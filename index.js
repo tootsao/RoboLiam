@@ -6,8 +6,6 @@ const bot = new Client();
 const ms = require("ms");
 const fs = require("fs");
 
-var version = "1.2.1";
-
 const token = process.env.BOT_TOKEN;
 
 const PREFIX = process.env.PREFIX;

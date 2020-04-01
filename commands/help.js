@@ -1,4 +1,4 @@
-const index = "../index.js";
+var version = "1.2.1";
 const { Client, MessageEmbed } = require("discord.js");
 module.exports = {
   name: "help",
