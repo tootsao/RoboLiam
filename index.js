@@ -1,14 +1,17 @@
 // In cmd.exe, say "node ." to start and press CTRL + C to stop
 require("dotenv").config();
-const { Client, MessageEmbed } = require("discord.js");
-const bot = new Client();
+const Discord = require("discord.js");
+const bot = new Discord.Client();
 const ms = require("ms");
+const fs = require("fs");
 
 var version = "1.2.1";
 
 const token = process.env.BOT_TOKEN;
 
 const PREFIX = process.env.PREFIX;
+
+bot.commands = Discord.Collection();
 
 bot.on("ready", () => {
   console.log("The bot is now online.");
