@@ -26,7 +26,6 @@ bot.on("ready", () => {
     .catch(console.error);
 });
 
-// commands
 bot.on("message", message => {
   let args = message.content.slice(PREFIX.length).split(" ");
 
