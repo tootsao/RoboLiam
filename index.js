@@ -1,6 +1,6 @@
 // In cmd.exe, say "node ." to start and press CTRL + C to stop
 require("dotenv").config();
-const Discord = require("discord.js");
+const { Discord, Client, MessageEmbed } = require("discord.js");
 const bot = new Discord.Client();
 const ms = require("ms");
 const fs = require("fs");
