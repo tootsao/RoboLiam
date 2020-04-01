@@ -1,3 +1,4 @@
+const { Client, MessageEmbed } = require("discord.js");
 module.exports = {
   name: "help",
   description: "says pong.",
