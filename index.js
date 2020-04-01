@@ -4,7 +4,7 @@ const { Client, MessageEmbed } = require("discord.js");
 const bot = new Client();
 const ms = require("ms");
 
-var version = "1.2.0";
+var version = "1.2.1";
 
 const token = process.env.BOT_TOKEN;
 
@@ -47,7 +47,7 @@ bot.on("message", message => {
         const Embed = new MessageEmbed()
           .setTitle("Help")
           .setColor(0xff0000)
-          .addField("uprising", "???")
+          .addField("uprising", "APRIL FOOLS!")
           .setFooter("RoboLiam Version " + version);
         message.author.send(Embed);
       } else if (!args[1]) {
