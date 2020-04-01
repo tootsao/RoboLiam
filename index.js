@@ -13,6 +13,13 @@ const token = process.env.BOT_TOKEN;
 const PREFIX = process.env.PREFIX;
 
 bot.commands = new Discord.Collection();
+const commandFiles = fs
+  .readdirSync("./commands/")
+  .filter(file => file.endsWith(".js"));
+for (const file of commandFiles) {
+  const command = require(`./commands/${file}`);
+  bot.commands.set(command.name, command);
+}
 
 bot.on("ready", () => {
   console.log("The bot is now online.");
@@ -67,8 +74,7 @@ bot.on("message", message => {
       }
       break;
     case "ping":
-      message.channel.send("pong!");
-      break;
+      bot.commands.get("ping").execute(message, args);
     case "uprising":
       if (message.author.id === "441384103946878987") {
         const Embed = new MessageEmbed()
