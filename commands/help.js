@@ -24,13 +24,6 @@ module.exports = {
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
-    } else if (args[1] === "uprising") {
-      const Embed = new MessageEmbed()
-        .setTitle("Help")
-        .setColor(0xff0000)
-        .addField("uprising", "APRIL FOOLS!")
-        .setFooter("RoboLiam version " + version);
-      message.author.send(Embed);
     } else if (!args[1]) {
       const Embed = new MessageEmbed()
         .setTitle("Help")
@@ -38,7 +31,7 @@ module.exports = {
         .setDescription(
           "The following is a list of all current commands.\n\n[arg] - an argument\n[arg]? - an optional argument"
         )
-        .addField("Commands", ".help [cmd]?\n.ping\n.uprising")
+        .addField("Commands", ".help [cmd]?\n.ping")
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
     }
