@@ -1,5 +1,4 @@
-# RoboLiam
-![Protogen Avatar](https://cdn.discordapp.com/avatars/694637394300895273/84c7cbd530737d6f5a0b0edb660190a2.png)
+![Protogen Avatar](https://repository-images.githubusercontent.com/252278043/e73c6000-742f-11ea-9bb2-3744210750be)
 
 RoboLiam is a custom bot I created for my Discord server, [**ControlFreak707**](https://discord.gg/WMArYB2).
 
