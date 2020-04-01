@@ -36,6 +36,9 @@ bot.on("message", message => {
     case "ping":
       bot.commands.get("ping").execute(message, args);
       break;
+    case "kick":
+      bot.commands.get("kick").execute(message, args);
+      break;
   }
 });
 

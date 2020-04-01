@@ -2,7 +2,7 @@ var version = "1.2.1";
 const { Client, MessageEmbed } = require("discord.js");
 module.exports = {
   name: "help",
-  description: "says pong.",
+  description: "Displays all commands and how to use them.",
   execute(message, args) {
     if (args[1] === "help") {
       const Embed = new MessageEmbed()
