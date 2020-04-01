@@ -75,6 +75,7 @@ bot.on("message", message => {
       break;
     case "ping":
       bot.commands.get("ping").execute(message, args);
+      break;
     case "uprising":
       if (message.author.id === "441384103946878987") {
         const Embed = new MessageEmbed()
