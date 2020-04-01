@@ -11,7 +11,7 @@ const token = process.env.BOT_TOKEN;
 
 const PREFIX = process.env.PREFIX;
 
-bot.commands = Discord.Collection();
+bot.commands = new Discord.Collection();
 
 bot.on("ready", () => {
   console.log("The bot is now online.");
