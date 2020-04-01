@@ -2,7 +2,7 @@ module.exports = {
   name: "kick",
   description: "Kicks the specified user for a specified reason.",
   execute(message, args) {
-    if (message.member.roles.some(role => role.name === "Mod")) {
+    if (message.member.roles.some(role => role.name === "Moderators")) {
       const user = message.mentions.users.first();
       if (user) {
         const member = message.guild.member(user);
