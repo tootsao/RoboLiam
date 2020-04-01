@@ -1,3 +1,4 @@
+const index = "index.js";
 const { Client, MessageEmbed } = require("discord.js");
 module.exports = {
   name: "help",
@@ -11,7 +12,7 @@ module.exports = {
           "help [cmd]?",
           "Displays information regarding commands\n\n[cmd]? - Learn more about a specific command"
         )
-        .setFooter("RoboLiam Version " + version);
+        .setFooter("RoboLiam version " + index.version);
       message.author.send(Embed);
     } else if (args[1] === "ping") {
       const Embed = new MessageEmbed()
@@ -21,14 +22,14 @@ module.exports = {
           "ping",
           "A simple developer command that replies simply with 'Pong!'"
         )
-        .setFooter("RoboLiam Version " + version);
+        .setFooter("RoboLiam version " + index.version);
       message.author.send(Embed);
     } else if (args[1] === "uprising") {
       const Embed = new MessageEmbed()
         .setTitle("Help")
         .setColor(0xff0000)
         .addField("uprising", "APRIL FOOLS!")
-        .setFooter("RoboLiam Version " + version);
+        .setFooter("RoboLiam version " + index.version);
       message.author.send(Embed);
     } else if (!args[1]) {
       const Embed = new MessageEmbed()
@@ -38,7 +39,7 @@ module.exports = {
           "The following is a list of all current commands.\n\n[arg] - an argument\n[arg]? - an optional argument"
         )
         .addField("Commands", ".help [cmd]?\n.ping\n.uprising")
-        .setFooter("RoboLiam Version " + version);
+        .setFooter("RoboLiam version " + index.version);
       message.author.send(Embed);
     }
   }
