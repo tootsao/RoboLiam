@@ -2,12 +2,9 @@ module.exports = {
   name: "kick",
   description: "Kicks the specified user for a specified reason.",
   execute(message, args) {
-    if (!args[1]) {
-      message.channel.send("Please specify a user.");
-    }
     const user = message.mentions.users.first();
     if (user) {
-      const member = member.guild.member(user);
+      const member = message.guild.member(user);
       if (member) {
         member
           .kick()
@@ -22,7 +19,7 @@ module.exports = {
         message.reply(`The user you requested isn\'t a member of this server.`);
       }
     } else {
-      message.reply("The user you requested doesn't exist.");
+      message.reply("Please specify a user.");
     }
   }
 };
