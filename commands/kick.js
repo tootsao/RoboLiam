@@ -19,7 +19,7 @@ module.exports = {
         message.reply(`The user you requested isn\'t a member of this server.`);
       }
     } else {
-      message.reply("Please specify a user.");
+      message.reply("Couldn't find the user you requested!");
     }
   }
 };
