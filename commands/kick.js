@@ -19,10 +19,11 @@ module.exports = {
               console.log(err);
             });
         } else if (member && args[2]) {
+          let msgArgs = args.slice(2).join(" ");
           member
-            .kick(args[2])
+            .kick(msgArgs)
             .then(() => {
-              message.reply(`Succesfuly kicked ${user.tag} for ${args[2]}.`);
+              message.reply(`Succesfuly kicked ${user.tag} for ${msgArgs}.`);
             })
             .catch(err => {
               message.channel.send(
