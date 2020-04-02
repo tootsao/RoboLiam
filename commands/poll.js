@@ -22,7 +22,7 @@ module.exports = {
         });
       }
     } else {
-      message.channel.send("Insuficent permmisions.");
+      message.channel.send("Insufficient permissions.");
     }
   }
 };
