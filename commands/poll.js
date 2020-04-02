@@ -10,15 +10,13 @@ module.exports = {
         let msgArgs = args.slice(1).join(" ");
         const Embed = new MessageEmbed()
           .setColor(0xffc300)
-          .setTitle("Poll")
+          .setTitle("📋 Poll")
           .setDescription(msgArgs);
-        message.channel
-          .send("||@everyone||\n" + Embed)
-          .then(messageReaction => {
-            messageReaction.react("👍");
-            messageReaction.react("👎");
-            message.delete({ timeout: 500 }).catch(console.error);
-          });
+        message.channel.send(Embed).then(messageReaction => {
+          messageReaction.react("👍");
+          messageReaction.react("👎");
+          message.delete({ timeout: 500 }).catch(console.error);
+        });
       }
     } else {
       message.channel.send("Insufficient permissions.");
