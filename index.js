@@ -8,7 +8,7 @@ const fs = require("fs");
 
 const token = process.env.BOT_TOKEN;
 
-const PREFIX = process.env.PREFIX;
+const PREFIX = ".";
 
 bot.commands = new Discord.Collection();
 const commandFiles = fs
