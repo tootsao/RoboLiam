@@ -13,3 +13,4 @@ This bot is not aimed to be used by other server owners however you may, if you 
 - help [cmd]?
 - ping
 - kick [user] [reason]?
+- poll [query]
