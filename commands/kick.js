@@ -6,7 +6,7 @@ module.exports = {
       const user = message.mentions.users.first();
       if (user) {
         const member = message.guild.member(user);
-        if (member) {
+        if (member && !args[2]) {
           member
             .kick()
             .then(() => {
