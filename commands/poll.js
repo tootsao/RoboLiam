@@ -12,8 +12,10 @@ module.exports = {
       } else {
         if ((message.member.nickname = "null")) {
           var pollCreator = message.author.username;
+          console.log("Setting pollCreator to " + pollCreator + " (Username)");
         } else {
           var pollCreator = message.member.nickname;
+          console.log("Setting pollCreator to " + pollCreator + " (Nickname)");
         }
         let msgArgs = args.slice(1).join(" ");
         const Embed = new MessageEmbed()
