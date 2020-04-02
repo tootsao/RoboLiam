@@ -11,12 +11,14 @@ module.exports = {
         const Embed = new MessageEmbed()
           .setColor(0xffc300)
           .setTitle("Poll")
-          .setDescription("||@everyone||\n" + msgArgs);
-        message.channel.send(Embed).then(messageReaction => {
-          messageReaction.react("👍");
-          messageReaction.react("👎");
-          message.delete({ timeout: 500 }).catch(console.error);
-        });
+          .setDescription(msgArgs);
+        message.channel
+          .send("||@everyone||\n" + Embed)
+          .then(messageReaction => {
+            messageReaction.react("👍");
+            messageReaction.react("👎");
+            message.delete({ timeout: 500 }).catch(console.error);
+          });
       }
     } else {
       message.channel.send("Insufficient permissions.");
