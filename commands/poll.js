@@ -11,7 +11,7 @@ module.exports = {
         const Embed = new MessageEmbed()
           .setColor(0xffc300)
           .setTitle("📋 Poll")
-          .setDescription(msgArgs);
+          .setDescription(msgArgs + "\n\n👍 = Yes!\n👎 = No!");
         message.channel.send(Embed).then(messageReaction => {
           messageReaction.react("👍");
           messageReaction.react("👎");
