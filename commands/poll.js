@@ -10,10 +10,15 @@ module.exports = {
       if (!args[1]) {
         message.channel.send("Invalid Arguments.");
       } else {
+        if ((message.member.nickname = "null")) {
+          var pollCreator = message.author.username;
+        } else {
+          var pollCreator = message.member.nickname;
+        }
         let msgArgs = args.slice(1).join(" ");
         const Embed = new MessageEmbed()
           .setColor(0xffc300)
-          .setTitle("📋 Poll - By @" + message.member.nickname)
+          .setTitle("📋 Poll - By @" + pollCreator)
           .setDescription(msgArgs)
           .addField("Key", "👍 = Yes!\n👎 = No!");
         message.channel.send(Embed).then(messageReaction => {
