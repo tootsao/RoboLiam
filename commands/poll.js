@@ -3,10 +3,7 @@ module.exports = {
   name: "poll",
   description: "Creates a poll.",
   execute(message, args) {
-    if (
-      message.member.roles.cache.has("533712722311905290") ||
-      message.member.roles.cache.has("450746674202017792")
-    ) {
+    if (message.member.hasPermission("MANAGE_CHANNELS")) {
       if (!args[1]) {
         message.channel.send("Invalid Arguments.");
       } else {
