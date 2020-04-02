@@ -30,7 +30,7 @@ module.exports = {
         .setColor(0xff0000)
         .addField(
           "kick [user] [reason]?",
-          "Kicks the specified user, can only be used by moderators."
+          "Kicks the specified user, can only be used by moderators.\n\n[user] - The user you wish to kick.\n[reason]? - The reason for kicking the specified user."
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
