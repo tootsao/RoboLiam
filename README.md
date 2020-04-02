@@ -12,3 +12,4 @@ This bot is not aimed to be used by other server owners however you may, if you 
 : An optional argument.
 - help [cmd]?
 - ping
+- kick [user] [reason]?
