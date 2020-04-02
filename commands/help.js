@@ -24,6 +24,16 @@ module.exports = {
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
+    } else if (args[1] === "kick") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField(
+          "kick [user] [reason]?",
+          "Kicks the specified user, can only be used by moderators."
+        )
+        .setFooter("RoboLiam version " + version);
+      message.author.send(Embed);
     } else if (!args[1]) {
       const Embed = new MessageEmbed()
         .setTitle("Help")
@@ -31,7 +41,7 @@ module.exports = {
         .setDescription(
           "The following is a list of all current commands.\n\n[arg] - an argument\n[arg]? - an optional argument"
         )
-        .addField("Commands", ".help [cmd]?\n.ping")
+        .addField("Commands", ".help [cmd]?\n.ping\n.kick [user] [reason]?")
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
     }
