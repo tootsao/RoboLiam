@@ -27,17 +27,6 @@ bot.on("ready", () => {
 });
 
 bot.on("message", message => {
-  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-
-  if (!prefixes[message.guild.id]) {
-    prefixes[message.guild.id] = {
-      prefixes: botconfig.prefix
-    };
-  }
-
-  let prefix = prefixes[message.guild.id].prefixes;
-  console.log(prefix);
-
   let args = message.content.slice(PREFIX.length).split(" ");
 
   switch (args[0]) {
