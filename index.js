@@ -8,7 +8,7 @@ const fs = require("fs");
 
 const token = process.env.BOT_TOKEN;
 
-const PREFIX = process.env.PREFIX;
+const PREFIX = ".";
 
 bot.commands = new Discord.Collection();
 const commandFiles = fs
@@ -41,6 +41,9 @@ bot.on("message", message => {
       break;
     case "poll":
       bot.commands.get("poll").execute(message, args);
+      break;
+    case "prefix":
+      bot.commands.get("prefix").execute(message, args);
       break;
   }
 });
