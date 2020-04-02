@@ -18,6 +18,18 @@ module.exports = {
               );
               console.log(err);
             });
+        } else if (member && args[2]) {
+          member
+            .kick(args[2])
+            .then(() => {
+              message.reply(`Succesfuly kicked ${user.tag} for ${args[2]}.`);
+            })
+            .catch(err => {
+              message.channel.send(
+                `I was unable to kick the user ${user.tag}.`
+              );
+              console.log(err);
+            });
         } else {
           message.channel.send(`${user.tag} isn\'t a member of this server.`);
         }
