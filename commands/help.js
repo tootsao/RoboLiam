@@ -1,4 +1,4 @@
-var version = "1.2.1";
+var version = "1.3.0";
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "help",
@@ -34,6 +34,16 @@ module.exports = {
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
+    } else if (args[1] === "poll") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField(
+          "poll [query]",
+          "Creates a simple yes or no poll.\n\n[query] - The question you wish to ask."
+        )
+        .setFooter("RoboLiam version " + version);
+      message.author.send(Embed);
     } else if (!args[1]) {
       const Embed = new MessageEmbed()
         .setTitle("Help")
@@ -41,7 +51,10 @@ module.exports = {
         .setDescription(
           "The following is a list of all current commands.\n\n[arg] - an argument\n[arg]? - an optional argument"
         )
-        .addField("Commands", ".help [cmd]?\n.ping\n.kick [user] [reason]?")
+        .addField(
+          "Commands",
+          ".help [cmd]?\n.ping\n.kick [user] [reason]?\n.poll [query]"
+        )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
     }
