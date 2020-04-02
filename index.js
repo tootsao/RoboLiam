@@ -39,6 +39,9 @@ bot.on("message", message => {
     case "kick":
       bot.commands.get("kick").execute(message, args);
       break;
+    case "poll":
+      bot.commands.get("poll").execute(message, args);
+      break;
   }
 });
 

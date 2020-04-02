@@ -1,5 +1,5 @@
 var version = "1.2.1";
-const { Client, MessageEmbed } = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "help",
   description: "Displays all commands and how to use them.",
