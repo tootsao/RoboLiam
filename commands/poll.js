@@ -10,7 +10,7 @@ module.exports = {
       if (!args[1]) {
         message.channel.send("Invalid Arguments.");
       } else {
-        if ((message.member.nickname = "null")) {
+        if (message.member.nickname === "null") {
           var pollCreator = message.author.username;
           console.log("Setting pollCreator to " + pollCreator + " (Username)");
         } else {
