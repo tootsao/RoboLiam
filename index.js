@@ -42,6 +42,9 @@ bot.on("message", message => {
     case "poll":
       bot.commands.get("poll").execute(message, args);
       break;
+    case "prefix":
+      bot.commands.get("prefix").execute(message, args);
+      break;
   }
 });
 
