@@ -12,16 +12,15 @@ module.exports = {
       } else {
         if (!message.member.nickname) {
           var pollCreator = message.author.username;
-          console.log("Setting pollCreator to " + pollCreator + " (Username)");
         } else {
           var pollCreator = message.member.nickname;
-          console.log("Setting pollCreator to " + pollCreator + " (Nickname)");
         }
         let msgArgs = args.slice(1).join(" ");
         const Embed = new MessageEmbed()
           .setColor(0xffc300)
           .setTitle("📋 Poll - By @" + pollCreator)
           .setDescription(msgArgs)
+          .setThumbnail(message.author.avatarURL())
           .addField("Key", "👍 = Yes!\n👎 = No!");
         message.channel.send(Embed).then(messageReaction => {
           messageReaction.react("👍");
