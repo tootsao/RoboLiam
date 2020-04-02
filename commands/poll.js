@@ -13,7 +13,7 @@ module.exports = {
         let msgArgs = args.slice(1).join(" ");
         const Embed = new MessageEmbed()
           .setColor(0xffc300)
-          .setTitle("📋 Poll - By @" + message.author.nickname)
+          .setTitle("📋 Poll - By @" + message.member.nickname)
           .setDescription(msgArgs)
           .addField("Key", "👍 = Yes!\n👎 = No!");
         message.channel.send(Embed).then(messageReaction => {
