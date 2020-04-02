@@ -42,9 +42,6 @@ bot.on("message", message => {
     case "poll":
       bot.commands.get("poll").execute(message, args);
       break;
-    case "curse":
-      bot.commands.get("curse").execute(message, args);
-      break;
   }
 });
 
