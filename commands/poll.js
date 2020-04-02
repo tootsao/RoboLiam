@@ -13,8 +13,8 @@ module.exports = {
           .setTitle("Poll")
           .setDescription(msgArgs);
         message.channel.send(Embed).then(messageReaction => {
-          messageReaction.react(":thumbsup:");
-          messageReaction.react(":thumbsdown:");
+          messageReaction.react("👍");
+          messageReaction.react("👎");
           message.delete({ timeout: 500 }).catch(console.error);
         });
       }
