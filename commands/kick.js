@@ -2,7 +2,10 @@ module.exports = {
   name: "kick",
   description: "Kicks the specified user for a specified reason.",
   execute(message, args) {
-    if (message.member.roles.cache.has("533712722311905290")) {
+    if (
+      message.member.roles.cache.has("533712722311905290") ||
+      message.member.roles.cache.has("450746674202017792")
+    ) {
       const user = message.mentions.users.first();
       if (user) {
         const member = message.guild.member(user);
