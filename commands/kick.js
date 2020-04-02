@@ -41,7 +41,7 @@ module.exports = {
         message.channel.send("Couldn't find the user you requested!");
       }
     } else {
-      message.channel.send("Insufficient Permissions.");
+      message.channel.send("Insufficient permissions.");
     }
   }
 };
