@@ -23,7 +23,7 @@ module.exports = {
           member
             .kick(msgArgs)
             .then(() => {
-              message.reply(`Succesfuly kicked ${user.tag} for ${msgArgs}.`);
+              message.reply(`Succesfuly kicked ${user.tag} for "${msgArgs}".`);
             })
             .catch(err => {
               message.channel.send(
