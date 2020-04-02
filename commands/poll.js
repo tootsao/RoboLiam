@@ -14,7 +14,7 @@ module.exports = {
       message.channel.send(Embed).then(messageReaction => {
         messageReaction.react("👍");
         messageReaction.react("👎");
-        message.delete(1000).catch(console.error);
+        message.delete({ timeout: 1000 }).catch(console.error);
       });
     }
   }
