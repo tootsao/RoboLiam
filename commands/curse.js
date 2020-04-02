@@ -13,7 +13,9 @@ module.exports = {
       if (user) {
         const member = message.guild.member(user);
         if (member) {
-          message.reply("<@!" + member.id + "> has been cursed! :smiling_imp:");
+          message.channel.send(
+            "<@!" + member.id + "> has been cursed! :smiling_imp:"
+          );
         } else {
           message.channel.send("The user you requested isn't on this server.");
         }
