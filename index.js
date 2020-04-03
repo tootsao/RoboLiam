@@ -49,7 +49,7 @@ bot.on("message", message => {
       }
     })
     .then(() => {
-      const member = message.guild.member("<@694637394300895273>");
+      const member = message.guild.member(bot);
       member.setNickname(`RoboLiam [${prefix}]`);
 
       let args = message.content.slice(prefix.length).split(" ");
