@@ -9,7 +9,7 @@ module.exports = {
     message.channel.send(
       "***WOOP!***\nHey @everyone, <@!" +
         message.author.id +
-        "> has found a secret! :D",
+        "> found a secret! 😃",
       attachment
     );
   }
