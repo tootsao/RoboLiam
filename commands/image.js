@@ -30,14 +30,14 @@ module.exports = {
           return;
         }
         // send result
-        message.channel.send(
-          "||" + urls[Math.floor(Math.random() * urls.length)] + "||"
-        );
+        message.channel
+          .send("|| " + urls[Math.floor(Math.random() * urls.length)] + " ||")
+          .then(() => {
+            message.delete().catch(console.error);
+          });
       });
     }
 
-    image(message).then(() => {
-      message.delete().catch(console.error);
-    });
+    image(message);
   }
 };
