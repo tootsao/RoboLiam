@@ -58,6 +58,9 @@ module.exports = {
       const Embed = new MessageEmbed()
         .setTitle("Help")
         .setColor(0xff0000)
+        .setImage(
+          "https://repository-images.githubusercontent.com/252278043/e73c6000-742f-11ea-9bb2-3744210750be"
+        )
         .setDescription(
           "The following is a list of all current commands.\n\n[arg] - an argument\n[arg]? - an optional argument"
         )
