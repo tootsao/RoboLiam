@@ -5,9 +5,10 @@ module.exports = {
   name: "image",
   description: "Sends an image of choice.",
   execute(message, args) {
+    let msgArgs = args.slice(1).join(" ");
     function image(message) {
       var options = {
-        url: "https://results.dogpile.com/serp?qc=images&q=" + args[1],
+        url: "https://results.dogpile.com/serp?qc=images&q=" + msgArgs,
         method: "GET",
         headers: {
           Accept: "text/html",
@@ -24,15 +25,19 @@ module.exports = {
         var urls = new Array(links.length)
           .fill(0)
           .map((v, i) => links.eq(i).attr("href"));
-        console.log(urls);
+        // console.log(urls);
         if (!urls.length) {
           return;
         }
-        //send result
-        message.channel.send(urls[Math.floor(Math.random() * urls.length)]);
+        // send result
+        message.channel.send(
+          "||" + urls[Math.floor(Math.random() * urls.length)] + "||"
+        );
       });
     }
 
-    image(message);
+    image(message).then(() => {
+      message.delete().catch(console.error);
+    });
   }
 };

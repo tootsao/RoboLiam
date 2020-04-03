@@ -20,3 +20,4 @@ This bot is not aimed to be used by other server owners however you may, if you 
 - poll [query]
 - simonSays [message]
 - setPrefix [prefix]
+- image [image]
