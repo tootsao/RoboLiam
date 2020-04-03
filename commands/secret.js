@@ -4,7 +4,7 @@ module.exports = {
   description: "Congratulates the user for finding a secret.",
   execute(message, args) {
     if (message.guild.id === "450114903865294862") {
-      var mention = "<&506971411336921098>";
+      var mention = "<@&506971411336921098>";
     } else {
       var mention = "everyone";
     }
