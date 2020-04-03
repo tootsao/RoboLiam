@@ -51,6 +51,8 @@ bot.on("message", message => {
     .then(() => {
       let args = message.content.slice(prefix.length).split(" ");
 
+      if (!args[0].startsWith(prefix)) return;
+
       switch (args[0]) {
         case "help":
           bot.commands.get("help").execute(message, args);
