@@ -45,6 +45,9 @@ bot.on("message", message => {
     case "prefix":
       bot.commands.get("prefix").execute(message, args);
       break;
+    case "secret":
+      bot.commands.get("secret").execute(message, args);
+      break;
   }
 });
 
