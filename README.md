@@ -16,4 +16,5 @@ This bot is not aimed to be used by other server owners however you may, if you 
 - ping
 - kick [user][reason]?
 - poll [query]
-- simonsays [message]
+- simonSays [message]
+- setPrefix [prefix]
