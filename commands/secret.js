@@ -2,7 +2,7 @@ module.exports = {
   name: "secret",
   description: "Congratulates the user for finding a secret.",
   execute(message, args) {
-    const attachment = new attachment(
+    const attachment = new Attachment(
       "https://vignette.wikia.nocookie.net/club-penguin-rewritten/images/c/ce/You_Found_A_Secret.png"
     );
     message.channel.send(
