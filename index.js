@@ -80,46 +80,61 @@ bot.on("ready", () => {
 });
 
 bot.on("message", message => {
-  db.collection("guilds")
-    .doc(message.guild.id)
-    .get()
-    .then(q => {
-      if (q.exists) {
-        prefix = q.data().prefix;
-      }
-    })
-    .then(() => {
-      let args = message.content.slice(prefix.length).split(" ");
+  if (!message.guild) {
+    let args = message.content.slice(prefix.length).split(" ");
 
-      if (!message.content.startsWith(prefix)) return;
+    if (!message.content.startsWith(prefix)) return;
 
-      switch (args[0]) {
-        case "help":
-          bot.commands.get("help").execute(message, args);
-          break;
-        case "ping":
-          bot.commands.get("ping").execute(message, args);
-          break;
-        case "kick":
-          bot.commands.get("kick").execute(message, args);
-          break;
-        case "poll":
-          bot.commands.get("poll").execute(message, args);
-          break;
-        case "setPrefix":
-          bot.commands.get("setPrefix").execute(message, args, db);
-          break;
-        case "secret":
-          bot.commands.get("secret").execute(message, args);
-          break;
-        case "simonSays":
-          bot.commands.get("simonSays").execute(message, args);
-          break;
-        case "image":
-          bot.commands.get("image").execute(message, args);
-          break;
-      }
-    });
+    switch (args[0]) {
+      case "help":
+        bot.commands.get("help").execute(message, args);
+        break;
+      case "ping":
+        bot.commands.get("ping").execute(message, args);
+        break;
+    }
+  } else {
+    db.collection("guilds")
+      .doc(message.guild.id)
+      .get()
+      .then(q => {
+        if (q.exists) {
+          prefix = q.data().prefix;
+        }
+      })
+      .then(() => {
+        let args = message.content.slice(prefix.length).split(" ");
+
+        if (!message.content.startsWith(prefix)) return;
+
+        switch (args[0]) {
+          case "help":
+            bot.commands.get("help").execute(message, args);
+            break;
+          case "ping":
+            bot.commands.get("ping").execute(message, args);
+            break;
+          case "kick":
+            bot.commands.get("kick").execute(message, args);
+            break;
+          case "poll":
+            bot.commands.get("poll").execute(message, args);
+            break;
+          case "setPrefix":
+            bot.commands.get("setPrefix").execute(message, args, db);
+            break;
+          case "secret":
+            bot.commands.get("secret").execute(message, args);
+            break;
+          case "simonSays":
+            bot.commands.get("simonSays").execute(message, args);
+            break;
+          case "image":
+            bot.commands.get("image").execute(message, args);
+            break;
+        }
+      });
+  }
 });
 
 bot.on("guildCreate", async gData => {
