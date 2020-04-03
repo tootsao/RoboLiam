@@ -35,7 +35,7 @@ for (const file of commandFiles) {
 bot.on("ready", () => {
   console.log("The bot is now online.");
   bot.user
-    .setActivity('Say ".help" for cmds!', { type: "PLAYING" })
+    .setActivity('Say "help" for cmds!', { type: "PLAYING" })
     .catch(console.error);
 });
 
