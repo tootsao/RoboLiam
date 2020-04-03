@@ -5,13 +5,12 @@ module.exports = {
     if (!args[1]) {
       message.channel.send("Please specify a role.");
     } else {
-      let nStaffRole = message.guild.roles.fetch(
-        message.mentions.roles.first()
-      );
+      let nStaffRole = message.guild.roles.fetch(message.mentions.roles.first())
+        .id;
       db.collection("guilds")
         .doc(message.guild.id)
         .update({
-          staffRole: nStaffRole.id
+          staffRole: nStaffRole
         })
         .then(() => {
           message.channel.send(
