@@ -48,6 +48,9 @@ bot.on("message", message => {
     case "secret":
       bot.commands.get("secret").execute(message, args);
       break;
+    case "simonsays":
+      bot.commands.get("simonsays").execute(message, args);
+      break;
   }
 });
 
