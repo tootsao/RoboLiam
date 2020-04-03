@@ -36,9 +36,47 @@ for (const file of commandFiles) {
 
 bot.on("ready", () => {
   console.log("The bot is now online.");
-  bot.user
-    .setActivity('Say "help" for cmds!', { type: "PLAYING" })
-    .catch(console.error);
+
+  let activNum = 0;
+
+  setInterval(function() {
+    if (activNum === 0) {
+      bot.user
+        .setActivity('Say "help" for cmds!', { type: "PLAYING" })
+        .catch(console.error);
+      activNum = 1;
+    } else if (activNum === 1) {
+      bot.user
+        .setActivity("With Code.", { type: "PLAYING" })
+        .catch(console.error);
+      activNum = 2;
+    } else if (activNum === 2) {
+      bot.user
+        .setActivity("Minecraft.", { type: "PLAYING" })
+        .catch(console.error);
+      activNum = 3;
+    } else if (activNum === 3) {
+      bot.user
+        .setActivity("Naruto.", { type: "WATCHING" })
+        .catch(console.error);
+      activNum = 4;
+    } else if (activNum === 4) {
+      bot.user
+        .setActivity('Say "help" for cmds!', { type: "PLAYING" })
+        .catch(console.error);
+      activNum = 5;
+    } else if (activNum === 5) {
+      bot.user
+        .setActivity("LoFi Music.", { type: "LISTENING" })
+        .catch(console.error);
+      activNum = 6;
+    } else if (activNum === 6) {
+      bot.user
+        .setActivity("Furry YouTubers.", { type: "WATCHING" })
+        .catch(console.error);
+      activNum = 0;
+    }
+  }, 60 * 1000);
 });
 
 bot.on("message", message => {
