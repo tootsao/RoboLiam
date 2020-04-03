@@ -73,7 +73,7 @@ bot.on("message", message => {
           bot.commands.get("secret").execute(message, args);
           break;
         case "simonsays":
-          bot.commands.get("simonsays").execute(message, args);
+          bot.commands.get("simonSays").execute(message, args);
           break;
       }
     });

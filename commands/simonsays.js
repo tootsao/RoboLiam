@@ -1,5 +1,5 @@
 module.exports = {
-  name: "simonsays",
+  name: "simonSays",
   description: "Responds with whatever the user says.",
   execute(message, args) {
     let msgArgs = args.slice(1).join(" ");

@@ -44,13 +44,23 @@ module.exports = {
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
-    } else if (args[1] === "simonsays") {
+    } else if (args[1] === "simonSays") {
       const Embed = new MessageEmbed()
         .setTitle("Help")
         .setColor(0xff0000)
         .addField(
-          "simonsays [message]",
+          "simonSays [message]",
           "Repeats whatever you say.\n\n[message] - The message you wish to be said."
+        )
+        .setFooter("RoboLiam version " + version);
+      message.author.send(Embed);
+    } else if (args[1] === "setPrefix") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField(
+          "setPrefix [prefix]",
+          "Allows you to change the prefix.\n\n[prefix] - Your new prefix."
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
@@ -66,7 +76,7 @@ module.exports = {
         )
         .addField(
           "Commands",
-          ".help [cmd]?\n.ping\n.kick [user] [reason]?\n.poll [query]\n.simonsays [message]"
+          "help [cmd]?\nping\nkick [user] [reason]?\npoll [query]\nsimonSays [message]\nsetPrefix [prefix]"
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
