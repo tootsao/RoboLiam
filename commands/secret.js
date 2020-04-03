@@ -1,3 +1,4 @@
+const { Attachment } = require("discord.js");
 module.exports = {
   name: "secret",
   description: "Congratulates the user for finding a secret.",
