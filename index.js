@@ -49,7 +49,9 @@ bot.on("message", message => {
       }
     })
     .then(() => {
-      const member = message.guild.member(bot);
+      const member = message.guild.member(
+        Client.users.find(user => user.username == "RoboLiam")
+      );
       member.setNickname(`RoboLiam [${prefix}]`);
 
       let args = message.content.slice(prefix.length).split(" ");
