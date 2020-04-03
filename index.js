@@ -50,7 +50,7 @@ bot.on("message", message => {
     })
     .then(() => {
       const member = message.guild.member(
-        Client.users.find(user => user.username == "RoboLiam")
+        bot.users.find(user => user.username == "RoboLiam")
       );
       member.setNickname(`RoboLiam [${prefix}]`);
 
