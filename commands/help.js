@@ -1,4 +1,4 @@
-var version = "1.3.0";
+var version = "1.4.3";
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "help",
@@ -44,6 +44,16 @@ module.exports = {
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
+    } else if (args[1] === "simonsays") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField(
+          "simonsays [message]",
+          "Repeats whatever you say.\n\n[message] - The message you wish to be said."
+        )
+        .setFooter("RoboLiam version " + version);
+      message.author.send(Embed);
     } else if (!args[1]) {
       const Embed = new MessageEmbed()
         .setTitle("Help")
@@ -53,7 +63,7 @@ module.exports = {
         )
         .addField(
           "Commands",
-          ".help [cmd]?\n.ping\n.kick [user] [reason]?\n.poll [query]"
+          ".help [cmd]?\n.ping\n.kick [user] [reason]?\n.poll [query]\n.simonsays [message]"
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
