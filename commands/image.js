@@ -31,7 +31,7 @@ module.exports = {
         }
         // send result
         message.channel
-          .send("|| " + urls[Math.floor(Math.random() * urls.length)] + " ||")
+          .send(urls[Math.floor(Math.random() * urls.length)])
           .then(() => {
             message.delete().catch(console.error);
           });
