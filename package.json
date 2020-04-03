@@ -10,10 +10,12 @@
   "author": "ControlFreak707",
   "license": "ISC",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "discord.js": "^12.1.1",
     "dotenv": "^8.2.0",
     "firebase": "^7.13.2",
     "firebase-admin": "^8.10.0",
-    "ms": "^2.1.2"
+    "ms": "^2.1.2",
+    "request": "^2.88.2"
   }
 }

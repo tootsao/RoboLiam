@@ -1,10 +1,12 @@
 // In terminal, say "node ." to start and press CTRL + C to stop
 require("dotenv").config();
-const { Client, MessageEmbed } = require("discord.js");
+const { Client, MessageEmbed, MessageAttachment } = require("discord.js");
 const Discord = require("discord.js");
 const bot = new Client();
 const ms = require("ms");
 const fs = require("fs");
+const cheerio = require("cheerio");
+const request = require("request");
 
 // Import settings
 let prefix;
@@ -74,6 +76,9 @@ bot.on("message", message => {
           break;
         case "simonSays":
           bot.commands.get("simonSays").execute(message, args);
+          break;
+        case "image":
+          bot.commands.get("image").execute(message, args);
           break;
       }
     });
