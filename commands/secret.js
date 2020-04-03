@@ -1,4 +1,5 @@
-const { Attachment } = require("discord.js");
+Discord = require("discord.js");
+const { Client, Attachment } = require("discord.js");
 module.exports = {
   name: "secret",
   description: "Congratulates the user for finding a secret.",
