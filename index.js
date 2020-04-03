@@ -80,6 +80,12 @@ bot.on("message", message => {
         case "image":
           bot.commands.get("image").execute(message, args);
           break;
+        case "staffList":
+          bot.commands.get("staffList").execute(message, args);
+          break;
+        case "staffRole":
+          bot.commands.get("staffRole").execute(message, args, db);
+          break;
       }
     });
 });
@@ -93,7 +99,8 @@ bot.on("guildCreate", async gData => {
       guildOwner: gData.owner.user.username,
       guildOwnerID: gData.owner.id,
       guildMemberCount: gData.memberCount,
-      prefix: "."
+      prefix: ".",
+      staffRole: "null"
     });
 });
 
