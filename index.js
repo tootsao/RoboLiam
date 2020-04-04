@@ -109,7 +109,7 @@ bot.on("message", message => {
 
         switch (args[0]) {
           case "help":
-            bot.commands.get("help").execute(message, args);
+            bot.commands.get("help").execute(message, args, prefix);
             break;
           case "ping":
             bot.commands.get("ping").execute(message, args);

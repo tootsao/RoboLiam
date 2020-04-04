@@ -1,9 +1,9 @@
-var version = "1.6.2";
+var version = "1.6.3";
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "help",
   description: "Displays all commands and how to use them.",
-  execute(message, args) {
+  execute(message, args, prefix) {
     if (args[1] === "help") {
       const Embed = new MessageEmbed()
         .setTitle("Help")
@@ -90,6 +90,10 @@ module.exports = {
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
+    } else {
+      message.author.send(
+        `${args[1]} isn't a command! Say \`${prefix}help\` to see all current commands.`
+      );
     }
   }
 };
