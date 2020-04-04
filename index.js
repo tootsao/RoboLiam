@@ -144,14 +144,7 @@ bot.on("guildCreate", async (gData) => {
     guildName: gData.name,
     guildOwner: gData.owner.user.username,
     guildOwnerID: gData.owner.id,
-    guildMemberCount: gData.memberCount,
     prefix: ".",
-  });
-});
-
-bot.on("guildMemberAdd", async (gData) => {
-  db.collection("guilds").doc(gData.id).update({
-    guildMemberCount: gData.memberCount,
   });
 });
 
