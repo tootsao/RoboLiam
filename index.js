@@ -81,9 +81,10 @@ bot.on("ready", () => {
 
 bot.on("message", message => {
   if (!message.guild) {
-    let args = message.content.slice(prefix.length).split(" ");
+    let defaultPrefix = ".";
+    let args = message.content.slice(defaultPrefix.length).split(" ");
 
-    if (!message.content.startsWith(prefix)) return;
+    if (!message.content.startsWith(defaultPrefix)) return;
 
     switch (args[0]) {
       case "help":
