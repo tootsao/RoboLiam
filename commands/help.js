@@ -1,9 +1,15 @@
-var version = "1.6.4";
+var version = "1.6.5";
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "help",
   description: "Displays all commands and how to use them.",
-  execute(message, args, prefix) {
+  execute(message, args, prefix, defaultPrefix) {
+    if (message.channel) {
+      let tempPrefix = prefix;
+    } else {
+      let tempPrefix = defaultPrefix;
+    }
+
     if (args[1] === "help") {
       const Embed = new MessageEmbed()
         .setTitle("Help")
@@ -92,7 +98,7 @@ module.exports = {
       message.author.send(Embed);
     } else {
       message.author.send(
-        `${args[1]} isn't a command! Say \`${prefix}help\` to see all current commands.`
+        `${args[1]} isn't a command! Say \`${tempPrefix}help\` to see all current commands.`
       );
     }
   }
