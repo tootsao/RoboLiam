@@ -5,9 +5,9 @@ module.exports = {
   description: "Displays all commands and how to use them.",
   execute(message, args, prefix, defaultPrefix) {
     if (message.channel) {
-      let tempPrefix = prefix;
+      var tempPrefix = prefix;
     } else {
-      let tempPrefix = defaultPrefix;
+      var tempPrefix = defaultPrefix;
     }
 
     if (args[1] === "help") {
