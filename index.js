@@ -155,7 +155,7 @@ bot.on("guildMemberAdd", member => {
   console.log("User" + member.user.tag + "has joined the server!");
 
   var role = member.guild.roles.fetch("695794438819020842");
-  member.addRole(role);
+  member.roles.add(role);
 });
 
 bot.login(token);
