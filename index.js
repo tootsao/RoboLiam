@@ -20,7 +20,7 @@ const admin = require("firebase-admin");
 const serviceAccount = require("./serviceAccount.json");
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
+  credential: admin.credential.cert(serviceAccount),
 });
 
 let db = admin.firestore();
@@ -28,7 +28,7 @@ let db = admin.firestore();
 bot.commands = new Discord.Collection();
 const commandFiles = fs
   .readdirSync("./commands/")
-  .filter(file => file.endsWith(".js"));
+  .filter((file) => file.endsWith(".js"));
 for (const file of commandFiles) {
   const command = require(`./commands/${file}`);
   bot.commands.set(command.name, command);
@@ -39,7 +39,7 @@ bot.on("ready", () => {
 
   let activNum = 0;
 
-  setInterval(function() {
+  setInterval(function () {
     if (activNum === 0) {
       bot.user
         .setActivity('Say "help" for cmds!', { type: "PLAYING" })
@@ -79,7 +79,7 @@ bot.on("ready", () => {
   }, 60 * 1000);
 });
 
-bot.on("message", message => {
+bot.on("message", (message) => {
   if (!message.guild) {
     let defaultPrefix = ".";
     let args = message.content.slice(defaultPrefix.length).split(" ");
@@ -98,7 +98,7 @@ bot.on("message", message => {
     db.collection("guilds")
       .doc(message.guild.id)
       .get()
-      .then(q => {
+      .then((q) => {
         if (q.exists) {
           prefix = q.data().prefix;
         }
@@ -138,17 +138,25 @@ bot.on("message", message => {
   }
 });
 
-bot.on("guildCreate", async gData => {
-  db.collection("guilds")
-    .doc(gData.id)
-    .set({
-      guildID: gData.id,
-      guildName: gData.name,
-      guildOwner: gData.owner.user.username,
-      guildOwnerID: gData.owner.id,
-      guildMemberCount: gData.memberCount,
-      prefix: "."
-    });
+bot.on("guildCreate", async (gData) => {
+  db.collection("guilds").doc(gData.id).set({
+    guildID: gData.id,
+    guildName: gData.name,
+    guildOwner: gData.owner.user.username,
+    guildOwnerID: gData.owner.id,
+    guildMemberCount: gData.memberCount,
+    prefix: ".",
+  });
+});
+
+bot.on("message", async (gData) => {
+  db.collection("guilds").doc(gData.id).set({
+    guildID: gData.id,
+    guildName: gData.name,
+    guildOwner: gData.owner.user.username,
+    guildOwnerID: gData.owner.id,
+    guildMemberCount: gData.memberCount,
+  });
 });
 
 bot.login(token);
