@@ -150,15 +150,20 @@ bot.on("guildCreate", async (gData) => {
 });
 
 bot.on("guildUpdate", async (gData) => {
-  setTimeout(function () {
+  db.collection("guilds").doc(gData.id).update({
+    guildID: gData.id,
+    guildName: gData.name,
+    guildOwner: gData.owner.user.username,
+    guildOwnerID: gData.owner.id,
+    guildMemberCount: gData.memberCount,
+  }).then(() => {
     db.collection("guilds").doc(gData.id).update({
       guildID: gData.id,
       guildName: gData.name,
       guildOwner: gData.owner.user.username,
       guildOwnerID: gData.owner.id,
       guildMemberCount: gData.memberCount,
-    });
-  }, 10000);
+  });
 });
 
 bot.login(token);
