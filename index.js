@@ -150,7 +150,7 @@ bot.on("guildCreate", async (gData) => {
 });
 
 bot.on("message", async (gData) => {
-  db.collection("guilds").doc(gData.id).set({
+  db.collection("guilds").doc(gData.id).update({
     guildID: gData.id,
     guildName: gData.name,
     guildOwner: gData.owner.user.username,
