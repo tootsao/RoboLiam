@@ -149,4 +149,10 @@ bot.on("guildCreate", async (gData) => {
   });
 });
 
+bot.on("guildMemberAdd", async (gData) => {
+  db.collection("guilds").doc(gData.id).update({
+    guildMemberCount: gData.memberCount,
+  });
+});
+
 bot.login(token);
