@@ -152,7 +152,7 @@ bot.on("guildCreate", async gData => {
 });
 
 bot.on("guildMemberAdd", async member => {
-  var role = member.guild.roles.find(role => role.name === "Puny Who-Mans");
+  var role = member.guild.roles.fetch("695794438819020842");
   member.member.addRole(role);
 });
 
