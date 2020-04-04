@@ -151,4 +151,9 @@ bot.on("guildCreate", async gData => {
     });
 });
 
+bot.on("guildMemberAdd", async member => {
+  var role = member.guild.roles.find(role => role.name === "Puny Who-Mans");
+  member.member.addRole(role);
+});
+
 bot.login(token);
