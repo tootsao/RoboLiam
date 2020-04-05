@@ -6,6 +6,7 @@ module.exports = {
 
     let nChannel = args[1];
     console.log(`nChannel = ${nChannel}`);
+    console.log(`nChannel.id = ${nChannel.id}`);
 
     /* db.collection("guilds")
       .doc(message.guild.id)
