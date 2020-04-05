@@ -133,6 +133,9 @@ bot.on("message", (message) => {
           case "image":
             bot.commands.get("image").execute(message, args);
             break;
+          case "welcome":
+            bot.commands.get("welcome").execute(message, args);
+            break;
         }
       });
   }
