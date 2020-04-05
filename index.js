@@ -149,7 +149,9 @@ bot.on("guildMemberAdd", async (member) => {
       }
     })
     .then(() => {
-      bot.channels.fetch(serverAnnouncements).send("<message content here>");
+      bot.channels.fetch(serverAnnouncements).then((channel) => {
+        channel.send("<message content here>");
+      });
     });
 });
 
