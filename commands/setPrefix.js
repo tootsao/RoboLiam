@@ -4,15 +4,15 @@ module.exports = {
   execute(message, args, db) {
     if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
 
-    let nPrefix = args[1];
+    let nPrefix = message.mentions.channels.first();
 
     db.collection("guilds")
       .doc(message.guild.id)
       .update({
-        prefix: nPrefix
+        prefix: nPrefix,
       })
       .then(() => {
         message.channel.send(`The prefix has been changed to ${nPrefix}`);
       });
-  }
+  },
 };
