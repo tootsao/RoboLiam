@@ -134,7 +134,7 @@ bot.on("message", (message) => {
             bot.commands.get("image").execute(message, args);
             break;
           case "setJoin":
-            bot.commands.get("setJoin").execute(message, args);
+            bot.commands.get("setJoin").execute(message, args, db);
             break;
         }
       });

@@ -1,7 +1,7 @@
 module.exports = {
   name: "setJoin",
   description: "Set's where to make join and leave announcements.",
-  execute(message, args) {
+  execute(message, args, db) {
     if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
 
     let nChannel = message.mentions.channels.first();
