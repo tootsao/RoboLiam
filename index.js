@@ -151,19 +151,24 @@ bot.on("guildMemberAdd", async (member) => {
     .then(() => {
       bot.channels.fetch(serverAnnouncements).then((channel) => {
         rNum = Math.floor(Math.random() * Math.floor(4));
+        console.log(`rNum = ${rNum}`);
 
         if ((rNum = 0)) {
           channel.send(`Oh look who it is, <@!${member.id}>'s here!`);
+          console.log(`If statement received rNum = ${rNum}`);
         } else if ((rNum = 1)) {
           channel.send(`Here comes <@!${member.id}>!`);
+          console.log(`If statement received rNum = ${rNum}`);
         } else if ((rNum = 2)) {
           channel.send(
             `Is it a bird? Is it a plane? No, it's <@!${member.id}>!`
           );
+          console.log(`If statement received rNum = ${rNum}`);
         } else if ((rNum = 3)) {
           channel.send(
             `Is it a bird? Is it a plane? Wait, It's-! Oh it's just <@!${member.id}>, nevermind.`
           );
+          console.log(`If statement received rNum = ${rNum}`);
         }
       });
     });
