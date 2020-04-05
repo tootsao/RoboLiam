@@ -150,7 +150,12 @@ bot.on("guildMemberAdd", async (member) => {
     })
     .then(() => {
       bot.channels.fetch(serverAnnouncements).then((channel) => {
-        channel.send("<message content here>");
+        rNum = Math.floor(Math.random() * Math.floor(2));
+        if (rNum === 0) {
+          channel.send(`Oh look who it is, <@!${member.id}> 's here!`);
+        } else if (rNum === 1) {
+          channel.send(`Oh look who it is, <@!${member.id}> 's here!`);
+        }
       });
     });
 });
