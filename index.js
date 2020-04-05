@@ -189,13 +189,13 @@ bot.on("guildMemberRemove", async (member) => {
         rNum = Math.floor(Math.random() * Math.floor(4));
 
         if ((rNum = 0)) {
-          channel.send(`Placeholder message ${member.id}`);
+          channel.send(`Placeholder message <@!${member.id}>`);
         } else if ((rNum = 1)) {
-          channel.send(`Placeholder message ${member.id}`);
+          channel.send(`Placeholder message <@!${member.id}>`);
         } else if ((rNum = 2)) {
-          channel.send(`Placeholder message ${member.id}`);
+          channel.send(`Placeholder message <@!${member.id}>`);
         } else if ((rNum = 3)) {
-          channel.send(`Placeholder message ${member.id}`);
+          channel.send(`Placeholder message <@!${member.id}>`);
         }
       });
     });
