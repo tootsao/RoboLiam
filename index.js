@@ -150,11 +150,19 @@ bot.on("guildMemberAdd", async (member) => {
     })
     .then(() => {
       bot.channels.fetch(serverAnnouncements).then((channel) => {
-        rNum = Math.floor(Math.random() * Math.floor(2));
+        rNum = Math.floor(Math.random() * Math.floor(4));
         if (rNum === 0) {
-          channel.send(`Oh look who it is, <@!${member.id}> 's here!`);
+          channel.send(`Oh look who it is, <@!${member.id}>'s here!`);
         } else if (rNum === 1) {
-          channel.send(`Oh look who it is, <@!${member.id}> 's here!`);
+          channel.send(`Here comes <@!${member.id}>!`);
+        } else if (rNum === 2) {
+          channel.send(
+            `Is it a bird? Is it a plane? No, it's <@!${member.id}>!`
+          );
+        } else if (rNum === 3) {
+          channel.send(
+            `Is it a bird? Is it a plane? Wait, It's-! Oh it's just <@!${member.id}>, nevermind.`
+          );
         }
       });
     });
