@@ -4,7 +4,7 @@ module.exports = {
   execute(message, args) {
     if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
 
-    let nChannel = args[1];
+    let nChannel = message.mentions.channels.first();
     console.log(`nChannel = ${nChannel}`);
     console.log(`nChannel.id = ${nChannel.id}`);
 

@@ -4,7 +4,7 @@ module.exports = {
   execute(message, args, db) {
     if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
 
-    let nPrefix = message.mentions.channels.first();
+    let nPrefix = args[1];
 
     db.collection("guilds")
       .doc(message.guild.id)
