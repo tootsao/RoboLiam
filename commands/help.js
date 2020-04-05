@@ -80,6 +80,16 @@ module.exports = {
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
+    } else if (args[1] === "setJoin") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField(
+          "setJoin [channel]",
+          "Allows you to set the channel for join/leave announcements to be made.\n\n[channel] - The channel you want join/leave announcements to be made at."
+        )
+        .setFooter("RoboLiam version " + version);
+      message.author.send(Embed);
     } else if (!args[1]) {
       const Embed = new MessageEmbed()
         .setTitle("Help")
@@ -92,7 +102,7 @@ module.exports = {
         )
         .addField(
           "Commands",
-          "help [cmd]?\nping\nkick [user] [reason]?\npoll [query]\nsimonSays [message]\nsetPrefix [prefix]\nimage [image]"
+          "help [cmd]?\nping\nkick [user] [reason]?\npoll [query]\nsimonSays [message]\nsetPrefix [prefix]\nimage [image]\nsetJoin [channel]"
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
