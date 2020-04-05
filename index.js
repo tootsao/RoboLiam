@@ -153,6 +153,8 @@ bot.on("guildMemberAdd", async (member) => {
     })
     .then(() => {
       bot.channels.fetch(serverAnnouncements).then((channel) => {
+        if (serverAnnouncements === "null") return;
+
         rNum = Math.floor(Math.random() * Math.floor(4));
 
         if (rNum === 0) {
@@ -184,6 +186,8 @@ bot.on("guildMemberRemove", async (member) => {
     })
     .then(() => {
       bot.channels.fetch(serverAnnouncements).then((channel) => {
+        if (serverAnnouncements === "null") return;
+
         rNum = Math.floor(Math.random() * Math.floor(5));
 
         if ((rNum = 0)) {
@@ -212,6 +216,7 @@ bot.on("guildCreate", async (gData) => {
     guildOwner: gData.owner.user.username,
     guildOwnerID: gData.owner.id,
     prefix: ".",
+    serverAnnouncements: "null",
   });
 });
 
