@@ -138,6 +138,21 @@ bot.on("message", (message) => {
   }
 });
 
+bot.on("guildMemberAdd", async (member) => {
+  let serverAnnouncements;
+  db.collection("guilds")
+    .doc(member.guild.id)
+    .get()
+    .then((q) => {
+      if (q.exists) {
+        serverAnnouncements = q.data().serverAnnouncements;
+      }
+    })
+    .then(() => {
+      bot.channels.get(serverAnnouncements).send("<message content here>");
+    });
+});
+
 bot.on("guildCreate", async (gData) => {
   db.collection("guilds").doc(gData.id).set({
     guildID: gData.id,
