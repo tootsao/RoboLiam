@@ -1,4 +1,4 @@
-var version = "1.6.5";
+var version = "1.7.0";
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "help",
@@ -101,5 +101,5 @@ module.exports = {
         `${args[1]} isn't a command! Say \`${tempPrefix}help\` to see all current commands.`
       );
     }
-  }
+  },
 };
