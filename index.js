@@ -169,6 +169,33 @@ bot.on("guildMemberAdd", async (member) => {
     });
 });
 
+bot.on("guildMemberRemove", async (member) => {
+  let serverAnnouncements;
+  db.collection("guilds")
+    .doc(member.guild.id)
+    .get()
+    .then((q) => {
+      if (q.exists) {
+        serverAnnouncements = q.data().serverAnnouncements;
+      }
+    })
+    .then(() => {
+      bot.channels.fetch(serverAnnouncements).then((channel) => {
+        rNum = Math.floor(Math.random() * Math.floor(4));
+
+        if ((rNum = 0)) {
+          channel.send(`Placeholder message ${member.id}`);
+        } else if ((rNum = 1)) {
+          channel.send(`Placeholder message ${member.id}`);
+        } else if ((rNum = 2)) {
+          channel.send(`Placeholder message ${member.id}`);
+        } else if ((rNum = 3)) {
+          channel.send(`Placeholder message ${member.id}`);
+        }
+      });
+    });
+});
+
 bot.on("guildCreate", async (gData) => {
   db.collection("guilds").doc(gData.id).set({
     guildID: gData.id,
