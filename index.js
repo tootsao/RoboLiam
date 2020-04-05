@@ -151,6 +151,7 @@ bot.on("guildMemberAdd", async (member) => {
     .then(() => {
       bot.channels.fetch(serverAnnouncements).then((channel) => {
         rNum = Math.floor(Math.random() * Math.floor(4));
+
         if (rNum === 0) {
           channel.send(`Oh look who it is, <@!${member.id}>'s here!`);
         } else if (rNum === 1) {
