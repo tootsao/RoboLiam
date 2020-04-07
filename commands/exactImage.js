@@ -2,8 +2,8 @@ const request = require("request");
 const cheerio = require("cheerio");
 
 module.exports = {
-  name: "image",
-  description: "Sends an image of choice.",
+  name: "exactImage",
+  description: "Sends the exact image of choice.",
   execute(message, args) {
     if (!args[1]) {
       message.channel.send("You didn't say what to search for!");
