@@ -1,4 +1,4 @@
-var version = "1.7.0";
+var version = "1.8.0";
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "help",
@@ -90,6 +90,16 @@ module.exports = {
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
+    } else if (args[1] === "exactImage") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField(
+          "exactImage [image]",
+          "Returns the exact image most related to your search.\n\n[image] - The image you wish to see."
+        )
+        .setFooter("RoboLiam version " + version);
+      message.author.send(Embed);
     } else if (!args[1]) {
       const Embed = new MessageEmbed()
         .setTitle("Help")
@@ -102,7 +112,7 @@ module.exports = {
         )
         .addField(
           "Commands",
-          "help [cmd]?\nping\nkick [user] [reason]?\npoll [query]\nsimonSays [message]\nsetPrefix [prefix]\nimage [image]\nsetJoin [channel]"
+          "help [cmd]?\nping\nkick [user] [reason]?\npoll [query]\nsimonSays [message]\nsetPrefix [prefix]\nimage [image]\nsetJoin [channel]\nexactImage [image]"
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);

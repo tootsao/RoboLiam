@@ -33,11 +33,9 @@ module.exports = {
             return;
           }
           // send result
-          message.channel
-            .send(urls[Math.floor(Math.random() * urls.length)])
-            .then(() => {
-              message.delete().catch(console.error);
-            });
+          message.channel.send(urls[0]).then(() => {
+            message.delete().catch(console.error);
+          });
         });
       }
 
