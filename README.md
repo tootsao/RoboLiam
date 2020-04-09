@@ -23,5 +23,6 @@ This bot is not aimed to be used by other server owners however you may, if you 
 - image [image]
 - setJoin [channel]
 - exactImage [image]
+- clear [amount]
 
 Credit to [Noba](https://www.reddit.com/user/N0ba/) on Redit for the Protogen Avatar.
