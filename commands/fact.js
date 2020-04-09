@@ -59,10 +59,10 @@ module.exports = {
     } else if (rNum === 17) {
       message.channel.send("Johnny Appleseed’s fruits weren’t for eating.");
     } else if (rNum === 18) {
-      message.channel.send("Scotland has 421 words for “snow”");
+      message.channel.send("Scotland has 421 words for “snow”.");
     } else if (rNum === 19) {
       message.channel.send(
-        "Samsung tests phone durability with a butt-shaped robot"
+        "Samsung tests phone durability with a butt-shaped robot."
       );
     } else if (rNum === 20) {
       message.channel.send(
@@ -88,7 +88,7 @@ module.exports = {
       );
     } else if (rNum === 28) {
       message.channel.send(
-        "That tiny pocket in jeans was designed to store pocket watches"
+        "That tiny pocket in jeans was designed to store pocket watches."
       );
     } else if (rNum === 29) {
       message.channel.send("Turkeys can blush.");
