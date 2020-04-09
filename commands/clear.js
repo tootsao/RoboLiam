@@ -11,10 +11,13 @@ module.exports = {
         message.channel
           .bulkDelete(args[1])
           .then((messages) => {
-            message.channel.send(`Cleared ${messages.size} messages.`);
-            setTimeout(function () {
-              message.delete();
-            }, 3000);
+            message.channel
+              .send(`Cleared ${messages.size} messages.`)
+              .then((botMessage) => {
+                setTimeout(function () {
+                  botMessage.delete();
+                }, 3000);
+              });
           })
           .catch(console.error);
       });
