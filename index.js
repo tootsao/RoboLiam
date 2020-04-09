@@ -142,6 +142,9 @@ bot.on("message", (message) => {
           case "clear":
             bot.commands.get("clear").execute(message, args);
             break;
+          case "fact":
+            bot.commands.get("fact").execute(message, args);
+            break;
         }
       });
   }
