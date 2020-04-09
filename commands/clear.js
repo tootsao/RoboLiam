@@ -12,8 +12,7 @@ module.exports = {
           .bulkDelete(args[1])
           .then((messages) =>
             message.channel.send(`Cleared ${messages.size} messages.`)
-          )
-          .catch(console.error);
+          );
       });
     }
   },
