@@ -139,6 +139,9 @@ bot.on("message", (message) => {
           case "exactImage":
             bot.commands.get("exactImage").execute(message, args);
             break;
+          case "clear":
+            bot.commands.get("clear").execute(message, args);
+            break;
         }
       });
   }
