@@ -1,3 +1,4 @@
+const bot = new Client();
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "ban",
@@ -26,17 +27,42 @@ module.exports = {
               `<@!${message.author.id}>, are you sure you want to ban ${user.tag} ${msgDays}?`
             );
 
-          message.channel.send(Embed);
+          var reacted = false;
 
-          /* member
-            .ban({ days: args[2] })
-            .then(() => {
-              message.reply(`Succesfuly banned ${user.tag} ${msgDays}.`);
-            })
-            .catch((err) => {
-              message.channel.send(`I was unable to ban the user ${user.tag}.`);
-              console.log(err);
-            }); */
+          message.channel.send(Embed).then((messageReaction) => {
+            messageReaction.react("👍").then(() => {
+              messageReaction.react("👎");
+            });
+          });
+
+          while (reacted === false) {
+            bot.on("messageReactionAdd", (messageReaction, user) => {
+              if (user.bot) return;
+              const { message, emoji } = messageReaction;
+
+              if (emoji.name === "👍") {
+                if (message.content === Embed) {
+                  member
+                    .ban({ days: args[2] })
+                    .then(() => {
+                      message.reply(
+                        `Succesfuly banned ${user.tag} ${msgDays}.`
+                      );
+                    })
+                    .catch((err) => {
+                      message.channel.send(
+                        `I was unable to ban the user ${user.tag}.`
+                      );
+                      console.log(err);
+                    });
+                }
+              } else if (emoji.name === "👍") {
+                if (message.content === Embed) {
+                  message.channel.send("Ban cancled.");
+                }
+              }
+            });
+          }
         } else if (member && args[2] && args[3]) {
           let msgArgs = args.slice(2).join(" ");
           member
