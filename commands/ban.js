@@ -1,5 +1,5 @@
-const bot = new Client();
 const { MessageEmbed, Client } = require("discord.js");
+const bot = new Client();
 module.exports = {
   name: "ban",
   description:
