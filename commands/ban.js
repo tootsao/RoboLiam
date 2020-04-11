@@ -13,10 +13,11 @@ module.exports = {
             `Please specify how many days you want to ban ${user.tag}.`
           );
         } else if (member && args[2] && !args[3]) {
+          var msgDays;
           if (args[2] === 0) {
-            var msgDays = "permanently";
+            msgDays = "permanently";
           } else {
-            var msgDays = `for ${args[2]} days`;
+            msgDays = `for ${args[2]} days`;
           }
 
           const Embed = new MessageEmbed()
@@ -25,7 +26,9 @@ module.exports = {
               `<@!${message.author.id}>, are you sure you want to ban ${user.tag} ${msgDays}?`
             );
 
-          member
+          message.channel.send(Embed);
+
+          /* member
             .ban({ days: args[2] })
             .then(() => {
               message.reply(`Succesfuly banned ${user.tag} ${msgDays}.`);
@@ -33,7 +36,7 @@ module.exports = {
             .catch((err) => {
               message.channel.send(`I was unable to ban the user ${user.tag}.`);
               console.log(err);
-            });
+            }); */
         } else if (member && args[2] && args[3]) {
           let msgArgs = args.slice(2).join(" ");
           member
