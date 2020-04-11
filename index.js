@@ -108,7 +108,10 @@ bot.on("message", (message) => {
 
         if (!message.content.startsWith(prefix)) return;
         if (message.author.id === "694637394300895273") {
-          message.channel.send("Wow there, we don't want to break the bot!");
+          const Embed = new MessageEmbed().setDescription(
+            "Wow there, we don't want to break the bot!"
+          );
+          message.channel.send(Embed);
           return;
         }
         switch (args[0]) {
