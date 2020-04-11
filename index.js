@@ -151,9 +151,6 @@ bot.on("message", (message) => {
           case "fact":
             bot.commands.get("fact").execute(message, args);
             break;
-          case "ban":
-            bot.commands.get("ban").execute(message, args);
-            break;
         }
       });
   }
