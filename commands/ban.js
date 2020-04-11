@@ -1,6 +1,5 @@
-const { Client, MessageEmbed, MessageAttachment } = require("discord.js");
 const bot = new Client();
-const { MessageEmbed } = require("discord.js");
+const { MessageEmbed, Client } = require("discord.js");
 module.exports = {
   name: "ban",
   description:
