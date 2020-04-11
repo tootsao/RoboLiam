@@ -107,7 +107,10 @@ bot.on("message", (message) => {
         let args = message.content.slice(prefix.length).split(" ");
 
         if (!message.content.startsWith(prefix)) return;
-
+        if (message.author.id === "694637394300895273") {
+          message.channel.send("Wow there, we don't want to break the bot!");
+          return;
+        }
         switch (args[0]) {
           case "help":
             bot.commands.get("help").execute(message, args, prefix);
