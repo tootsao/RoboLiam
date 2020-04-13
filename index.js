@@ -12,6 +12,7 @@ const request = require("request");
 let prefix;
 const owner = process.env.OWNER;
 const token = process.env.BOT_TOKEN;
+const version = require("../version.json").version;
 
 // Initialize database (firebase)
 const firebase = require("firebase/app");
@@ -116,7 +117,7 @@ bot.on("message", (message) => {
         }
         switch (args[0]) {
           case "help":
-            bot.commands.get("help").execute(message, args, prefix);
+            bot.commands.get("help").execute(message, args, prefix, version);
             break;
           case "ping":
             bot.commands.get("ping").execute(message, args);
@@ -155,7 +156,7 @@ bot.on("message", (message) => {
             bot.commands.get("serverInfo").execute(message, args);
             break;
           case "info":
-            bot.commands.get("info").execute(message, args);
+            bot.commands.get("info").execute(message, args, version);
             break;
         }
       });

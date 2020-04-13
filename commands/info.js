@@ -3,9 +3,7 @@ const bot = new Client();
 module.exports = {
   name: "info",
   description: "Displays bot info.",
-  execute(message, args) {
-    const version = require("../version.json").version;
-
+  execute(message, args, version) {
     let totalSeconds = bot.uptime / 1000;
     let days = Math.floor(totalSeconds / 86400);
     let hours = Math.floor(totalSeconds / 3600);
