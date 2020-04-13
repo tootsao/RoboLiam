@@ -5,7 +5,8 @@ module.exports = {
   execute(message, args) {
     const Embed = new MessageEmbed()
       .setTitle(message.guild.name)
-      .setThumbnail(message.guild.iconURL());
+      .setThumbnail(message.guild.iconURL())
+      .addField("Owner", message.guild.owner.user.tag, true);
 
     message.channel.send(Embed);
   },
