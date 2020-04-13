@@ -8,7 +8,7 @@ module.exports = {
       .setThumbnail(message.guild.iconURL())
       .addField("Owner", message.guild.owner.user.tag, true)
       .addField("Region", message.guild.region, true)
-      .addField("Channels", message.guild.channels.size, true)
+      .addField("Channels", message.guild.channels, true)
       .addField("Members", message.guild.memberCount, true);
 
     message.channel.send(Embed);
