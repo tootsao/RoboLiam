@@ -16,7 +16,7 @@ module.exports = {
     const Embed = new MessageEmbed()
       .setTitle("Bot Info")
       .addField("Version", version)
-      .addField("Servers", "W.I.P.")
+      .addField("Servers", message.guilds.size)
       .addField(
         "Uptime",
         `${days} days, ${hours} hours, ${minutes} minutes, and ${Math.round(
