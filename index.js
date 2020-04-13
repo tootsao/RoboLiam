@@ -172,17 +172,24 @@ bot.on("guildMemberAdd", async (member) => {
 
         rNum = Math.floor(Math.random() * Math.floor(4));
 
+        const memberName;
+        if (member.nickname) {
+          memberName = `<@!${member.id}>`;
+        } else {
+          memberName = `<@${member.id}>`;
+        }
+
         if (rNum === 0) {
-          channel.send(`Oh look who it is, <@!${member.id}>'s here!`);
+          channel.send(`Oh look who it is, ${memberName}'s here!`);
         } else if (rNum === 1) {
-          channel.send(`Here comes <@!${member.id}>!`);
+          channel.send(`Here comes ${memberName}!`);
         } else if (rNum === 2) {
           channel.send(
-            `Is it a bird? Is it a plane? No, it's <@!${member.id}>!`
+            `Is it a bird? Is it a plane? No, it's ${memberName}!`
           );
         } else if (rNum === 3) {
           channel.send(
-            `Is it a bird? Is it a plane? Wait, It's-! Oh it's just <@!${member.id}>, nevermind.`
+            `Is it a bird? Is it a plane? Wait, It's-! Oh it's just ${memberName}, nevermind.`
           );
         }
       });
@@ -205,19 +212,26 @@ bot.on("guildMemberRemove", async (member) => {
 
         rNum = Math.floor(Math.random() * Math.floor(5));
 
+        const memberName;
+        if (member.nickname) {
+          memberName = `<@!${member.id}>`;
+        } else {
+          memberName = `<@${member.id}>`;
+        }
+
         if ((rNum = 0)) {
-          channel.send(`Aww, <@!${member.id}> just left...`);
+          channel.send(`Aww, ${memberName} just left...`);
         } else if ((rNum = 1)) {
           channel.send(
-            `<@!${member.id}> just left, can we get an "F" in the chat?`
+            `${memberName} just left, can we get an "F" in the chat?`
           );
         } else if ((rNum = 2)) {
-          channel.send(`Noooo! <@!${member.id}> left the server!`);
+          channel.send(`Noooo! ${memberName} left the server!`);
         } else if ((rNum = 3)) {
-          channel.send(`Finally, <@!${member.id}> left! Time to party!`);
+          channel.send(`Finally, ${memberName} left! Time to party!`);
         } else if ((rNum = 4)) {
           channel.send(
-            `Oh, <@!${member.id}> left? I didn't even get the chance to say "bye"...`
+            `Oh, ${memberName} left? I didn't even get the chance to say "bye"...`
           );
         }
       });
