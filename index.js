@@ -151,6 +151,9 @@ bot.on("message", (message) => {
           case "fact":
             bot.commands.get("fact").execute(message, args);
             break;
+          case "serverInfo":
+            bot.commands.get("serverInfo").execute(message, args);
+            break;
         }
       });
   }
