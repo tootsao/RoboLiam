@@ -6,6 +6,11 @@ module.exports = {
     const version = require("../version.json").version;
     const bot = require("../index.js");
 
+    let serverCount;
+    bot.guilds.cache.tap((coll) => {
+      serverCount = coll.size;
+    });
+
     let totalSeconds = bot.uptime / 1000;
     let days = Math.floor(totalSeconds / 86400);
     let hours = Math.floor(totalSeconds / 3600);
@@ -16,7 +21,7 @@ module.exports = {
     const Embed = new MessageEmbed()
       .setTitle("Bot Info")
       .addField("Version", version)
-      .addField("Servers", bot.guilds.size)
+      .addField("Servers", serverCount)
       .addField(
         "Uptime",
         `${days} days, ${hours} hours, ${minutes} minutes, and ${Math.round(
