@@ -2,7 +2,8 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "help",
   description: "Displays all commands and how to use them.",
-  execute(message, args, prefix, defaultPrefix, version) {
+  execute(message, args, prefix, defaultPrefix) {
+    const version = require("../version.json").version;
     if (message.channel) {
       var tempPrefix = prefix;
     } else {
