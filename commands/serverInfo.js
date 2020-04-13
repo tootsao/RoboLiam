@@ -9,7 +9,8 @@ module.exports = {
       .addField("Owner", `<@${message.guild.ownerID}>`, true)
       .addField("Region", message.guild.region, true)
       .addField("Members", message.guild.memberCount, true)
-      .addField("Highest Role", message.guild.roles.highest, true);
+      .addField("Highest Role", message.guild.roles.highest, true)
+      .addField("Created at", messgae.guild.createdAt, true);
 
     message.channel.send(Embed);
   },
