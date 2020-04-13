@@ -5,10 +5,7 @@ module.exports = {
   execute(message, args) {
     const Embed = new MessageEmbed()
       .setTitle(message.guild.name)
-      .addField(
-        "Server icon hash, whatever that means lol",
-        message.guild.icon
-      );
+      .setThumbnail(message.guild.iconURL());
 
     message.channel.send(Embed);
   },
