@@ -12,7 +12,7 @@ const request = require("request");
 let prefix;
 const owner = process.env.OWNER;
 const token = process.env.BOT_TOKEN;
-const version = require("../version.json").version;
+const version = require("./version.json").version;
 
 // Initialize database (firebase)
 const firebase = require("firebase/app");
