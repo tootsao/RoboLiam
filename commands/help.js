@@ -1,5 +1,5 @@
 var version = "1.11.0";
-module.exports = { version };
+module.exports = version;
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "help",
