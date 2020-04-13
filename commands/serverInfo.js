@@ -10,7 +10,9 @@ module.exports = {
       .addField("Region", message.guild.region, true)
       .addField("Members", message.guild.memberCount, true)
       .addField("Highest Role", message.guild.roles.highest, true)
-      .addField("Created at", message.guild.createdAt, true);
+      .setFooter(
+        `ID: ${message.guild.id} | Server Created • ${message.guild.createdTimestamp}`
+      );
 
     message.channel.send(Embed);
   },
