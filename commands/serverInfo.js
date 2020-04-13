@@ -11,7 +11,7 @@ module.exports = {
       .addField("Members", message.guild.memberCount, true)
       .addField("Highest Role", message.guild.roles.highest, true)
       .setFooter(
-        `ID: ${message.guild.id} | Server Created • ${message.guild.createdTimestamp}`
+        `ID: ${message.guild.id} | Server Created • ${message.guild.createdAt}`
       );
 
     message.channel.send(Embed);
