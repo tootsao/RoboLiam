@@ -11,7 +11,7 @@ module.exports = {
   name: "info",
   description: "Displays bot info.",
   execute(message, args) {
-    const totalGuilds = db.collection("guilds").listDocuments();
+    const totalGuilds = db.collection("guilds").firestore.getAll();
 
     const Embed = new MessageEmbed()
       .setTitle("Bot Info")
