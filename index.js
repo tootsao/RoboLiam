@@ -172,7 +172,7 @@ bot.on("guildMemberAdd", async (member) => {
 
         rNum = Math.floor(Math.random() * Math.floor(4));
 
-        const memberName;
+        var memberName;
         if (member.nickname) {
           memberName = `<@!${member.id}>`;
         } else {
@@ -184,9 +184,7 @@ bot.on("guildMemberAdd", async (member) => {
         } else if (rNum === 1) {
           channel.send(`Here comes ${memberName}!`);
         } else if (rNum === 2) {
-          channel.send(
-            `Is it a bird? Is it a plane? No, it's ${memberName}!`
-          );
+          channel.send(`Is it a bird? Is it a plane? No, it's ${memberName}!`);
         } else if (rNum === 3) {
           channel.send(
             `Is it a bird? Is it a plane? Wait, It's-! Oh it's just ${memberName}, nevermind.`
@@ -212,7 +210,7 @@ bot.on("guildMemberRemove", async (member) => {
 
         rNum = Math.floor(Math.random() * Math.floor(5));
 
-        const memberName;
+        var memberName;
         if (member.nickname) {
           memberName = `<@!${member.id}>`;
         } else {
