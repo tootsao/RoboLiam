@@ -1,4 +1,4 @@
-var version = "1.10.1";
+var version = "1.11.0";
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "help",
@@ -117,6 +117,16 @@ module.exports = {
         .addField("fact", "Gives a random fact.")
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
+    } else if (args[1] === "serverInfo") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField(
+          "serverInfo",
+          "Displays info about the server you are currently on."
+        )
+        .setFooter("RoboLiam version " + version);
+      message.author.send(Embed);
     } else if (!args[1]) {
       const Embed = new MessageEmbed()
         .setTitle("Help")
@@ -129,7 +139,7 @@ module.exports = {
         )
         .addField(
           "Commands",
-          "help [cmd]?\nping\nkick [user] [reason]?\npoll [query]\nsimonSays [message]\nsetPrefix [prefix]\nimage [image]\nsetJoin [channel]\nexactImage [image]\nclear [amount]\nfact"
+          "help [cmd]?\nping\nkick [user] [reason]?\npoll [query]\nsimonSays [message]\nsetPrefix [prefix]\nimage [image]\nsetJoin [channel]\nexactImage [image]\nclear [amount]\nfact\nserverInfo"
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
