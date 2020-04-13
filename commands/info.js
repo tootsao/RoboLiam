@@ -3,7 +3,7 @@ module.exports = {
   name: "info",
   description: "Displays bot info.",
   execute(message, args) {
-    import { version } from "./help.js";
+    const { version } = require("./help.js");
 
     let totalSeconds = client.uptime / 1000;
     let days = Math.floor(totalSeconds / 86400);
