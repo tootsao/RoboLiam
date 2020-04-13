@@ -173,10 +173,10 @@ bot.on("guildMemberAdd", async (member) => {
         rNum = Math.floor(Math.random() * Math.floor(4));
 
         var memberName;
-        if (member.nickname) {
-          memberName = `<@!${member.id}>`;
-        } else {
+        if (!member.nickname) {
           memberName = `<@${member.id}>`;
+        } else {
+          memberName = `<@!${member.id}>`;
         }
 
         if (rNum === 0) {
@@ -211,10 +211,10 @@ bot.on("guildMemberRemove", async (member) => {
         rNum = Math.floor(Math.random() * Math.floor(5));
 
         var memberName;
-        if (member.nickname) {
-          memberName = `<@!${member.id}>`;
-        } else {
+        if (!member.nickname) {
           memberName = `<@${member.id}>`;
+        } else {
+          memberName = `<@!${member.id}>`;
         }
 
         if ((rNum = 0)) {
