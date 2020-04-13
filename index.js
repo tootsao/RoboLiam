@@ -117,7 +117,7 @@ bot.on("message", (message) => {
         }
         switch (args[0]) {
           case "help":
-            bot.commands.get("help").execute(message, args, prefix, version);
+            bot.commands.get("help").execute(message, args, prefix);
             break;
           case "ping":
             bot.commands.get("ping").execute(message, args);
@@ -156,7 +156,7 @@ bot.on("message", (message) => {
             bot.commands.get("serverInfo").execute(message, args);
             break;
           case "info":
-            bot.commands.get("info").execute(message, args, version, bot);
+            bot.commands.get("info").execute(message, args, bot);
             break;
         }
       });
