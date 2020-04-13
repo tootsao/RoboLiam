@@ -1,9 +1,8 @@
-const { Client, MessageEmbed } = require("discord.js");
-const bot = new Client();
+const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "info",
   description: "Displays bot info.",
-  execute(message, args, version) {
+  execute(message, args, version, bot) {
     let totalSeconds = bot.uptime / 1000;
     let days = Math.floor(totalSeconds / 86400);
     let hours = Math.floor(totalSeconds / 3600);
