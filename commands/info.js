@@ -4,7 +4,7 @@ module.exports = {
   name: "info",
   description: "Displays bot info.",
   execute(message, args) {
-    const { version } = require("./help.js");
+    const version = require("../version.json").version;
 
     let totalSeconds = bot.uptime / 1000;
     let days = Math.floor(totalSeconds / 86400);
