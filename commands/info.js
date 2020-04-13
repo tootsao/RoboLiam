@@ -3,6 +3,8 @@ module.exports = {
   name: "info",
   description: "Displays bot info.",
   execute(message, args) {
+    import { version } from "./help.js";
+
     let totalSeconds = client.uptime / 1000;
     let days = Math.floor(totalSeconds / 86400);
     let hours = Math.floor(totalSeconds / 3600);
@@ -12,7 +14,8 @@ module.exports = {
 
     const Embed = new MessageEmbed()
       .setTitle("Bot Info")
-      .addField("Servers", "W.I.P.", true)
+      .addField("Version", version)
+      .addField("Servers", "W.I.P.")
       .addField(
         "Uptime",
         `${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds.`
