@@ -19,7 +19,9 @@ module.exports = {
       .addField("Servers", "W.I.P.")
       .addField(
         "Uptime",
-        `${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds.`
+        `${days} days, ${hours} hours, ${minutes} minutes, and ${Math.round(
+          seconds
+        )} seconds.`
       );
 
     message.channel.send(Embed);
