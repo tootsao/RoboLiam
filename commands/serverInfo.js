@@ -8,8 +8,8 @@ module.exports = {
       .setThumbnail(message.guild.iconURL())
       .addField("Owner", message.guild.owner.user.tag, true)
       .addField("Region", message.guild.region, true)
-      .addField("Channels", message.guild.channels, true)
-      .addField("Members", message.guild.memberCount, true);
+      .addField("Members", message.guild.memberCount, true)
+      .addField("Highest Role", message.guild.roles.highest, true);
 
     message.channel.send(Embed);
   },
