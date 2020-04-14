@@ -127,6 +127,13 @@ module.exports = {
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
+    } else if (args[1] === "info") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField("info", "Displays info about the RoboLiam bot.")
+        .setFooter("RoboLiam version " + version);
+      message.author.send(Embed);
     } else if (!args[1]) {
       const Embed = new MessageEmbed()
         .setTitle("Help")
@@ -139,7 +146,7 @@ module.exports = {
         )
         .addField(
           "Commands",
-          "help [cmd]?\nping\nkick [user] [reason]?\npoll [query]\nsimonSays [message]\nsetPrefix [prefix]\nimage [image]\nsetJoin [channel]\nexactImage [image]\nclear [amount]\nfact\nserverInfo"
+          "help [cmd]?\nping\nkick [user] [reason]?\npoll [query]\nsimonSays [message]\nsetPrefix [prefix]\nimage [image]\nsetJoin [channel]\nexactImage [image]\nclear [amount]\nfact\nserverInfo\ninfo"
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
