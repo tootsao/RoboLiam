@@ -26,5 +26,6 @@ This bot is not aimed to be used by other server owners however you may, if you 
 - clear [amount]
 - fact
 - serverInfo
+- info
 
 Credit to [Noba](https://www.reddit.com/user/N0ba/) on Redit for the Protogen Avatar.
