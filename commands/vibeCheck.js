@@ -19,7 +19,7 @@ module.exports = {
         `<@${message.author.id}> has called upon a vibe check...\n***...On ${targetMsg}!***\n\n${targetMsg}, whatever you say next will be judged! So choose your words carefully...`
       );
 
-      const targetHasResponded = false;
+      /* const targetHasResponded = false;
       while (targetHasResponded == false) {
         bot.on("message", async (nextMessage) => {
           if (nextMessage.author == target) {
@@ -34,7 +34,7 @@ module.exports = {
             targetHasResponded = true;
           }
         });
-      }
+      } */
     }
   },
 };
