@@ -1,3 +1,4 @@
+const { MessageAttachment } = require("discord.js");
 module.exports = {
   name: "vibeCheck",
   description: "V I B E   C H E C K",
@@ -19,7 +20,7 @@ module.exports = {
         `<@${message.author.id}> has called upon a vibe check...\n***...On ${targetMsg}!***\n\n${targetMsg}, whatever you say next will be judged! So choose your words carefully...`
       );
 
-      bot.on("message", async (nextMessage) => {
+      bot.on("message", (nextMessage) => {
         if (nextMessage.author == target) {
           rNum = Math.floor(Math.random() * Math.floor(2));
           if (rNum == 0) {
@@ -27,9 +28,15 @@ module.exports = {
               "Congratulations, you have passed the vibe test!"
             );
           } else if (rNum == 1) {
-            message.channel.send("***You have failed the vibe test***");
+            const attachment = new MessageAttachment(
+              "https://tenor.com/view/vibe-check-cursed-emoji-cumhereboi-gun-emoji-gif-15623737"
+            );
+            message.channel.send(
+              "***You have failed the vibe test***",
+              attachment
+            );
           }
-          return;
+          break;
         }
       });
     }
