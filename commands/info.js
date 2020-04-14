@@ -20,7 +20,9 @@ module.exports = {
 
     const Embed = new MessageEmbed()
       .setTitle("Bot Info")
-      .setThumbnail()
+      .setThumbnail(
+        "https://cdn.discordapp.com/avatars/694637394300895273/84c7cbd530737d6f5a0b0edb660190a2.png"
+      )
       .addField("Version", version)
       .addField("Servers", serverCount)
       .addField(
