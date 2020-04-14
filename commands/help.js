@@ -153,7 +153,7 @@ module.exports = {
           "kick [user] [reason]?\npoll [query]\nsetPrefix [prefix]\nsetJoin [channel]\nclear [amount]"
         )
         .addField("Developer", "ping\ninfo\nserverInfo")
-        .addField("Commands", "help [cmd]?")
+        .addField("Other", "help [cmd]?")
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
     } else {
