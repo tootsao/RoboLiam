@@ -20,6 +20,7 @@ module.exports = {
 
     const Embed = new MessageEmbed()
       .setTitle("Bot Info")
+      .setThumbnail()
       .addField("Version", version)
       .addField("Servers", serverCount)
       .addField(
