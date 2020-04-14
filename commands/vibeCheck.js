@@ -14,7 +14,7 @@ module.exports = {
       }
 
       message.channel.send(
-        `<@${message.author.id}> has called upon a vibe check...\n***...On ${target}!***`
+        `<@${message.author.id}> has called upon a vibe check...\n***...On ${target}!***\n\n${target}, whatever you say next will be judged! So choose your words carefully...`
       );
     }
   },
