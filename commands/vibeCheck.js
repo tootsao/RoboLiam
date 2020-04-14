@@ -29,7 +29,7 @@ module.exports = {
           } else if (rNum == 1) {
             message.channel.send("***You have failed the vibe test***");
           }
-          break;
+          return;
         }
       });
     }
