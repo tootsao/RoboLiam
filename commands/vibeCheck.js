@@ -29,48 +29,9 @@ module.exports = {
           } else if (rNum == 1) {
             message.channel.send("***You have failed the vibe test***");
           }
-          targetHasResponded = true;
+          break;
         }
       });
-
-      // const targetHasResponded = false;
-
-      /* if (targetHasResponded == false) {
-        const interval = setInterval(function () {
-          bot.on("message", async (nextMessage) => {
-            if (nextMessage.author == target) {
-              rNum = Math.floor(Math.random() * Math.floor(2));
-              if (rNum == 0) {
-                message.channel.send(
-                  "Congratulations, you have passed the vibe test!"
-                );
-              } else if (rNum == 1) {
-                message.channel.send("***You have failed the vibe test***");
-              }
-              targetHasResponded = true;
-            }
-          });
-        }, 1000);
-      } else if (targetHasResponded == true) {
-        task = interval;
-        clearInterval(task);
-      } */
-
-      /* while (targetHasResponded == false) {
-        bot.on("message", async (nextMessage) => {
-          if (nextMessage.author == target) {
-            rNum = Math.floor(Math.random() * Math.floor(2));
-            if (rNum == 0) {
-              message.channel.send(
-                "Congratulations, you have passed the vibe test!"
-              );
-            } else if (rNum == 1) {
-              message.channel.send("***You have failed the vibe test***");
-            }
-            targetHasResponded = true;
-          }
-        });
-      } */
     }
   },
 };
