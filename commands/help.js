@@ -10,7 +10,37 @@ module.exports = {
       var tempPrefix = defaultPrefix;
     }
 
-    if (args[1] === "help") {
+    if (args[1] == "fun") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField(
+          "Fun",
+          "simonSays [message]\nimage [image]\nexactImage [image]\nfact"
+        );
+      message.author.send(Embed);
+    } else if (args[1] == "moderation") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField(
+          "Moderation",
+          "kick [user] [reason]?\npoll [query]\nsetPrefix [prefix]\nsetJoin [channel]\nclear [amount]"
+        );
+      message.author.send(Embed);
+    } else if (args[1] == "developer") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField("Developer", "ping\ninfo\nserverInfo");
+      message.author.send(Embed);
+    } else if (args[1] == "other") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField("Other", "help [cmd]?");
+      message.author.send(Embed);
+    } else if (args[1] === "help") {
       const Embed = new MessageEmbed()
         .setTitle("Help")
         .setColor(0xff0000)
