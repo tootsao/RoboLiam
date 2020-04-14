@@ -159,6 +159,9 @@ bot.on("message", (message) => {
           case "info":
             bot.commands.get("info").execute(message, args);
             break;
+          case "vibeCheck":
+            bot.commands.get("vibeCheck").execute(message, args);
+            break;
         }
       });
   }
