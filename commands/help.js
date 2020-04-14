@@ -150,13 +150,10 @@ module.exports = {
         )
         .addField(
           "Moderation",
-          "kick [user]\npoll [query]\nsetPrefix [prefix]\nsetJoin [channel]\nclear [amount]"
+          "kick [user] [reason]?\npoll [query]\nsetPrefix [prefix]\nsetJoin [channel]\nclear [amount]"
         )
         .addField("Developer", "ping\ninfo\nserverInfo")
-        .addField(
-          "Commands",
-          "help [cmd]?\nping\nkick [user] [reason]?\npoll [query]\nsimonSays [message]\nsetPrefix [prefix]\nimage [image]\nsetJoin [channel]\nexactImage [image]\nclear [amount]\nfact\nserverInfo\ninfo"
-        )
+        .addField("Commands", "help [cmd]?")
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
     } else {
