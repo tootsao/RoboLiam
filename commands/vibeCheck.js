@@ -32,7 +32,7 @@ module.exports = {
               targetHasReplied = true;
             } else if (rNum == 1) {
               const attachment = new MessageAttachment(
-                "https://tenor.com/view/vibe-check-cursed-emoji-cumhereboi-gun-emoji-gif-15623737"
+                "https://media1.tenor.com/images/48b96ea30d85cb419b22c66393c3b739/tenor.gif?itemid=15623737"
               );
               message.channel.send(
                 "***You have failed the vibe test***",
