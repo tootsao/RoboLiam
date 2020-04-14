@@ -255,4 +255,10 @@ bot.on("guildCreate", async (gData) => {
   });
 });
 
+bot.on("guildMemberRemove", async (memberData) => {
+  if (memberData.id == "694637394300895273") {
+    db.collection("guilds").doc(memberData.guild.id).delete();
+  }
+});
+
 bot.login(token);
