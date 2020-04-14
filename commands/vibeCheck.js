@@ -20,25 +20,29 @@ module.exports = {
         `<@${message.author.id}> has called upon a vibe check...\n***...On ${targetMsg}!***\n\n${targetMsg}, whatever you say next will be judged! So choose your words carefully...`
       );
 
-      bot.on("message", (nextMessage) => {
-        if (nextMessage.author == target) {
-          rNum = Math.floor(Math.random() * Math.floor(2));
-          if (rNum == 0) {
-            message.channel.send(
-              "Congratulations, you have passed the vibe test!"
-            );
-          } else if (rNum == 1) {
-            const attachment = new MessageAttachment(
-              "https://tenor.com/view/vibe-check-cursed-emoji-cumhereboi-gun-emoji-gif-15623737"
-            );
-            message.channel.send(
-              "***You have failed the vibe test***",
-              attachment
-            );
+      const targetHasReplied = false;
+      if (targetHasReplied == false) {
+        bot.on("message", async (nextMessage) => {
+          if (nextMessage.author == target) {
+            rNum = Math.floor(Math.random() * Math.floor(2));
+            if (rNum == 0) {
+              message.channel.send(
+                "Congratulations, you have passed the vibe test!"
+              );
+              targetHasReplied = true;
+            } else if (rNum == 1) {
+              const attachment = new MessageAttachment(
+                "https://tenor.com/view/vibe-check-cursed-emoji-cumhereboi-gun-emoji-gif-15623737"
+              );
+              message.channel.send(
+                "***You have failed the vibe test***",
+                attachment
+              );
+              targetHasReplied = true;
+            }
           }
-          break;
-        }
-      });
+        });
+      } else if (targetHasReplied == true) return;
     }
   },
 };
