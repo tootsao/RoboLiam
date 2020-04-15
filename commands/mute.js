@@ -14,9 +14,9 @@ module.exports = {
               .fetch((role) => role.name === "Muted")
               .then((role) => {
                 if (role) {
-                  if (member.roles.has(role.id)) {
+                  if (member.roles.cache.has(role.id)) {
                     message.channel.send("That user is already muted!");
-                  } else if (!member.roles.has(role.id)) {
+                  } else if (!member.roles.cache.has(role.id)) {
                     member.roles.add(role);
                   }
                 } else if (!role) {
@@ -36,9 +36,9 @@ module.exports = {
                   message.guild.roles
                     .fetch((role) => role.name === "Muted")
                     .then((role) => {
-                      if (member.roles.has(role.id)) {
+                      if (member.roles.cache.has(role.id)) {
                         message.channel.send("That user is already muted!");
-                      } else if (!member.roles.has(role.id)) {
+                      } else if (!member.roles.cache.has(role.id)) {
                         member.roles.add(role);
                       }
                     });
