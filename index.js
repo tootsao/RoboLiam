@@ -159,12 +159,6 @@ bot.on("message", (message) => {
           case "info":
             bot.commands.get("info").execute(message, args);
             break;
-          case "mute":
-            bot.commands.get("mute").execute(message, args);
-            break;
-          case "unmute":
-            bot.commands.get("unmute").execute(message, args);
-            break;
         }
       });
   }
