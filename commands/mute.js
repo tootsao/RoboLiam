@@ -19,6 +19,35 @@ module.exports = {
                   } else if (!member.roles.has(role.id)) {
                     member.addRole(role);
                   }
+                } else if (!role) {
+                  message.guild.roles.create({
+                    data: {
+                      name: "Muted",
+                      color: "RED",
+                      mentionable: true,
+                      permissions: {
+                        CREATE_INSTANT_INVITE: true,
+                        ADD_REACTIONS: false,
+                        STREAM: false,
+                        VIEW_CHANNEL: true,
+                        SEND_MESSAGES: false,
+                        SEND_TTS_MESSAGES: false,
+                        ATTACH_FILES: false,
+                        READ_MESSAGE_HISTORY: true,
+                        CONNECT: true,
+                        SPEAK: false,
+                      },
+                    },
+                  });
+                  message.guild.roles
+                    .find((role) => role.name === "Muted")
+                    .then((role) => {
+                      if (member.roles.has(role.id)) {
+                        message.channel.send("That user is already muted!");
+                      } else if (!member.roles.has(role.id)) {
+                        member.addRole(role);
+                      }
+                    });
                 }
               });
           } else {
