@@ -21,30 +21,34 @@ module.exports = {
       );
 
       targetHasReplied = false;
-      let onContent;
+
       if (targetHasReplied == false) {
-        if (nextMessage.author == target) {
-          let onContent = null;
-          rNum = Math.floor(Math.random() * Math.floor(2));
-          if (rNum == 0) {
-            message.channel.send(
-              "Congratulations, you have passed the vibe test!"
-            );
-            targetHasReplied = true;
-          } else if (rNum == 1) {
-            const attachment = new MessageAttachment(
-              "https://media1.tenor.com/images/48b96ea30d85cb419b22c66393c3b739/tenor.gif?itemid=15623737"
-            );
-            message.channel.send(
-              "***You have failed the vibe test***",
-              attachment
-            );
-            targetHasReplied = true;
+        function onContent(nextMessage) {
+          if (nextMessage.author == target) {
+            function onContent(nextMessage) {
+              break;
+            }
+            rNum = Math.floor(Math.random() * Math.floor(2));
+            if (rNum == 0) {
+              message.channel.send(
+                "Congratulations, you have passed the vibe test!"
+              );
+              targetHasReplied = true;
+            } else if (rNum == 1) {
+              const attachment = new MessageAttachment(
+                "https://media1.tenor.com/images/48b96ea30d85cb419b22c66393c3b739/tenor.gif?itemid=15623737"
+              );
+              message.channel.send(
+                "***You have failed the vibe test***",
+                attachment
+              );
+              targetHasReplied = true;
+            }
           }
         }
       }
       bot.on("message", async (nextMessage) => {
-        onContent;
+        onContent(nextMessage);
       });
     }
   },
