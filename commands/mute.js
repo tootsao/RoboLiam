@@ -10,8 +10,8 @@ module.exports = {
         if (user) {
           const member = message.guild.member(user);
           if (member) {
-            message.guild.roles
-              .fetch((role) => role.name === "Muted")
+            message.guild.roles.cache
+              .find((role) => role.name === "Muted")
               .then((role) => {
                 if (role) {
                   if (member.roles.cache.has(role.id)) {
@@ -33,8 +33,8 @@ module.exports = {
                       ],
                     },
                   });
-                  message.guild.roles
-                    .fetch((role) => role.name === "Muted")
+                  message.guild.roles.cache
+                    .find((role) => role.name === "Muted")
                     .then((role) => {
                       if (member.roles.cache.has(role.id)) {
                         message.channel.send("That user is already muted!");
