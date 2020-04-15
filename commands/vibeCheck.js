@@ -44,13 +44,15 @@ module.exports = {
             }
           });
         }
-      } else if (targetHasReplied == true) {
+      }
+
+      pleasework();
+
+      if (targetHasReplied == true) {
         function pleasework() {
           break;
         }
       }
-
-      pleasework();
     }
   },
 };
