@@ -19,7 +19,7 @@ module.exports = {
                   if (member.roles.cache.has(role.id)) {
                     message.channel.send("That user is already muted!");
                   } else if (!member.roles.cache.has(role.id)) {
-                    member.addRole(role);
+                    member.roles.add(role);
                   }
                 } else if (!role) {
                   message.guild.roles.create({
@@ -45,7 +45,7 @@ module.exports = {
                       if (member.roles.cache.has(role.id)) {
                         message.channel.send("That user is already muted!");
                       } else if (!member.roles.cache.has(role.id)) {
-                        member.addRole(role);
+                        member.roles.add(role);
                       }
                     });
                 }
