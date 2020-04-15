@@ -25,18 +25,12 @@ module.exports = {
                       name: "Muted",
                       color: "RED",
                       mentionable: true,
-                      permissions: {
-                        CREATE_INSTANT_INVITE: true,
-                        ADD_REACTIONS: false,
-                        STREAM: false,
-                        VIEW_CHANNEL: true,
-                        SEND_MESSAGES: false,
-                        SEND_TTS_MESSAGES: false,
-                        ATTACH_FILES: false,
-                        READ_MESSAGE_HISTORY: true,
-                        CONNECT: true,
-                        SPEAK: false,
-                      },
+                      permissions: [
+                        "CREATE_INSTANT_INVITE",
+                        "VIEW_CHANNEL",
+                        "READ_MESSAGE_HISTORY",
+                        "CONNECT",
+                      ],
                     },
                   });
                   message.guild.roles
