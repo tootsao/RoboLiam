@@ -43,16 +43,15 @@ module.exports = {
               }
             }
           });
+          if (targetHasReplied == true) {
+            function pleasework() {
+              break;
+            }
+          }
         }
       }
 
       pleasework();
-
-      if (targetHasReplied == true) {
-        function pleasework() {
-          break;
-        }
-      }
     }
   },
 };
