@@ -76,7 +76,7 @@ module.exports = {
               gMessage.react("🎉");
               setTimeout(function () {
                 var peopleReacted = gMessage.reactions.cache.get("🎉").users;
-                console.log(peopleReacted.cache);
+                console.log(peopleReacted.cache.array());
                 var winners = [];
 
                 // Checks if fewer people reacted than the winnerCount allows users to win
@@ -90,7 +90,7 @@ module.exports = {
                     );
                     winners.push(peopleReacted[index]);
                     // After adding a user to winners, remove that item from the array to prevent him from winning multiple times
-                    peopleReacted.cache.splice(index, 1);
+                    peopleReacted.cache.array().splice(index, 1);
                   }
                 }
 
