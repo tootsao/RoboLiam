@@ -22,7 +22,7 @@ module.exports = {
           let minutes;
           let day;
           let month;
-          var ampm = d.getHours() >= 12 ? "pm" : "am";
+          var ampm = d.getHours() >= 12 ? "PM" : "AM";
 
           if (d.getMinutes() < 10) {
             minutes = `0${d.getMinutes()}`;
