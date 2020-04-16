@@ -16,6 +16,7 @@ module.exports = {
         } else {
           // 🎉
           let msgArgs = args.slice(3).join(" ");
+
           let time = args[1];
           setInterval(function () {
             time -= 1;
