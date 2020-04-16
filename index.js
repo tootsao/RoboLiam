@@ -159,6 +159,9 @@ bot.on("message", (message) => {
           case "info":
             bot.commands.get("info").execute(message, args);
             break;
+          case "giveaway":
+            bot.commands.get("giveaway").execute(message, args);
+            break;
         }
       });
   }
