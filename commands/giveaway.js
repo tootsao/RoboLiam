@@ -16,11 +16,18 @@ module.exports = {
         } else {
           // 🎉
           let msgArgs = args.slice(3).join(" ");
-
           let time = args[1];
+
+          let Embed = new MessageEmbed()
+            .setTitle(msgArgs)
+            .setDescription(
+              `React with 🎉 to participate!\nTime remaining: **${time}**`
+            )
+            .setFooter(`${args[2]} winner(s)`);
+
           setInterval(function () {
             time -= 1;
-            const Embed = new MessageEmbed()
+            Embed = new MessageEmbed()
               .setTitle(msgArgs)
               .setDescription(
                 `React with 🎉 to participate!\nTime remaining: **${time}**`
