@@ -78,7 +78,7 @@ module.exports = {
                     );
                     winners.push(peopleReacted[index]);
                     // After adding a user to winners, remove that item from the array to prevent him from winning multiple times
-                    peopleReacted.splice(index, 1);
+                    peopleReacted.slice(index, 1);
                   }
                 }
 
