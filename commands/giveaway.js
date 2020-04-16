@@ -16,7 +16,9 @@ module.exports = {
         } else {
           // 🎉
           const Embed = new MessageEmbed().setTitle("Everything's working 👍");
-          message.channel.send("🎉 ***GIVEAWAY*** 🎉" + Embed);
+          message.channel.send("🎉 **GIVEAWAY** 🎉").then(() => {
+            message.channel.send(Embed);
+          });
         }
       }
     }
