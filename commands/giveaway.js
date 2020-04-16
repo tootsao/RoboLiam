@@ -64,7 +64,7 @@ module.exports = {
             message.channel.send(Embed).then((gMessage) => {
               gMessage.react("🎉");
               setTimeout(function () {
-                var peopleReacted = gMessage.reactions.get("🎉").users;
+                var peopleReacted = gMessage.reactions.cache.get("🎉").users;
                 var winners = [];
 
                 // Checks if fewer people reacted than the winnerCount allows users to win
