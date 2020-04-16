@@ -46,9 +46,11 @@ module.exports = {
           }
 
           if (initialClock >= 60) {
-            finishedClock = `${d.getHours() + 1}:${initialClock - 60}`;
+            finishedClock = `${d.getHours() + 1}:${(
+              initialClock - 60
+            ).toString()}`;
           } else {
-            finishedClock = `${d.getHours()}:${initialClock}`;
+            finishedClock = `${d.getHours()}:${initialClock.toString()}`;
           }
 
           let Embed = new MessageEmbed()
