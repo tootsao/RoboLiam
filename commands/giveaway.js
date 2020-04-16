@@ -61,6 +61,9 @@ module.exports = {
           message.channel.send("🎉 **GIVEAWAY** 🎉").then(() => {
             message.channel.send(Embed).then((gMessage) => {
               gMessage.react("🎉");
+              setTimeout(function () {
+                // Winner stuff here
+              }, time * (60 * 1000));
             });
           });
         }
