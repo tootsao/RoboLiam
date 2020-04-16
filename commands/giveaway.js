@@ -25,25 +25,8 @@ module.exports = {
             )
             .setFooter(`${args[2]} winner(s)`);
 
-          setInterval(function () {
-            time -= 1;
-            Embed = new MessageEmbed()
-              .setTitle(msgArgs)
-              .setDescription(
-                `React with 🎉 to participate!\nTime remaining: **${time}**`
-              )
-              .setFooter(`${args[2]} winner(s)`);
-            if (time <= 0) {
-              clearInterval();
-            }
-          }, 1000);
-
           message.channel.send("🎉 **GIVEAWAY** 🎉").then(() => {
-            message.channel.send(Embed).then((gMessage) => {
-              setInterval(function () {
-                gMessage.edit(Embed);
-              }, 100);
-            });
+            message.channel.send(Embed) /*.then((gMessage) => {})*/;
           });
         }
       }
