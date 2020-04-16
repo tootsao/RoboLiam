@@ -64,7 +64,37 @@ module.exports = {
             message.channel.send(Embed).then((gMessage) => {
               gMessage.react("🎉");
               setTimeout(function () {
-                // Winner stuff here
+                var peopleReacted = gMessage.reactions.get("🎉").users;
+                var winners = [];
+
+                // Checks if fewer people reacted than the winnerCount allows users to win
+                if (peopleReacted.length <= args[2]) {
+                  winners = peopleReacted;
+                } else {
+                  // Gets as many random users from the peopleReacted as winnerCount allows users to win
+                  for (var i = 0; i < args[2]; i++) {
+                    var index = Math.floor(
+                      Math.random() * peopleReacted.length
+                    );
+                    winners.push(peopleReacted[index]);
+                    // After adding a user to winners, remove that item from the array to prevent him from winning multiple times
+                    peopleReacted.splice(index, 1);
+                  }
+                }
+
+                var winnerMsg = "User(s) ";
+                for (var i = 0; i < winners.length; i++) {
+                  // Add each winner to the winnerMsg
+                  winnerMsg += winners[i].toString() + ", ";
+                }
+
+                var haveHas;
+                if (winners.length === 1) {
+                  haveHas = "has";
+                } else {
+                  haveHas = "have";
+                }
+                message.channel.send(`${winnerMsg} ${haveHas} won ${msgArgs}`);
               }, time * (60 * 1000));
             });
           });
