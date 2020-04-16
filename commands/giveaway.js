@@ -59,7 +59,9 @@ module.exports = {
             .setFooter(`${args[2]} winner(s)`);
 
           message.channel.send("🎉 **GIVEAWAY** 🎉").then(() => {
-            message.channel.send(Embed) /*.then((gMessage) => {})*/;
+            message.channel.send(Embed).then((gMessage) => {
+              gMessage.react("🎉");
+            });
           });
         }
       }
