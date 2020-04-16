@@ -19,13 +19,14 @@ module.exports = {
           let time = args[1];
           setInterval(function () {
             time -= 1;
+            const Embed = new MessageEmbed()
+              .setTitle(msgArgs)
+              .setDescription(
+                `React with 🎉 to participate!\nTime remaining: **${time}**`
+              )
+              .setFooter(`${args[2]} winner(s)`);
           }, 1000);
-          const Embed = new MessageEmbed()
-            .setTitle(msgArgs)
-            .setDescription(
-              `React with 🎉 to participate!\nTime remaining: **${time}**`
-            )
-            .setFooter(`${args[2]} winner(s)`);
+
           message.channel.send("🎉 **GIVEAWAY** 🎉").then(() => {
             message.channel.send(Embed).then((gMessage) => {
               setInterval(function () {
