@@ -47,10 +47,21 @@ module.exports = {
           ).toString();
           let finishedClock;
 
+          let initialClockMinute;
           if (initialClock >= 60) {
-            finishedClock = `${d.getHours() + 1}:${initialClock - 60}`;
+            if (initialClock - 60 < 10) {
+              initialClockMinute = `0${initialClock - 60}`;
+            } else {
+              initialClockMinute = initialClock - 60;
+            }
+            finishedClock = `${d.getHours() + 1}:${initialClockMinute}`;
           } else {
-            finishedClock = `${d.getHours()}:${initialClock}`;
+            if (initialClock - 60 < 10) {
+              initialClockMinute = `0${initialClock}`;
+            } else {
+              initialClockMinute = initialClock;
+            }
+            finishedClock = `${d.getHours()}:${initialClockMinute}`;
           }
 
           let Embed = new MessageEmbed()
@@ -78,7 +89,7 @@ module.exports = {
                     );
                     winners.push(peopleReacted[index]);
                     // After adding a user to winners, remove that item from the array to prevent him from winning multiple times
-                    peopleReacted.slice(index, 1);
+                    peopleReacted.splice(index, 1);
                   }
                 }
 
