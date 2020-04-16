@@ -33,6 +33,9 @@ module.exports = {
                 `React with 🎉 to participate!\nTime remaining: **${time}**`
               )
               .setFooter(`${args[2]} winner(s)`);
+            if (time <= 0) {
+              return;
+            }
           }, 1000);
 
           message.channel.send("🎉 **GIVEAWAY** 🎉").then(() => {
