@@ -34,7 +34,7 @@ module.exports = {
               )
               .setFooter(`${args[2]} winner(s)`);
             if (time <= 0) {
-              break;
+              clearInterval();
             }
           }, 1000);
 
