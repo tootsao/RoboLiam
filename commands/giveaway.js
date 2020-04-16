@@ -23,11 +23,15 @@ module.exports = {
           const Embed = new MessageEmbed()
             .setTitle(msgArgs)
             .setDescription(
-              `React with 🎉 to participate!\nTime remaining: ${time}`
+              `React with 🎉 to participate!\nTime remaining: **${time}**`
             )
             .setFooter(`${args[2]} winner(s)`);
           message.channel.send("🎉 **GIVEAWAY** 🎉").then(() => {
-            message.channel.send(Embed);
+            message.channel.send(Embed).then((message) => {
+              setInterval(function () {
+                message.edit(Embed);
+              }, 500);
+            });
           });
         }
       }
