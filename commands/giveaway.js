@@ -15,7 +15,11 @@ module.exports = {
           message.channel.send("Please specify what to give away.");
         } else {
           // 🎉
-          const Embed = new MessageEmbed().setTitle("Everything's working 👍");
+          let msgArgs = args.slice(3).join(" ");
+          const Embed = new MessageEmbed()
+            .setTitle(msgArgs)
+            .setDescription(`React with 🎉 to participate!\nTime remaining: `)
+            .setFooter(`num winner(s)`);
           message.channel.send("🎉 **GIVEAWAY** 🎉").then(() => {
             message.channel.send(Embed);
           });
