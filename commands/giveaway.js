@@ -27,9 +27,9 @@ module.exports = {
             )
             .setFooter(`${args[2]} winner(s)`);
           message.channel.send("🎉 **GIVEAWAY** 🎉").then(() => {
-            message.channel.send(Embed).then((message) => {
+            message.channel.send(Embed).then((gMessage) => {
               setInterval(function () {
-                message.edit(Embed);
+                gMessage.edit(Embed);
               }, 500);
             });
           });
