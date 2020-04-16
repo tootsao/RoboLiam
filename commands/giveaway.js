@@ -22,6 +22,7 @@ module.exports = {
           let minutes;
           let day;
           let month;
+          var ampm = d.getHours() >= 12 ? "pm" : "am";
 
           if (d.getMinutes() < 10) {
             minutes = `0${d.getMinutes()}`;
@@ -44,7 +45,7 @@ module.exports = {
           let Embed = new MessageEmbed()
             .setTitle(msgArgs)
             .setDescription(
-              `React with 🎉 to participate!\nTime started: **${month}/${day}/${d.getFullYear()} ${d.getHours()}:${minutes}**`
+              `React with 🎉 to participate!\nTime started: **${month}/${day}/${d.getFullYear()} ${d.getHours()}:${minutes} ${ampm}** (UTC)`
             )
             .setFooter(`${args[2]} winner(s)`);
 
