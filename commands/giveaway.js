@@ -24,11 +24,6 @@ module.exports = {
           let month;
           var ampm = d.getHours() >= 12 ? "PM" : "AM";
 
-          let initialClock = (
-            parseFloat(minutes) + parseFloat(time)
-          ).toString();
-          let finishedClock;
-
           if (d.getMinutes() < 10) {
             minutes = `0${d.getMinutes()}`;
           } else {
@@ -46,6 +41,11 @@ module.exports = {
           } else {
             month = d.getMonth();
           }
+
+          let initialClock = (
+            parseFloat(minutes) + parseFloat(time)
+          ).toString();
+          let finishedClock;
 
           if (initialClock >= 60) {
             finishedClock = `${d.getHours() + 1}:${initialClock - 60}`;
