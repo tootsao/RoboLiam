@@ -24,6 +24,9 @@ module.exports = {
           let month;
           var ampm = d.getHours() >= 12 ? "PM" : "AM";
 
+          let initialClock = minutes + time;
+          let finishedClock;
+
           if (d.getMinutes() < 10) {
             minutes = `0${d.getMinutes()}`;
           } else {
@@ -42,10 +45,16 @@ module.exports = {
             month = d.getMonth();
           }
 
+          if (initialClock >= 60) {
+            finishedClock = `${d.getHours() + 1}:${minutes - 60}`;
+          } else {
+            finishedClock = `${d.getHours()}:${minutes}`;
+          }
+
           let Embed = new MessageEmbed()
             .setTitle(msgArgs)
             .setDescription(
-              `React with 🎉 to participate!\nTime started: **${month}/${day}/${d.getFullYear()} ${d.getHours()}:${minutes} ${ampm}** (UTC)`
+              `React with 🎉 to participate!\nTime started: **${month}/${day}/${d.getFullYear()} ${d.getHours()}:${minutes} ${ampm}** (UTC)\nTime ended: **${month}/${day}/${d.getFullYear()} ${finishedClock} ${ampm}** (UTC)`
             )
             .setFooter(`${args[2]} winner(s)`);
 
