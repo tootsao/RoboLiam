@@ -54,7 +54,7 @@ module.exports = {
           let Embed = new MessageEmbed()
             .setTitle(msgArgs)
             .setDescription(
-              `React with 🎉 to participate!\nTime started: **${month}/${day}/${d.getFullYear()} ${d.getHours()}:${minutes} ${ampm}** (UTC)\nTime ended: **${month}/${day}/${d.getFullYear()} ${finishedClock} ${ampm}** (UTC)`
+              `React with 🎉 to participate!\nStart time: **${month}/${day}/${d.getFullYear()} ${d.getHours()}:${minutes} ${ampm}** (UTC)\nEnd time: **${month}/${day}/${d.getFullYear()} ${finishedClock} ${ampm}** (UTC)`
             )
             .setFooter(`${args[2]} winner(s)`);
 
