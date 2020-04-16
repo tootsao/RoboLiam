@@ -16,6 +16,7 @@ module.exports = {
         } else {
           // 🎉
           let msgArgs = args.slice(3).join(" ");
+          let time;
           const Embed = new MessageEmbed()
             .setTitle(msgArgs)
             .setDescription(`React with 🎉 to participate!\nTime remaining: `)
