@@ -24,7 +24,9 @@ module.exports = {
           let month;
           var ampm = d.getHours() >= 12 ? "PM" : "AM";
 
-          let initialClock = parseFloat(minutes) + parseFloat(time);
+          let initialClock = (
+            parseFloat(minutes) + parseFloat(time)
+          ).toString();
           let finishedClock;
 
           if (d.getMinutes() < 10) {
@@ -46,11 +48,9 @@ module.exports = {
           }
 
           if (initialClock >= 60) {
-            finishedClock = `${d.getHours() + 1}:${(
-              initialClock - 60
-            ).toString()}`;
+            finishedClock = `${d.getHours() + 1}:${initialClock - 60}`;
           } else {
-            finishedClock = `${d.getHours()}:${initialClock.toString()}`;
+            finishedClock = `${d.getHours()}:${initialClock}`;
           }
 
           let Embed = new MessageEmbed()
