@@ -19,7 +19,7 @@ module.exports = {
           const Embed = new MessageEmbed()
             .setTitle(msgArgs)
             .setDescription(`React with 🎉 to participate!\nTime remaining: `)
-            .setFooter(`num winner(s)`);
+            .setFooter(`${args[2]} winner(s)`);
           message.channel.send("🎉 **GIVEAWAY** 🎉").then(() => {
             message.channel.send(Embed);
           });
