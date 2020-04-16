@@ -42,7 +42,7 @@ module.exports = {
             message.channel.send(Embed).then((gMessage) => {
               setInterval(function () {
                 gMessage.edit(Embed);
-              }, 500);
+              }, 100);
             });
           });
         }
