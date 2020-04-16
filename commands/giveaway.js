@@ -56,7 +56,7 @@ module.exports = {
             }
             finishedClock = `${d.getHours() + 1}:${initialClockMinute}`;
           } else {
-            if (initialClock - 60 < 10) {
+            if (initialClock < 10) {
               initialClockMinute = `0${initialClock}`;
             } else {
               initialClockMinute = initialClock;
