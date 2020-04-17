@@ -79,7 +79,7 @@ module.exports = {
                 var winners = [];
 
                 // Checks if fewer people reacted than the winner count allows users to win
-                if (peopleReacted.length >= args[2]) {
+                if (peopleReacted.length <= args[2]) {
                   winners = peopleReacted;
                 } else {
                   // Gets as many random users from the peopleReacted as winner count allows users to win
