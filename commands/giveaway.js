@@ -100,7 +100,7 @@ module.exports = {
                   console.log(
                     `\nwinners[i].toString() : ${winners[i].toString()}`
                   );
-                  winnerMsg += winners[i].toString() /*.toString()*/ + ", ";
+                  winnerMsg += winners[i].toString() + ", ";
                 }
 
                 var haveHas;
