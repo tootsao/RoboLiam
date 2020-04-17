@@ -76,14 +76,13 @@ module.exports = {
               gMessage.react("🎉");
               setTimeout(function () {
                 var peopleReacted = gMessage.reactions.cache.get("🎉").users;
-                console.log(peopleReacted.cache.array());
                 var winners = [];
 
-                // Checks if fewer people reacted than the winnerCount allows users to win
+                // Checks if fewer people reacted than the winner count allows users to win
                 if (peopleReacted.length <= args[2]) {
                   winners = peopleReacted;
                 } else {
-                  // Gets as many random users from the peopleReacted as winnerCount allows users to win
+                  // Gets as many random users from the peopleReacted as winner count allows users to win
                   for (var i = 0; i < args[2]; i++) {
                     var index = Math.floor(
                       Math.random() * peopleReacted.length
@@ -94,12 +93,10 @@ module.exports = {
                   }
                 }
 
+                console.log(`\nwinners : ${winners}`);
                 var winnerMsg = "User(s) ";
                 for (var i = 0; i < winners.length; i++) {
                   // Add each winner to the winnerMsg
-                  console.log(
-                    `\nwinners[i].toString() : ${winners[i].toString()}`
-                  );
                   winnerMsg += winners[i].toString() + ", ";
                 }
 
