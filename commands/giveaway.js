@@ -88,12 +88,11 @@ module.exports = {
                       Math.random() * peopleReacted.length
                     );
                     winners.push(peopleReacted[index]);
-                    // After adding a user to winners, remove that item from the array to prevent him from winning multiple times
+                    // After adding a user to winners, remove that item from the array to prevent them from winning multiple times
                     peopleReacted.cache.array().splice(index, 1);
                   }
                 }
 
-                console.log(`\nwinners : ${winners.toString()}`);
                 var winnerMsg = "User(s) ";
                 for (var i = 0; i < winners.length; i++) {
                   // Add each winner to the winnerMsg
