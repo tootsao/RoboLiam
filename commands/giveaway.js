@@ -98,7 +98,7 @@ module.exports = {
                 for (var i = 0; i < winners.length; i++) {
                   // Add each winner to the winnerMsg
                   console.log(winners[i]);
-                  winnerMsg += winners[i].toString() + ", ";
+                  winnerMsg += winners[i] /*.toString()*/ + ", ";
                 }
 
                 var haveHas;
