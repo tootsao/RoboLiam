@@ -93,11 +93,6 @@ module.exports = {
                   }
                 }
 
-                console.log("Below: winners[i]");
-                console.log(winners[i]);
-                console.log(winners);
-                console.log("Above: winners");
-
                 var winnerMsg = "User(s) ";
                 for (var i = 0; i < winners.length; i++) {
                   // Add each winner to the winnerMsg
