@@ -8,7 +8,41 @@ module.exports = {
         const member = message.guild.member(user);
         if (member) {
           if (args[2]) {
-            // do stuff
+            let days;
+            if (args[2] == 0) {
+              days = `ever`;
+            } else {
+              days = ` ${args[2]} days`;
+            }
+
+            if (args[3]) {
+              let msgArgs = args.slice(3).join(" ");
+              member
+                .ban({ days: args[2], reason: msgArgs })
+                .then(() => {
+                  message.reply(
+                    `Succesfuly banned ${user.tag} for "${msgArgs}" for${days}.`
+                  );
+                })
+                .catch((err) => {
+                  message.channel.send(
+                    `I was unable to ban the user ${user.tag}.`
+                  );
+                  console.log(err);
+                });
+            } else {
+              member
+                .ban({ days: args[2] })
+                .then(() => {
+                  message.reply(`Succesfuly banned ${user.tag} for${days}.`);
+                })
+                .catch((err) => {
+                  message.channel.send(
+                    `I was unable to ban the user ${user.tag}.`
+                  );
+                  console.log(err);
+                });
+            }
           } else {
             message.channel.send(
               `Please specify how long you'd like to ban ${user.tag} for.`
