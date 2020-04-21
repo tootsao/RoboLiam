@@ -25,7 +25,7 @@ module.exports = {
         .setColor(0xff0000)
         .addField(
           "Moderation",
-          "kick [user] [reason]?\npoll [query]\nsetPrefix [prefix]\nsetJoin [channel]\nclear [amount]"
+          "kick [user] [reason]?\nban [user] [days] [reason]?\npoll [query]\nsetPrefix [prefix]\nsetJoin [channel]\nclear [amount]"
         );
       message.author.send(Embed);
     } else if (args[1] == "developer") {
