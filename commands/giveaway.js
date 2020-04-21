@@ -75,7 +75,9 @@ module.exports = {
             message.channel.send(Embed).then((gMessage) => {
               gMessage.react("🎉");
               setTimeout(function () {
-                var peopleReacted = gMessage.reactions.cache.get("🎉").array();
+                var peopleReacted = gMessage.reactions.cache
+                  .get("🎉")
+                  .toArray();
                 var winners = [];
                 console.log(`peopleReacted = ${peopleReacted}`);
 
