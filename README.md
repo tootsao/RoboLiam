@@ -8,6 +8,10 @@ If you wish to add the bot to your own server, you can do so with the following 
 
 (The default prefix is ".")
 
+<a href="https://top.gg/bot/694637394300895273" >
+  <img src="https://top.gg/api/widget/694637394300895273.svg" alt="RoboLiam" />
+</a>
+
 ## Current list of all commands
 
 [arg]
