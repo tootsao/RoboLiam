@@ -170,7 +170,7 @@ module.exports = {
         .setColor(0xff0000)
         .addField(
           "ban [user] [days] [reason]?",
-          "Bans a specified user for a specified amount of time for a specified reason."
+          "Bans a specified user for a specified amount of time for a specified reason.\nCan only be used by moderators.\n\n[user] - The user you want to ban\n[days] - How many days you want to ban the user. Set to 0 to perm ban.\n[reason]? - The reason you want to ban someone."
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
