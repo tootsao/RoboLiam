@@ -164,6 +164,16 @@ module.exports = {
         .addField("info", "Displays info about the RoboLiam bot.")
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
+    } else if (args[1] === "ban") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField(
+          "ban [user] [days] [reason]?",
+          "Bans a specified user for a specified amount of time for a specified reason."
+        )
+        .setFooter("RoboLiam version " + version);
+      message.author.send(Embed);
     } else if (!args[1]) {
       const Embed = new MessageEmbed()
         .setTitle("Help")
@@ -180,7 +190,7 @@ module.exports = {
         )
         .addField(
           "Moderation",
-          "kick [user] [reason]?\npoll [query]\nsetPrefix [prefix]\nsetJoin [channel]\nclear [amount]"
+          "kick [user] [reason]?\nban [user] [days] [reason]?\npoll [query]\nsetPrefix [prefix]\nsetJoin [channel]\nclear [amount]"
         )
         .addField("Developer", "ping\ninfo\nserverInfo")
         .addField("Other", "help [cmd]?")
