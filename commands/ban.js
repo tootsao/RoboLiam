@@ -12,7 +12,7 @@ module.exports = {
             if (args[2] == 0) {
               days = `ever`;
             } else {
-              days = ` ${args[2]} days`;
+              days = ` ${args[2]} day(s)`;
             }
 
             if (args[3]) {
