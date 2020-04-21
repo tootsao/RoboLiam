@@ -12,7 +12,7 @@ module.exports = {
             .then(() => {
               message.reply(`Succesfuly kicked ${user.tag}.`);
             })
-            .catch(err => {
+            .catch((err) => {
               message.channel.send(
                 `I was unable to kick the user ${user.tag}.`
               );
@@ -25,7 +25,7 @@ module.exports = {
             .then(() => {
               message.reply(`Succesfuly kicked ${user.tag} for "${msgArgs}".`);
             })
-            .catch(err => {
+            .catch((err) => {
               message.channel.send(
                 `I was unable to kick the user ${user.tag}.`
               );
@@ -38,7 +38,7 @@ module.exports = {
         message.channel.send("Couldn't find the user you requested!");
       }
     } else {
-      message.channel.send("Insufficient permissions.");
+      message.channel.send("You do not have permission to do that!");
     }
-  }
+  },
 };
