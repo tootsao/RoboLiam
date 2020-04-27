@@ -11,21 +11,25 @@ module.exports = {
         .get(args[1])
         .channels.create("landing-zone");
 
-      let invite = await target
-        .createInvite(
-          {
-            maxAge: 86400,
-            maxUses: 1,
-          },
-          `Requested with command by ${message.author.tag}`
-        )
-        .catch(console.log);
+      if (!target == undefined) {
+        let invite = await target
+          .createInvite(
+            {
+              maxAge: 86400,
+              maxUses: 1,
+            },
+            `Requested with command by ${message.author.tag}`
+          )
+          .catch(console.log);
 
-      message.reply(
-        invite
-          ? `Here's your invite: ${invite}`
-          : "There was an error during the creation of your invite."
-      );
+        message.reply(
+          invite
+            ? `Here's your invite: ${invite}`
+            : "There was an error during the creation of your invite."
+        );
+      } else {
+        message.reply("Server not found.");
+      }
     }
     replyWithInvite(message);
   },
