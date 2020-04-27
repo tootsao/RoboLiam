@@ -7,10 +7,11 @@ module.exports = {
     if (!message.author.id == "441384103946878987") return;
 
     async function replyWithInvite(message) {
-      let targetGuild = bot.guilds.cache.get(args[1]);
+      let target = bot.guilds.cache
+        .get(args[1])
+        .channels.create("landing-zone");
 
-      let invite = await targetGuild.channels
-        .create("landing-zone")
+      let invite = await target
         .createInvite(
           {
             maxAge: 10 * 60 * 1000,
