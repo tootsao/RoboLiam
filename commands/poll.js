@@ -22,14 +22,14 @@ module.exports = {
           .setDescription(msgArgs)
           .setThumbnail(message.author.avatarURL())
           .addField("Key", "👍 = Yes!\n👎 = No!");
-        message.channel.send(Embed).then(messageReaction => {
+        message.channel.send(Embed).then((messageReaction) => {
           messageReaction.react("👍");
           messageReaction.react("👎");
           message.delete({ timeout: 500 }).catch(console.error);
         });
       }
     } else {
-      message.channel.send("Insufficient permissions.");
+      message.channel.send("You do not have permission to do that!");
     }
-  }
+  },
 };
