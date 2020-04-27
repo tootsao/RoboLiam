@@ -116,7 +116,7 @@ module.exports = {
         .setColor(0xff0000)
         .addField(
           "setJoin [channel]",
-          "Allows you to set the channel for join/leave announcements to be made in.\n\n[channel] - The channel you want join/leave announcements to be made in."
+          "Allows you to set the channel for join/leave announcements to be made in.\n\n[channel] - The channel you want join/leave announcements to be made in. (Set to 'null' to disable join/leave commands.)"
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
