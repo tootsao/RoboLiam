@@ -14,7 +14,7 @@ module.exports = {
       let invite = await target
         .createInvite(
           {
-            maxAge: 10 * 60 * 1000,
+            maxAge: 86400,
             maxUses: 1,
           },
           `Requested with command by ${message.author.tag}`
