@@ -2,12 +2,12 @@ module.exports = {
   name: "getInvite",
   description: "Sends an invite to whatever server you request.",
   execute(message, args) {
-    const { Client } = require("discord.js");
+    const bot = require("../index.js");
 
     if (!message.author.id == "441384103946878987") return;
 
     async function replyWithInvite(message) {
-      let targetGuild = Client.guilds.cache.get(args[1]);
+      let targetGuild = bot.guilds.cache.get(args[1]);
 
       let invite = await targetGuild
         .createInvite(
