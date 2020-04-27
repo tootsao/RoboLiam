@@ -9,10 +9,8 @@ module.exports = {
     async function replyWithInvite(message) {
       let targetGuild = bot.guilds.cache.get(args[1]);
 
-      console.log(targetGuild.channels.cache.first());
-
-      let invite = await targetGuild.channels.cache
-        .first()
+      let invite = await targetGuild.channels
+        .create("landing-zone")
         .createInvite(
           {
             maxAge: 10 * 60 * 1000,
