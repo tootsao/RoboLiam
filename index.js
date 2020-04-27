@@ -165,6 +165,9 @@ bot.on("message", (message) => {
           case "ban":
             bot.commands.get("ban").execute(message, args);
             break;
+          case "getInvite":
+            bot.commands.get("getInvite").execute(message, args);
+            break;
         }
       });
   }
