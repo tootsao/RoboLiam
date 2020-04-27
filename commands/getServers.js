@@ -4,6 +4,11 @@ module.exports = {
   execute(message, args) {
     const bot = require("../index.js");
 
-    message.channel.send(bot.guilds.cache.each());
+    let servers;
+    bot.guilds.cache.tap((coll) => {
+      servers = coll;
+    });
+
+    message.channel.send(servers);
   },
 };
