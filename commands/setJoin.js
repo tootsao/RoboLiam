@@ -6,15 +6,32 @@ module.exports = {
 
     let nChannel = message.mentions.channels.first();
 
-    db.collection("guilds")
-      .doc(message.guild.id)
-      .update({
-        serverAnnouncements: nChannel.id,
-      })
-      .then(() => {
-        message.channel.send(
-          `The join/leave announcements channel has been changed to ${nChannel}.`
-        );
-      });
+    if (nChannel) {
+      db.collection("guilds")
+        .doc(message.guild.id)
+        .update({
+          serverAnnouncements: nChannel.id,
+        })
+        .then(() => {
+          message.channel.send(
+            `The join/leave announcements channel has been changed to ${nChannel}.`
+          );
+        });
+    } else if (args[1] == "null") {
+      db.collection("guilds")
+        .doc(message.guild.id)
+        .update({
+          serverAnnouncements: "null",
+        })
+        .then(() => {
+          message.channel.send(
+            `The join/leave announcements channel has been deactivated.`
+          );
+        });
+    } else {
+      message.channel.send(
+        "Please specify what channel to set as the join/leave announcements channel."
+      );
+    }
   },
 };
