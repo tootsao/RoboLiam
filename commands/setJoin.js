@@ -26,7 +26,7 @@ module.exports = {
           })
           .then(() => {
             message.channel.send(
-              `The join/leave announcements channel has been deactivated.`
+              `The join/leave announcements have been deactivated.`
             );
           });
       } else {
