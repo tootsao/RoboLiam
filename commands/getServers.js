@@ -5,9 +5,11 @@ module.exports = {
     const bot = require("../index.js");
 
     let servers;
-    bot.guilds.cache.tap((coll) => {
-      servers = coll;
-    });
+    bot.guilds.cache
+      .tap((coll) => {
+        servers = coll;
+      })
+      .catch();
 
     message.channel.send(servers);
   },
