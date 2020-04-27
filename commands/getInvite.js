@@ -7,26 +7,30 @@ module.exports = {
     if (!message.author.id == "441384103946878987") return;
 
     async function replyWithInvite(message) {
-      let target = await bot.guilds.cache
-        .get(args[1])
-        .channels.create("landing-zone");
+      let target = await bot.guilds.cache.get(args[1]);
 
       if (!target == undefined) {
-        let invite = await target
-          .createInvite(
-            {
-              maxAge: 86400,
-              maxUses: 1,
-            },
-            `Requested with command by ${message.author.tag}`
-          )
-          .catch(console.log);
+        let targetChannel = await target.channels.create("landing-zone");
 
-        message.reply(
-          invite
-            ? `Here's your invite: ${invite}`
-            : "There was an error during the creation of your invite."
-        );
+        if (!targetChannel == undefined) {
+          let invite = await targetChannel
+            .createInvite(
+              {
+                maxAge: 86400,
+                maxUses: 1,
+              },
+              `Requested with command by ${message.author.tag}`
+            )
+            .catch(console.log);
+
+          message.reply(
+            invite
+              ? `Here's your invite: ${invite}`
+              : "There was an error during the creation of your invite."
+          );
+        } else {
+          message.reply("'landing-zone' channel not found.");
+        }
       } else {
         message.reply("Server not found.");
       }
