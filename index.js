@@ -81,35 +81,6 @@ bot.on("ready", () => {
   }, 60 * 1000);
 });
 
-let activGuild = 1;
-
-bot.on("ready", (guild) => {
-  let guildCount = db
-    .collection("guilds")
-    .get()
-    .then((snap) => {
-      size = snap.size;
-    });
-
-  function guildsCheck() {
-    if (activGuild <= guildCount) {
-      db.collection("guilds")
-        .startAt(activGuild)
-        .get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((documentSnapshot) => {
-            console.log(`Found document at ${documentSnapshot.ref.path}`);
-          });
-        });
-      guildsCheck();
-    } else if (activGuild > guildCount) {
-      activGuild == 1;
-      guildsCheck();
-    }
-  }
-  guildsCheck();
-});
-
 bot.on("message", (message) => {
   if (!message.guild) {
     let defaultPrefix = ".";
