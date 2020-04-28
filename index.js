@@ -83,7 +83,7 @@ bot.on("ready", () => {
 
 let activGuild = 0;
 
-bot.on("guildUnavailable", (guild) => {
+bot.on("ready", (guild) => {
   let guildCount = db
     .collection("guilds")
     .get()
