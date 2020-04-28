@@ -81,6 +81,30 @@ bot.on("ready", () => {
   }, 60 * 1000);
 });
 
+let activGuild = 0;
+let guildCount = db
+  .collection("guilds")
+  .get()
+  .then((snap) => {
+    size = snap.size;
+  });
+
+setInterval(function () {
+  if (activGuild <= guildCount) {
+    db.collection("guilds")
+      .startAt(activGuild)
+      .limit(1)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((documentSnapshot) => {
+          console.log(`Found document at ${documentSnapshot.ref.path}`);
+        });
+      });
+  } else if (activGuild > guildCount) {
+    activGuild == 0;
+  }
+}, 500);
+
 bot.on("message", (message) => {
   if (!message.guild) {
     let defaultPrefix = ".";
