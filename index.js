@@ -95,7 +95,6 @@ bot.on("ready", (guild) => {
     if (activGuild <= guildCount) {
       db.collection("guilds")
         .startAt(activGuild)
-        .limit(1)
         .get()
         .then((querySnapshot) => {
           querySnapshot.forEach((documentSnapshot) => {
