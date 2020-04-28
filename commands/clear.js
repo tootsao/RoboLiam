@@ -12,7 +12,7 @@ module.exports = {
           .bulkDelete(args[1])
           .then((messages) => {
             message.channel
-              .send(`Cleared ${messages.size} messages.`)
+              .send(`Cleared ${messages.size} message(s).`)
               .then((botMessage) => {
                 setTimeout(function () {
                   botMessage.delete();
