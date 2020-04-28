@@ -81,7 +81,7 @@ bot.on("ready", () => {
   }, 60 * 1000);
 });
 
-let activGuild = 0;
+let activGuild = 1;
 
 bot.on("ready", (guild) => {
   let guildCount = db
@@ -104,7 +104,7 @@ bot.on("ready", (guild) => {
         });
       guildsCheck();
     } else if (activGuild > guildCount) {
-      activGuild == 0;
+      activGuild == 1;
       guildsCheck();
     }
   }
