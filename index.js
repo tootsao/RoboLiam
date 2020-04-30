@@ -38,6 +38,7 @@ for (const file of commandFiles) {
 
 bot.on("ready", () => {
   console.log("The bot is now online.");
+  console.log(`The UID of the bot is: ${firebase.auth().currentUser.uid}`);
 
   let activNum = 0;
 
