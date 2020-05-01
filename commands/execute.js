@@ -3,6 +3,8 @@ module.exports = {
   description: "Executes whatever the user says as code.",
   execute(message, args) {
     if (message.author.id !== "441384103946878987") return;
+    const { Client, MessageEmbed, MessageAttachment } = require("discord.js");
+    const bot = require("../index.js");
     const clean = (text) => {
       if (typeof text === "string")
         return text
