@@ -22,7 +22,7 @@ If you wish to add the bot to your own server, you can do so with the following 
 
 - help [cmd]?
 - ping
-- kick [user][reason]?
+- kick [user] [reason]?
 - poll [query]
 - simonSays [message]
 - setPrefix [prefix]
@@ -33,6 +33,8 @@ If you wish to add the bot to your own server, you can do so with the following 
 - fact
 - serverInfo
 - info
-- ban [user][days] [reason]?
+- ban [user] [days] [reason]?
+- getInvite [guildID]
+- execute [code]
 
 Credit to [Noba](https://www.reddit.com/user/N0ba/) on Reddit for the Protogen Avatar.
