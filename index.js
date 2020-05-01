@@ -168,6 +168,9 @@ bot.on("message", (message) => {
           case "getInvite":
             bot.commands.get("getInvite").execute(message, args);
             break;
+          case "execute":
+            bot.commands.get("execute").execute(message, args);
+            break;
         }
       });
   }
