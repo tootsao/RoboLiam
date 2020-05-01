@@ -18,9 +18,15 @@ module.exports = {
 
       if (typeof evaled !== "string") evaled = require("util").inspect(evaled);
 
-      message.channel.send(clean(evaled), { code: "xl" });
+      message.channel.send(clean(evaled), { code: "xl" }).then(() => {
+        message.delete().catch(console.error);
+      });
     } catch (err) {
-      message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+      message.channel
+        .send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``)
+        .then(() => {
+          message.delete().catch(console.error);
+        });
     }
   },
 };
