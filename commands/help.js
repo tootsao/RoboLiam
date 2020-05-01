@@ -32,7 +32,10 @@ module.exports = {
       const Embed = new MessageEmbed()
         .setTitle("Help")
         .setColor(0xff0000)
-        .addField("Developer", "ping\ninfo\nserverInfo");
+        .addField(
+          "Developer",
+          "ping\ninfo\nserverInfo\ngetInvite [guildID]\nexecute [code]"
+        );
       message.author.send(Embed);
     } else if (args[1] == "other") {
       const Embed = new MessageEmbed()
@@ -174,6 +177,26 @@ module.exports = {
         )
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
+    } else if (args[1] === "getInvite") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField(
+          "getInvite [guildID]",
+          "Returns an invite to the specified server. (NOTE: Can only be used by developers.)\n\n[guildID] - The ID of the server you wish to recieve an invite to."
+        )
+        .setFooter("RoboLiam version " + version);
+      message.author.send(Embed);
+    } else if (args[1] === "execute") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField(
+          "execute [code]",
+          "Executes the specified code. (NOTE: Can only be used by developers.)\n\n[code] - The code you wish to execute."
+        )
+        .setFooter("RoboLiam version " + version);
+      message.author.send(Embed);
     } else if (!args[1]) {
       const Embed = new MessageEmbed()
         .setTitle("Help")
@@ -192,7 +215,10 @@ module.exports = {
           "Moderation",
           "kick [user] [reason]?\nban [user] [days] [reason]?\npoll [query]\nsetPrefix [prefix]\nsetJoin [channel]\nclear [amount]"
         )
-        .addField("Developer", "ping\ninfo\nserverInfo")
+        .addField(
+          "Developer",
+          "ping\ninfo\nserverInfo\ngetInvite [guildID]\nexecute [code]"
+        )
         .addField("Other", "help [cmd]?")
         .setFooter("RoboLiam version " + version);
       message.author.send(Embed);
