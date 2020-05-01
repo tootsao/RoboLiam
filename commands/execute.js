@@ -11,7 +11,7 @@ module.exports = {
       else return text;
     };
     try {
-      const code = args.join(" ");
+      const code = args.slice(1).join(" ");
       let evaled = eval(code);
 
       if (typeof evaled !== "string") evaled = require("util").inspect(evaled);
