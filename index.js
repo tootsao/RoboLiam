@@ -171,6 +171,9 @@ bot.on("message", (message) => {
           case "execute":
             bot.commands.get("execute").execute(message, args);
             break;
+          case "summon":
+            bot.commands.get("summon").execute(message, args);
+            break;
         }
       });
   }
