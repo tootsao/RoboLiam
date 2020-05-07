@@ -1,7 +1,12 @@
+const { MessageEmbed } = require("discord.js");
+const bot = require("../index.js");
 module.exports = {
   name: "ping",
-  description: "Says pong.",
+  description: "Sends an embed containing the bot's ping.",
   execute(message, args) {
-    message.channel.send("Pong!");
+    const Embed = new MessageEmbed().setDescription(
+      `Ping: ${Math.round(bot.ws.ping)}`
+    );
+    message.channel.send(Embed);
   },
 };
