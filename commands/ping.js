@@ -5,7 +5,7 @@ module.exports = {
   description: "Sends an embed containing the bot's ping.",
   execute(message, args) {
     const Embed = new MessageEmbed().setDescription(
-      `Ping: ${Math.round(bot.ws.ping)}`
+      `Ping: ${Math.round(bot.ws.ping)} ms`
     );
     message.channel.send(Embed);
   },
