@@ -15,6 +15,7 @@ module.exports = {
       }
       if (!targetUser) {
         message.channel.send("I couldn't find the user you requested.");
+        break;
       }
       async function createInvite(message) {
         let invite = await message.channel
