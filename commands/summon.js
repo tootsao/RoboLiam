@@ -6,10 +6,39 @@ module.exports = {
     let targetUser;
     let targetTag = args.slice(1).join(" ");
     if (message.mentions.users.first()) {
-      targetUser = message.mentions.users.first();
+      targetUser = message.mentions.users
+        .first()
+        .catch(() => message.channel.send("Sorry, something went wrong!"));
     } else {
-      targetUser = bot.users.cache.find((user) => user.tag == targetTag);
+      targetUser = bot.users.cache
+        .find((user) => user.tag == targetTag)
+        .catch(() =>
+          message.channel.send("I couldn't find the user you requested.")
+        );
     }
-    message.channel.send(`targetUser = ${targetUser}`);
+    let invite = message.channel
+      .createInvite(
+        {
+          maxAge: 0,
+          maxUses: 1,
+        },
+        `Requested with "summon" command by ${message.author.tag}.`
+      )
+      .catch(() => {
+        console.log;
+        message.channel.send(
+          "There was an error creating the invite, please try again later."
+        );
+      });
+    targetUser
+      .send(
+        `${targetUser}, ${message.author} has summoned you! To accept, click on the following invite!${invite}`
+      )
+      .then(message.channel.send("✅ Summon request successfully sent!"))
+      .catch(
+        message.channel.send(
+          "There was an error sending a message to the requested user. They may have their DMs disabled!"
+        )
+      );
   },
 };
