@@ -4,13 +4,11 @@ module.exports = {
   description: "Summons the requested user.",
   execute(message, args) {
     let targetUser;
-    let targetUsername = args.slice(1).join(" ");
+    let targetTag = args.slice(1).join(" ");
     if (message.mentions.users.first()) {
       targetUser = message.mentions.users.first();
     } else {
-      targetUser = bot.users.cache.find(
-        (user) => user.username == targetUsername
-      );
+      targetUser = bot.users.cache.find((user) => user.tag == targetTag);
     }
     message.channel.send(`targetUser = ${targetUser}`);
   },
