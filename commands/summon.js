@@ -33,8 +33,10 @@ module.exports = {
         .send(
           `${targetUser}, ${message.author} has summoned you! To accept, click on the following invite!${invite}`
         )
-        .then(message.channel.send("✅ Summon request successfully sent!"))
-        .catch(
+        .then(() => {
+          message.channel.send("✅ Summon request successfully sent!");
+        })
+        .catch(() =>
           message.channel.send(
             "There was an error sending a message to the requested user. They may have their DMs disabled!"
           )
