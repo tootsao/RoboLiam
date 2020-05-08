@@ -30,7 +30,7 @@ module.exports = {
       });
     targetUser
       .send(
-        `${targetUser}, ${message.author} has summoned you! To accept, click on the following invite!${invite}`
+        `${targetUser}, ${message.author} has summoned you! To accept, click on the following invite!\nhttps://discord.gg/${invite.code}`
       )
       .then(message.channel.send("✅ Summon request successfully sent!"))
       .catch(
