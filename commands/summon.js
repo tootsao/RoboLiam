@@ -8,7 +8,9 @@ module.exports = {
     if (message.mentions.users.first()) {
       targetUser = message.mentions.users.first();
     } else {
-      targetUser = bot.users.cache.find("username", targetUsername);
+      targetUser = bot.users.cache.find(
+        (user) => user.username == targetUsername
+      );
     }
     message.channel.send(`targetUser = ${targetUser}`);
   },
