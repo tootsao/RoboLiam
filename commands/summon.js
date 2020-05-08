@@ -6,9 +6,7 @@ module.exports = {
     let targetUser;
     let targetTag = args.slice(1).join(" ");
     if (message.mentions.users.first()) {
-      targetUser = message.mentions.users
-        .first()
-        .catch(() => message.channel.send("Sorry, something went wrong!"));
+      targetUser = message.mentions.users.first();
     } else {
       targetUser = bot.users.cache
         .find((user) => user.tag == targetTag)
