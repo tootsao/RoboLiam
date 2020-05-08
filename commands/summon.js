@@ -8,11 +8,10 @@ module.exports = {
     if (message.mentions.users.first()) {
       targetUser = message.mentions.users.first();
     } else {
-      targetUser = bot.users.cache
-        .find((user) => user.tag == targetTag)
-        .catch(() =>
-          message.channel.send("I couldn't find the user you requested.")
-        );
+      targetUser = bot.users.cache.find((user) => user.tag == targetTag);
+    }
+    if (!targetUser) {
+      message.channel.send("I couldn't find the user you requested.");
     }
     async function createInvite(message) {
       let invite = await message.channel
