@@ -21,7 +21,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] == "moderation") {
@@ -35,7 +37,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] == "developer") {
@@ -49,7 +53,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] == "other") {
@@ -60,7 +66,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] === "help") {
@@ -75,7 +83,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] === "ping") {
@@ -90,7 +100,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] === "kick") {
@@ -105,7 +117,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] === "poll") {
@@ -120,7 +134,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] === "simonSays") {
@@ -135,7 +151,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] === "setPrefix") {
@@ -150,7 +168,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] === "image") {
@@ -165,7 +185,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] === "setJoin") {
@@ -180,7 +202,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] === "exactImage") {
@@ -195,7 +219,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] === "clear") {
@@ -210,7 +236,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] === "fact") {
@@ -222,7 +250,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] === "serverInfo") {
@@ -237,7 +267,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] === "info") {
@@ -249,7 +281,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] === "ban") {
@@ -264,7 +298,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] === "getInvite") {
@@ -279,7 +315,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] === "execute") {
@@ -294,7 +332,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (args[1] === "summon") {
@@ -309,7 +349,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else if (!args[1]) {
@@ -339,7 +381,9 @@ module.exports = {
       message.author
         .send(Embed)
         .then(() => {
-          message.channel.send("✅ Check your DMs for the commands!");
+          if (message.guild.available) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
         })
         .catch(() => message.reply("Please enable Direct Messages."));
     } else {
