@@ -16,7 +16,7 @@ module.exports = {
         .setColor(0xff0000)
         .addField(
           "Fun",
-          "simonSays [message]\nimage [image]\nexactImage [image]\nfact"
+          "simonSays [message]\nimage [image]\nexactImage [image]\nfact\nsummon [user]"
         );
       message.author
         .send(Embed)
@@ -297,6 +297,21 @@ module.exports = {
           message.channel.send("✅ Check your DMs for the commands!");
         })
         .catch(() => message.reply("Please enable Direct Messages."));
+    } else if (args[1] === "summon") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField(
+          "summon [user]",
+          "Invites the specified user to the server you are currently in.\n\n[user] - The user you wish to summon."
+        )
+        .setFooter("RoboLiam version " + version);
+      message.author
+        .send(Embed)
+        .then(() => {
+          message.channel.send("✅ Check your DMs for the commands!");
+        })
+        .catch(() => message.reply("Please enable Direct Messages."));
     } else if (!args[1]) {
       const Embed = new MessageEmbed()
         .setTitle("Help")
@@ -309,7 +324,7 @@ module.exports = {
         )
         .addField(
           "Fun",
-          "simonSays [message]\nimage [image]\nexactImage [image]\nfact"
+          "simonSays [message]\nimage [image]\nexactImage [image]\nfact\nsummon [user]"
         )
         .addField(
           "Moderation",
