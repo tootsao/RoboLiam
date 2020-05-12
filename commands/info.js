@@ -12,6 +12,11 @@ module.exports = {
       serverCount = coll.size;
     });
 
+    let channelCount;
+    bot.channels.cache.tap((coll) => {
+      channelCount = coll.size;
+    });
+
     let userCount;
     bot.users.cache.tap((coll) => {
       userCount = coll.size;
@@ -32,6 +37,7 @@ module.exports = {
       .addField("Bot Version", version, true)
       .addField("Discord.js Version", packages["discord.js"], true)
       .addField("Servers", serverCount)
+      .addField("Channels", channelCount, true)
       .addField("Users", userCount, true)
       .addField(
         "Uptime",
