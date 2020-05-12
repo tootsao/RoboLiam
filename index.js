@@ -7,7 +7,6 @@ const ms = require("ms");
 const fs = require("fs");
 const cheerio = require("cheerio");
 const request = require("request");
-const webp = require("webp-converter");
 module.exports = bot;
 
 // Import settings

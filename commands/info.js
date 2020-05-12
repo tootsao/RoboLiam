@@ -5,7 +5,6 @@ module.exports = {
   execute(message, args) {
     const version = require("../version.json").version;
     const bot = require("../index.js");
-    const webp = require("webp-converter");
 
     let serverCount;
     bot.guilds.cache.tap((coll) => {
@@ -19,28 +18,20 @@ module.exports = {
     let minutes = Math.floor(totalSeconds / 60);
     let seconds = totalSeconds % 60;
 
-    webp.cwebp(
-      "https://top.gg/api/widget/694637394300895273.svg",
-      "../images/694637394300895273.webp",
-      "-q 80",
-      function () {
-        const Embed = new MessageEmbed()
-          .setTitle("Bot Info")
-          .setThumbnail(
-            "https://cdn.discordapp.com/avatars/694637394300895273/84c7cbd530737d6f5a0b0edb660190a2.png"
-          )
-          .addField("Version", version)
-          .addField("Servers", serverCount)
-          .addField(
-            "Uptime",
-            `${days} days, ${hours} hours, ${minutes} minutes, and ${Math.round(
-              seconds
-            )} seconds.`
-          )
-          .setImage("../images/694637394300895273.webp");
+    const Embed = new MessageEmbed()
+      .setTitle("Bot Info")
+      .setThumbnail(
+        "https://cdn.discordapp.com/avatars/694637394300895273/84c7cbd530737d6f5a0b0edb660190a2.png"
+      )
+      .addField("Version", version)
+      .addField("Servers", serverCount)
+      .addField(
+        "Uptime",
+        `${days} days, ${hours} hours, ${minutes} minutes, and ${Math.round(
+          seconds
+        )} seconds.`
+      );
 
-        message.channel.send(Embed);
-      }
-    );
+    message.channel.send(Embed);
   },
 };
