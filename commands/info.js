@@ -51,6 +51,7 @@ module.exports = {
         true
       )
       .addField("Ping", `${Math.round(bot.ws.ping)} ms`, true)
+      .addField("\u200B", "\u200B")
       .addField(
         "Invite",
         "[Invite Me](https://discordapp.com/api/oauth2/authorize?client_id=694637394300895273&permissions=8&scope=bot)"
