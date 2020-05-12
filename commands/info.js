@@ -36,10 +36,10 @@ module.exports = {
       )
       .setDescription("Made by Liam The Snow Leopard#2501 with Discord.js.")
       .addField("Bot Version", version, true)
-      .addField("Discord.js Version", packages["discord.js"])
+      .addField("Discord.js Version", packages["discord.js"], true)
       .addField("Servers", serverCount, true)
       .addField("Channels", channelCount, true)
-      .addField("Users", userCount)
+      .addField("Users", userCount, true)
       .addField(
         "Uptime",
         `${days} d, ${hours} h, ${minutes} m, ${Math.round(seconds)} s`,
