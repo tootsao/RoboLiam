@@ -36,7 +36,8 @@ module.exports = {
             `${days} days, ${hours} hours, ${minutes} minutes, and ${Math.round(
               seconds
             )} seconds.`
-          );
+          )
+          .setImage("694637394300895273.png");
 
         message.channel.send(Embed);
       }
