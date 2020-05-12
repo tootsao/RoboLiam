@@ -42,7 +42,7 @@ module.exports = {
       .addField("Discord.js Version", packages["discord.js"], true)
       .addField(
         "Uptime",
-        `${days} d, ${hours} h, ${minutes} m, ${Math.round(seconds)} s`,
+        `${days}d, ${hours}h, ${minutes}m, ${Math.round(seconds)}s`,
         true
       )
       .addField("Ping", `${Math.round(bot.ws.ping)} ms`, true);
