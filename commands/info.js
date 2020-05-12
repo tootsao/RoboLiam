@@ -31,14 +31,13 @@ module.exports = {
       )
       .addField("Bot Version", version, true)
       .addField("Discord.js Version", packages["discord.js"], true)
-      .addField("Servers", serverCount, true)
+      .addField("Servers", serverCount)
       .addField("Users", userCount, true)
       .addField(
         "Uptime",
         `${days} days, ${hours} hours, ${minutes} minutes, and ${Math.round(
           seconds
-        )} seconds.`,
-        true
+        )} seconds.`
       );
 
     message.channel.send(Embed);
