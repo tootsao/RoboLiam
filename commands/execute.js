@@ -5,6 +5,11 @@ module.exports = {
     if (message.author.id !== "441384103946878987") return;
     const { Client, MessageEmbed, MessageAttachment } = require("discord.js");
     const bot = require("../index.js");
+    const ms = require("ms");
+    const fs = require("fs");
+    const cheerio = require("cheerio");
+    const request = require("request");
+    const webp = require("webp-converter");
     const clean = (text) => {
       if (typeof text === "string")
         return text
