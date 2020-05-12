@@ -30,11 +30,16 @@ module.exports = {
     let seconds = totalSeconds % 60;
 
     const Embed = new MessageEmbed()
+      .setAuthor(
+        "Made by Liam The Snow Leopard#2501",
+        "https://cdn.discordapp.com/avatars/441384103946878987/72dd31a2cd197b4067178e9b82aaaae4.png",
+        "http://github.com/Controlfreak707/"
+      )
       .setTitle("Bot Info")
       .setThumbnail(
         "https://cdn.discordapp.com/avatars/694637394300895273/84c7cbd530737d6f5a0b0edb660190a2.png"
       )
-      .setDescription("Made by Liam The Snow Leopard#2501 with Discord.js.")
+      .setFooter("Made with Discord.js.", "https://i.imgur.com/wSTFkRM.png")
       .addField("Servers", serverCount, true)
       .addField("Channels", channelCount, true)
       .addField("Users", userCount, true)
