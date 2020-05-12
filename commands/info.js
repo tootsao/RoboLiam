@@ -43,7 +43,8 @@ module.exports = {
         "Uptime",
         `${days} d, ${hours} h, ${minutes} m, ${Math.round(seconds)} s`,
         true
-      );
+      )
+      .addField("Ping", `${Math.round(bot.ws.ping)} ms`, true);
 
     message.channel.send(Embed);
   },
