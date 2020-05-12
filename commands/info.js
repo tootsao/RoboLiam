@@ -21,7 +21,7 @@ module.exports = {
 
     webp.cwebp(
       "https://top.gg/api/widget/694637394300895273.svg",
-      "694637394300895273.png",
+      "../images/694637394300895273.webp",
       "-q 80",
       function () {
         const Embed = new MessageEmbed()
@@ -37,7 +37,7 @@ module.exports = {
               seconds
             )} seconds.`
           )
-          .setImage("694637394300895273.png");
+          .setImage("../images/694637394300895273.webp");
 
         message.channel.send(Embed);
       }
