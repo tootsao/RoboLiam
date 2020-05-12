@@ -23,13 +23,19 @@ module.exports = {
       .setThumbnail(
         "https://cdn.discordapp.com/avatars/694637394300895273/84c7cbd530737d6f5a0b0edb660190a2.png"
       )
-      .addField("Version", version)
-      .addField("Servers", serverCount)
+      .addField("Version", version, true)
+      .addField("Servers", serverCount, true)
+      .addField(
+        "Users",
+        bot.users.cache.tap((coll) => coll.size),
+        true
+      )
       .addField(
         "Uptime",
         `${days} days, ${hours} hours, ${minutes} minutes, and ${Math.round(
           seconds
-        )} seconds.`
+        )} seconds.`,
+        true
       );
 
     message.channel.send(Embed);
