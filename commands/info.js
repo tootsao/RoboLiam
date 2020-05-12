@@ -41,9 +41,7 @@ module.exports = {
       .addField("Users", userCount, true)
       .addField(
         "Uptime",
-        `${days} days, ${hours} hours, ${minutes} minutes, and ${Math.round(
-          seconds
-        )} seconds.`,
+        `${days} d, ${hours} h, ${minutes} m, ${Math.round(seconds)} s`,
         true
       );
 
