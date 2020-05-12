@@ -3,6 +3,7 @@ module.exports = {
   name: "info",
   description: "Displays bot info.",
   execute(message, args) {
+    const packages = require("../package.json").dependencies;
     const version = require("../version.json").version;
     const bot = require("../index.js");
 
@@ -28,7 +29,8 @@ module.exports = {
       .setThumbnail(
         "https://cdn.discordapp.com/avatars/694637394300895273/84c7cbd530737d6f5a0b0edb660190a2.png"
       )
-      .addField("Version", version, true)
+      .addField("Bot Version", version, true)
+      .addField("Discord.js Version", packages["discord.js"], true)
       .addField("Servers", serverCount, true)
       .addField("Users", userCount, true)
       .addField(
