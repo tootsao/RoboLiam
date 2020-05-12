@@ -11,6 +11,11 @@ module.exports = {
       serverCount = coll.size;
     });
 
+    let userCount;
+    bot.users.cache.tap((coll) => {
+      userCount = coll.size;
+    });
+
     let totalSeconds = bot.uptime / 1000;
     let days = Math.floor(totalSeconds / 86400);
     let hours = Math.floor(totalSeconds / 3600);
@@ -25,11 +30,7 @@ module.exports = {
       )
       .addField("Version", version, true)
       .addField("Servers", serverCount, true)
-      .addField(
-        "Users",
-        bot.users.cache.tap((coll) => coll.size),
-        true
-      )
+      .addField("Users", userCount, true)
       .addField(
         "Uptime",
         `${days} days, ${hours} hours, ${minutes} minutes, and ${Math.round(
