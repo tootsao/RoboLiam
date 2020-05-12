@@ -35,10 +35,10 @@ module.exports = {
         "https://cdn.discordapp.com/avatars/694637394300895273/84c7cbd530737d6f5a0b0edb660190a2.png"
       )
       .addField("Bot Version", version, true)
-      .addField("Discord.js Version", packages["discord.js"], true)
-      .addField("Servers", serverCount)
+      .addField("Discord.js Version", packages["discord.js"])
+      .addField("Servers", serverCount, true)
       .addField("Channels", channelCount, true)
-      .addField("Users", userCount, true)
+      .addField("Users", userCount)
       .addField(
         "Uptime",
         `${days} d, ${hours} h, ${minutes} m, ${Math.round(seconds)} s`,
