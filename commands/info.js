@@ -37,7 +37,8 @@ module.exports = {
         "Uptime",
         `${days} days, ${hours} hours, ${minutes} minutes, and ${Math.round(
           seconds
-        )} seconds.`
+        )} seconds.`,
+        true
       );
 
     message.channel.send(Embed);
