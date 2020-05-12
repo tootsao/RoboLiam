@@ -45,7 +45,21 @@ module.exports = {
         `${days}d, ${hours}h, ${minutes}m, ${Math.round(seconds)}s`,
         true
       )
-      .addField("Ping", `${Math.round(bot.ws.ping)} ms`, true);
+      .addField("Ping", `${Math.round(bot.ws.ping)} ms`, true)
+      .addField(
+        "Invite",
+        "[Invite Me](https://discordapp.com/api/oauth2/authorize?client_id=694637394300895273&permissions=8&scope=bot)"
+      )
+      .addField("Support", "[Join](https://discord.gg/QFMjF2j)")
+      .addField(
+        "Github",
+        "[Click Here](https://github.com/Controlfreak707/RoboLiam)"
+      )
+      .addField("top.gg", "[Click Here](https://top.gg/bot/694637394300895273)")
+      .addField(
+        "discord.bots.gg",
+        "[Click Here](https://discord.bots.gg/bots/694637394300895273)"
+      );
 
     message.channel.send(Embed);
   },
