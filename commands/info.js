@@ -40,6 +40,7 @@ module.exports = {
         "https://cdn.discordapp.com/avatars/694637394300895273/84c7cbd530737d6f5a0b0edb660190a2.png"
       )
       .setFooter("Made with Discord.js.", "https://i.imgur.com/wSTFkRM.png")
+      .setTimestamp()
       .addField("Servers", serverCount, true)
       .addField("Channels", channelCount, true)
       .addField("Users", userCount, true)
