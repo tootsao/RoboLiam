@@ -4,6 +4,11 @@ module.exports = {
   name: "code",
   description: "Shows the code to the specified file.",
   execute(message, args) {
+    if (!args[1]) {
+      return message.channel.send(
+        "Please specify what command to view the code of."
+      );
+    }
     const commandskid = fs.readFileSync(`./${args[1]}.js`).toString();
 
     try {
