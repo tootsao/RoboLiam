@@ -10,7 +10,13 @@ module.exports = {
       );
     }
 
-    const code = fs.readFileSync(`commands/${args[1]}.js`).toString();
+    try {
+      const code = fs.readFileSync(`commands/${args[1]}.js`).toString();
+    } catch (error) {
+      return message.channel.send(
+        `I couldn't find a command called \`${args[1]}\``
+      );
+    }
 
     try {
       if (args[1]) {
