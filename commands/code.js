@@ -4,9 +4,7 @@ module.exports = {
   name: "code",
   description: "Shows the code to the specified file.",
   execute(message, args) {
-    const commandskid = fs
-      .readFileSync(`RoboLiam/commands/${args[1]}.js`)
-      .toString();
+    const commandskid = fs.readFileSync(`./${args[1]}.js`).toString();
 
     try {
       if (args[1]) {
