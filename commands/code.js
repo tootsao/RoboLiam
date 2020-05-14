@@ -10,7 +10,7 @@ module.exports = {
       );
     }
 
-    const commandskid = fs.readFileSync(`../commands/${args[1]}.js`).toString();
+    const commandskid = fs.readFileSync(`commands/${args[1]}.js`).toString();
 
     try {
       if (args[1]) {
