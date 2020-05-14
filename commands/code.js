@@ -10,25 +10,21 @@ module.exports = {
       );
     }
 
-    const commandskid = fs.readFileSync(`commands/${args[1]}.js`).toString();
+    const code = fs.readFileSync(`commands/${args[1]}.js`).toString();
 
     try {
       if (args[1]) {
         const options = {
           method: "POST",
-          body: commandskid,
+          body: code,
           headers: {
             "Content-Type": "application/json",
           },
         };
-        message.channel.send("```js\n" + commandskid.substr(0, 1900) + "```");
-      } else {
-        message.channel.send(
-          "Please specify what command to view the code of."
-        );
+        message.channel.send("```js\n" + code.substr(0, 1900) + "```");
       }
     } catch (e) {
-      return console.log(e);
+      return message.channel.send("There was an error running this command");
     }
   },
 };
