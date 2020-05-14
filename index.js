@@ -174,6 +174,9 @@ bot.on("message", (message) => {
           case "summon":
             bot.commands.get("summon").execute(message, args);
             break;
+          case "code":
+            bot.commands.get("code").execute(message, args);
+            break;
         }
       });
   }
