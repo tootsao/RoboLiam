@@ -9,6 +9,7 @@ module.exports = {
         "Please specify what command to view the code of."
       );
     }
+
     const commandskid = fs.readFileSync(`./${args[1]}.js`).toString();
 
     try {
