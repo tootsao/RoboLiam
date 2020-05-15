@@ -82,13 +82,15 @@ bot.on("message", (message) => {
 
     if (!message.content.startsWith(defaultPrefix)) return;
 
-    switch (args[0]) {
-      case "help":
-        bot.commands.get("help").execute(message, args, defaultPrefix);
-        break;
-      case "ping":
-        bot.commands.get("ping").execute(message, args);
-        break;
+    let command = bot.commands.get(args[0]);
+    if (args[0] === "help" || args[0] === "ping") {
+      try {
+        command.execute(bot, message, args, prefix, db);
+      } catch (error) {
+        message.channel.send(
+          "There was an error while executing that command."
+        );
+      }
     }
   } else {
     db.collection("guilds")
