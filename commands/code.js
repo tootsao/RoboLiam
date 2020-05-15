@@ -28,11 +28,16 @@ module.exports = {
             "Content-Type": "application/json",
           },
         };
-        message.channel.send("```js\n" + code.substr(0, 1900) + "```");
+        message.channel.send(
+          "Here is the code for the " +
+            args[1] +
+            " command:\n```js\n" +
+            code.substr(0, 1900) +
+            "```"
+        );
       }
     } catch (e) {
-      // return message.channel.send("There was an error running the command");
-      return console.log(e);
+      return message.channel.send("There was an error running the command");
     }
   },
 };
