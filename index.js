@@ -104,8 +104,8 @@ bot.on("message", (message) => {
                 const reaction = collected.first();
                 if (
                   reaction.emoji.name === "❓" &&
-                  reaction.users.cache.find(
-                    (user) => user.id == message.author.id
+                  !reaction.users.cache.find(
+                    (user) => user.id == "694637394300895273"
                   )
                 ) {
                   const Embed = new MessageEmbed()
