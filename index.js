@@ -102,7 +102,10 @@ bot.on("message", (message) => {
               .awaitReactions(filter, { max: 1, time: 60000, errors: ["time"] })
               .then((collected) => {
                 const reaction = collected.first();
-                if (reaction.emoji.name === "❓") {
+                if (
+                  reaction.emoji.name === "❓" &&
+                  this.user === message.author
+                ) {
                   const Embed = new MessageEmbed()
                     .setTitle("Error")
                     .setDescription(`\`\`\`js\n${error}\n\`\`\``);
