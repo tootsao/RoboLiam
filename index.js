@@ -106,6 +106,7 @@ bot.on("message", (message) => {
                   const Embed = new MessageEmbed()
                     .setTitle("Error")
                     .setDescription(`\`\`\`js\n${error}\n\`\`\``);
+                  message.channel.send(Embed);
                 }
               })
               .catch();
