@@ -104,7 +104,9 @@ bot.on("message", (message) => {
                 const reaction = collected.first();
                 if (
                   reaction.emoji.name === "❓" &&
-                  this.user === message.author
+                  reaction.users.cache.find(
+                    (user) => user.id == message.author.id
+                  )
                 ) {
                   const Embed = new MessageEmbed()
                     .setTitle("Error")
