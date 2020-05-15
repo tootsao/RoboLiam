@@ -10,8 +10,9 @@ module.exports = {
       );
     }
 
+    let code;
     try {
-      const code = fs.readFileSync(`commands/${args[1]}.js`).toString();
+      code = fs.readFileSync(`commands/${args[1]}.js`).toString();
     } catch (error) {
       return message.channel.send(
         `I couldn't find a command called \`${args[1]}\``
