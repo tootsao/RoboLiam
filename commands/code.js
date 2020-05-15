@@ -30,7 +30,8 @@ module.exports = {
         message.channel.send("```js\n" + code.substr(0, 1900) + "```");
       }
     } catch (e) {
-      return message.channel.send("There was an error running this command");
+      // return message.channel.send("There was an error running the command");
+      return console.log(e);
     }
   },
 };
