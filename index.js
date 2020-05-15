@@ -91,30 +91,30 @@ bot.on("message", (message) => {
         message.channel
           .send("There was an error while executing that command.")
           .then((message) => {
-            message.react("❓");
-            const filter = (reaction, user) => {
-              return (
-                ["❓"].includes(reaction.emoji.name) &&
-                user.id === message.author.id
-              );
-            };
-            message
-              .awaitReactions(filter, { max: 1, time: 60000, errors: ["time"] })
-              .then((collected) => {
-                const reaction = collected.first();
-                if (
-                  reaction.emoji.name === "❓" &&
-                  !reaction.users.cache.find(
-                    (user) => user.id == "694637394300895273"
-                  )
-                ) {
-                  const Embed = new MessageEmbed()
-                    .setTitle("Error")
-                    .setDescription(`\`\`\`js\n${error}\n\`\`\``);
-                  message.channel.send(Embed);
-                }
-              })
-              .catch();
+            message.react("❓").then((message) => {
+              const filter = (reaction, user) => {
+                return (
+                  ["❓"].includes(reaction.emoji.name) &&
+                  user.id === message.author.id
+                );
+              };
+              message
+                .awaitReactions(filter, {
+                  max: 1,
+                  time: 60000,
+                  errors: ["time"],
+                })
+                .then((collected) => {
+                  const reaction = collected.first();
+                  if (reaction.emoji.name === "❓") {
+                    const Embed = new MessageEmbed()
+                      .setTitle("Error")
+                      .setDescription(`\`\`\`js\n${error}\n\`\`\``);
+                    message.channel.send(Embed);
+                  }
+                })
+                .catch();
+            });
           });
       }
     }
