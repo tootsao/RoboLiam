@@ -91,7 +91,7 @@ bot.on("message", (message) => {
         message.channel
           .send("There was an error while executing that command.")
           .then((message) => {
-            message.react("❓").then((message) => {
+            message.react("❓").then(() => {
               const filter = (reaction, user) => {
                 return (
                   ["❓"].includes(reaction.emoji.name) &&
