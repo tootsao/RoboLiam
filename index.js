@@ -88,9 +88,28 @@ bot.on("message", (message) => {
         command.execute(bot, message, args, prefix, db);
       } catch (error) {
         console.log(error);
-        message.channel.send(
-          "There was an error while executing that command."
-        );
+        message.channel
+          .send("There was an error while executing that command.")
+          .then((message) => {
+            message.react("❓");
+            const filter = (reaction, user) => {
+              return (
+                ["❓"].includes(reaction.emoji.name) &&
+                user.id === message.author.id
+              );
+            };
+            message
+              .awaitReactions(filter, { max: 1, time: 60000, errors: ["time"] })
+              .then((collected) => {
+                const reaction = collected.first();
+                if (reaction.emoji.name === "❓") {
+                  const Embed = new MessageEmbed()
+                    .setTitle("Error")
+                    .setDescription(`\`\`\`js\n${error}\n\`\`\``);
+                }
+              })
+              .catch();
+          });
       }
     }
   } else {
