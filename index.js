@@ -87,6 +87,7 @@ bot.on("message", (message) => {
       try {
         command.execute(bot, message, args, prefix, db);
       } catch (error) {
+        console.log(error);
         message.channel.send(
           "There was an error while executing that command."
         );
