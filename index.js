@@ -76,6 +76,7 @@ bot.on("ready", () => {
 });
 
 function executeCommand(parameters) {
+  let command = bot.commands.get(args[0]);
   try {
     command.execute(message, args, parameters);
   } catch (error) {
@@ -98,7 +99,6 @@ bot.on("message", (message) => {
 
     if (!message.content.startsWith(defaultPrefix)) return;
 
-    let command = bot.commands.get(args[0]);
     if (args[0] === "help" || args[0] === "ping") {
       executeCommand(bot, prefix, db);
     }
@@ -122,7 +122,6 @@ bot.on("message", (message) => {
           message.channel.send(Embed);
           return;
         }
-        let command = bot.commands.get(args[0]);
         switch (args[0]) {
           case "help":
             executeCommand(prefix);
