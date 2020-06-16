@@ -75,25 +75,25 @@ bot.on("ready", () => {
   }, 60000);
 });
 
-function executeCommand(parameters) {
-  let args = message.content.slice(prefix.length).split(" ");
-  let command = bot.commands.get(args[0]);
-  try {
-    command.execute(message, args, parameters);
-  } catch (error) {
-    console.log(error);
-    message.channel
-      .send("There was an error while executing that command.")
-      .then((message) => {
-        const Embed = new MessageEmbed()
-          .setTitle("Error")
-          .setDescription(`\`\`\`js\n${error}\n\`\`\``);
-        message.channel.send(Embed);
-      });
-  }
-}
-
 bot.on("message", (message) => {
+  function executeCommand(parameters) {
+    let args = message.content.slice(prefix.length).split(" ");
+    let command = bot.commands.get(args[0]);
+    try {
+      command.execute(message, args, parameters);
+    } catch (error) {
+      console.log(error);
+      message.channel
+        .send("There was an error while executing that command.")
+        .then((message) => {
+          const Embed = new MessageEmbed()
+            .setTitle("Error")
+            .setDescription(`\`\`\`js\n${error}\n\`\`\``);
+          message.channel.send(Embed);
+        });
+    }
+  }
+
   if (!message.guild) {
     let defaultPrefix = ".";
     let args = message.content.slice(defaultPrefix.length).split(" ");
