@@ -76,6 +76,7 @@ bot.on("ready", () => {
 });
 
 function executeCommand(parameters) {
+  let args = message.content.slice(prefix.length).split(" ");
   let command = bot.commands.get(args[0]);
   try {
     command.execute(message, args, parameters);
