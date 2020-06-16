@@ -75,6 +75,22 @@ bot.on("ready", () => {
   }, 60000);
 });
 
+function executeCommand(parameters) {
+  try {
+    command.execute(message, args, parameters);
+  } catch (error) {
+    console.log(error);
+    message.channel
+      .send("There was an error while executing that command.")
+      .then((message) => {
+        const Embed = new MessageEmbed()
+          .setTitle("Error")
+          .setDescription(`\`\`\`js\n${error}\n\`\`\``);
+        message.channel.send(Embed);
+      });
+  }
+}
+
 bot.on("message", (message) => {
   if (!message.guild) {
     let defaultPrefix = ".";
@@ -84,19 +100,7 @@ bot.on("message", (message) => {
 
     let command = bot.commands.get(args[0]);
     if (args[0] === "help" || args[0] === "ping") {
-      try {
-        command.execute(bot, message, args, prefix, db);
-      } catch (error) {
-        console.log(error);
-        message.channel
-          .send("There was an error while executing that command.")
-          .then((message) => {
-            const Embed = new MessageEmbed()
-              .setTitle("Error")
-              .setDescription(`\`\`\`js\n${error}\n\`\`\``);
-            message.channel.send(Embed);
-          });
-      }
+      executeCommand(bot, prefix, db);
     }
   } else {
     db.collection("guilds")
@@ -118,66 +122,67 @@ bot.on("message", (message) => {
           message.channel.send(Embed);
           return;
         }
+        let command = bot.commands.get(args[0]);
         switch (args[0]) {
           case "help":
-            bot.commands.get("help").execute(message, args, prefix);
+            executeCommand(prefix);
             break;
           case "ping":
-            bot.commands.get("ping").execute(message, args);
+            executeCommand();
             break;
           case "kick":
-            bot.commands.get("kick").execute(message, args);
+            executeCommand();
             break;
           case "poll":
-            bot.commands.get("poll").execute(message, args);
+            executeCommand();
             break;
           case "setPrefix":
-            bot.commands.get("setPrefix").execute(message, args, db);
+            executeCommand(db);
             break;
           case "secret":
-            bot.commands.get("secret").execute(message, args);
+            executeCommand();
             break;
           case "simonSays":
-            bot.commands.get("simonSays").execute(message, args);
+            executeCommand();
             break;
           case "image":
-            bot.commands.get("image").execute(message, args);
+            executeCommand();
             break;
           case "setJoin":
-            bot.commands.get("setJoin").execute(message, args, db);
+            executeCommand(db);
             break;
           case "exactImage":
-            bot.commands.get("exactImage").execute(message, args);
+            executeCommand();
             break;
           case "clear":
-            bot.commands.get("clear").execute(message, args);
+            executeCommand();
             break;
           case "fact":
-            bot.commands.get("fact").execute(message, args);
+            executeCommand();
             break;
           case "serverInfo":
-            bot.commands.get("serverInfo").execute(message, args);
+            executeCommand();
             break;
           case "info":
-            bot.commands.get("info").execute(message, args);
+            executeCommand();
             break;
           case "giveaway":
-            bot.commands.get("giveaway").execute(message, args);
+            executeCommand();
             break;
           case "ban":
-            bot.commands.get("ban").execute(message, args);
+            executeCommand();
             break;
           case "getInvite":
-            bot.commands.get("getInvite").execute(message, args);
+            executeCommand();
             break;
           case "execute":
-            bot.commands.get("execute").execute(message, args);
+            executeCommand();
             break;
           case "summon":
-            bot.commands.get("summon").execute(message, args);
+            executeCommand();
             break;
           case "code":
-            bot.commands.get("code").execute(message, args);
+            executeCommand();
             break;
         }
       });
