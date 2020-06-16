@@ -91,30 +91,10 @@ bot.on("message", (message) => {
         message.channel
           .send("There was an error while executing that command.")
           .then((message) => {
-            message.react("❓").then(() => {
-              const filter = (reaction, user) => {
-                return (
-                  ["❓"].includes(reaction.emoji.name) &&
-                  user.id === message.author.id
-                );
-              };
-              message
-                .awaitReactions(filter, {
-                  max: 1,
-                  time: 60000,
-                  errors: ["time"],
-                })
-                .then((collected) => {
-                  const reaction = collected.first();
-                  if (reaction.emoji.name === "❓") {
-                    const Embed = new MessageEmbed()
-                      .setTitle("Error")
-                      .setDescription(`\`\`\`js\n${error}\n\`\`\``);
-                    message.channel.send(Embed);
-                  }
-                })
-                .catch();
-            });
+            const Embed = new MessageEmbed()
+              .setTitle("Error")
+              .setDescription(`\`\`\`js\n${error}\n\`\`\``);
+            message.channel.send(Embed);
           });
       }
     }
