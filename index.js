@@ -186,7 +186,7 @@ bot.on("message", (message) => {
             executeCommand();
             break;
           case "define":
-            executeCommand(fetch);
+            executeCommand();
             break;
         }
       });
