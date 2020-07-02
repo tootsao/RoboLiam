@@ -7,6 +7,7 @@ const ms = require("ms");
 const fs = require("fs");
 const cheerio = require("cheerio");
 const request = require("request");
+const fetch = require("node-fetch");
 module.exports = bot;
 
 // Import settings
@@ -76,7 +77,7 @@ bot.on("ready", () => {
 });
 
 bot.on("message", (message) => {
-  function executeCommand(parameters) {
+  async function executeCommand(parameters) {
     let args = message.content.slice(prefix.length).split(" ");
     let command = bot.commands.get(args[0]);
     try {
@@ -183,6 +184,9 @@ bot.on("message", (message) => {
             break;
           case "code":
             executeCommand();
+            break;
+          case "define":
+            executeCommand(fetch);
             break;
         }
       });
