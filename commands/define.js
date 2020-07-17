@@ -21,9 +21,7 @@ module.exports = {
             .setTitle(response.def[0].text)
             .addField(
               "Definition",
-              response.def[0]
-                .map((response) => response.tr[0].mean)
-                .join("\n\n")
+              response.def[0].tr[0].mean.map((def) => def.text).join("\n\n")
             );
           console.log("Embed defined"); //remove
           message.channel.send(Embed);
