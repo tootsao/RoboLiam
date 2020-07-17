@@ -5,8 +5,8 @@ module.exports = {
   execute(message, args) {
     if (args[1]) {
       const { MessageEmbed } = require("discord.js");
-      const fetch = require("node-fetch");
-      const response = /*await*/ fetch(`https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=dict.1.1.20200702T031014Z.224775ae6b942b5e.d757485e9a8a4540385b78899c7d21a391e6eb93
+      const fetch = await require("node-fetch");
+      const response = await fetch(`https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=dict.1.1.20200702T031014Z.224775ae6b942b5e.d757485e9a8a4540385b78899c7d21a391e6eb93
       &lang=en-en&text=${args[1]}`).then((response) => response.json());
       console.log(response);
       const Embed = new MessageEmbed()

@@ -140,9 +140,6 @@ bot.on("message", (message) => {
           case "setPrefix":
             executeCommand(db);
             break;
-          case "secret":
-            executeCommand();
-            break;
           case "simonSays":
             executeCommand();
             break;
