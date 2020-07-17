@@ -17,10 +17,10 @@ module.exports = {
         console.log("response:"); //remove
         console.log(response); //remove
         const Embed = new MessageEmbed()
-          .setTitle(response.def.text)
+          .setTitle(response.def[0])
           .addField(
             "Definition",
-            response.map((response) => response.def.tr.mean)
+            response.def.map((response) => response.tr.mean)
           )
           .join("\n\n");
         console.log("Embed defined"); //remove
