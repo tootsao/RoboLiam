@@ -20,7 +20,7 @@ module.exports = {
           .setTitle(response.def[0])
           .addField(
             "Definition",
-            response.def.map((response) => response.tr.mean)
+            response.def.map((response) => response.tr[0].mean[0])
           )
           .join("\n\n");
         console.log("Embed defined"); //remove
