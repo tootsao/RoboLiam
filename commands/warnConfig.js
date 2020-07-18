@@ -11,7 +11,7 @@ module.exports = {
                 .doc(message.guild.id)
                 .update({
                   warnPunish: args[1],
-                  warnAmount: args[2],
+                  warnAmount: Number(args[2]),
                 })
                 .then(() => {
                   let punishment;
