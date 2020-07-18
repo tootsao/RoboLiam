@@ -22,6 +22,15 @@ module.exports = {
           }
         ).then((response) => response.json());
 
+        let definition;
+        if (response.list[0].definition.length > 1024) {
+          definition =
+            response.list[0].definition.substring(0, 985) +
+            "... **Click the Above Link to Continue**";
+        } else {
+          definition = response.list[0].definition;
+        }
+
         let example;
         if (response.list[0].example == "") {
           example = "None";
@@ -33,7 +42,7 @@ module.exports = {
           .setTitle(`${response.list[0].word.toUpperCase()}`)
           .setURL(`${response.list[0].permalink}`)
           .setColor("#FFA500")
-          .addField("Definition", response.list[0].definition)
+          .addField("Definition", definition)
           .addField("Example", example)
           .setFooter(
             "Definitions supplied by Urban Dictionary",
