@@ -24,6 +24,13 @@ module.exports = {
             }
           ).then((response) => response.json());
 
+          let example;
+          if ((response.list[0].example = "")) {
+            example = "None";
+          } else {
+            example = response.list[0].example;
+          }
+
           const Embed = new MessageEmbed()
             .setTitle(`${response.list[0].word.toUpperCase()}`)
             .setAuthor(
@@ -32,13 +39,7 @@ module.exports = {
               `https://www.urbandictionary.com/author.php?author=${response.list[0].author}`
             )
             .addField("Definition", response.list[0].definition)
-            .addField("Example", async function () {
-              try {
-                response.list[0].example;
-              } catch (err) {
-                ("None");
-              }
-            });
+            .addField("Example", example);
 
           message.channel.send(Embed);
         } else {
