@@ -32,7 +32,13 @@ module.exports = {
               `https://www.urbandictionary.com/author.php?author=${response.list[0].author}`
             )
             .addField("Definition", response.list[0].definition)
-            .addField("Example", response.list[0].example);
+            .addField("Example", async function () {
+              try {
+                response.list[0].example;
+              } catch (err) {
+                ("None");
+              }
+            });
 
           message.channel.send(Embed);
         } else {
