@@ -13,7 +13,7 @@ module.exports = {
               .collection("members")
               .doc(message.mentions.users.first().id)
               .set({
-                warns: (warns || 0) + 1,
+                warns: warns || (warns = 0) + 1,
               })
               .then(() => {
                 db.collection("guilds")
