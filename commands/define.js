@@ -26,7 +26,7 @@ module.exports = {
         if (response.list[0].definition.length > 1024) {
           definition =
             response.list[0].definition.substring(0, 984) +
-            "... **Click the Above Link to Continue**";
+            "... \n**Click the Above Link to Continue**";
         } else {
           definition = response.list[0].definition;
         }
@@ -35,7 +35,13 @@ module.exports = {
         if (response.list[0].example == "") {
           example = "None";
         } else {
-          example = response.list[0].example;
+          if (response.list[0].example.length > 1024) {
+            example =
+              response.list[0].example.substring(0, 984) +
+              "... \n**Click the Above Link to Continue**";
+          } else {
+            example = response.list[0].example;
+          }
         }
 
         const Embed = new MessageEmbed()
