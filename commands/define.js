@@ -33,8 +33,13 @@ module.exports = {
 
           const Embed = new MessageEmbed()
             .setTitle(`${response.list[0].word.toUpperCase()}`)
+            .setColor("#FFA500")
             .addField("Definition", response.list[0].definition)
-            .addField("Example", example);
+            .addField("Example", example)
+            .setFooter(
+              `[Definitions supplied by Urban Dictionary](${response.list[0].permalink})`,
+              "https://slack-files2.s3-us-west-2.amazonaws.com/avatars/2018-01-11/297387706245_85899a44216ce1604c93_512.jpg"
+            );
 
           message.channel.send(Embed);
         } else {
