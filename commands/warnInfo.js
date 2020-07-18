@@ -27,19 +27,19 @@ module.exports = {
         } else {
           punishment = "Not Set";
         }
-      });
 
-    switch (punishment) {
-      case "Not Set":
-        message.channel.send(
-          "The warning system is not compatible with this server.\nPlease contact <@441384103946878987> to fix this."
-        );
-        break;
-      default:
-        message.channel.send(
-          `Members will be ${punishment} after being warned ${warnings} time(s).`
-        );
-        break;
-    }
+        switch (punishment) {
+          case "Not Set":
+            message.channel.send(
+              "The warning system is not compatible with this server.\nPlease contact <@441384103946878987> to fix this."
+            );
+            break;
+          default:
+            message.channel.send(
+              `Members will be ${punishment} after being warned ${warnings} time(s).`
+            );
+            break;
+        }
+      });
   },
 };
