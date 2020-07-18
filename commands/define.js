@@ -28,7 +28,7 @@ module.exports = {
             .setTitle(`${response.list[0].word.toUpperCase()}`)
             .setAuthor(
               response.list[0].author,
-              null,
+              undefined,
               `https://www.urbandictionary.com/author.php?author=${response.list[0].author}`
             )
             .addField("Definition", response.list[0].definition)
