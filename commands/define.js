@@ -10,7 +10,9 @@ module.exports = {
 
           const fetch = await require("node-fetch");
           const response = await fetch(
-            "https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=WORD",
+            `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${args
+              .slice(1)
+              .join(" ")}`,
             {
               method: "GET",
               headers: {
