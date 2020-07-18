@@ -6,12 +6,12 @@ module.exports = {
       if (args[1]) {
         if (args[2]) {
           if (args[1] == "ban" || args[1] == "kick" || args[1] == "mute") {
-            if (Number(args[2]) != NaN) {
+            if (parseInt(args[2], 10) != "") {
               db.collection("guilds")
                 .doc(message.guild.id)
                 .update({
                   warnPunish: args[1],
-                  warnAmount: Number(args[2]),
+                  warnAmount: parseInt(args[2], 10),
                 })
                 .then(() => {
                   let punishment;
@@ -30,7 +30,10 @@ module.exports = {
                       break;
                   }
                   message.channel.send(
-                    `Members will be ${punishment} after being warned ${args[2]} time(s).`
+                    `Members will be ${punishment} after being warned ${parseInt(
+                      args[2],
+                      10
+                    )} time(s).`
                   );
                 });
             } else {
