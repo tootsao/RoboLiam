@@ -5,7 +5,7 @@ module.exports = {
     let punishment;
     let warnings;
     db.collection("guilds")
-      .doc(member.guild.id)
+      .doc(message.guild.id)
       .get()
       .then((q) => {
         if (q.exists) {
