@@ -25,7 +25,7 @@ module.exports = {
         let definition;
         if (response.list[0].definition.length > 1024) {
           definition =
-            response.list[0].definition.substring(0, 985) +
+            response.list[0].definition.substring(0, 984) +
             "... **Click the Above Link to Continue**";
         } else {
           definition = response.list[0].definition;
