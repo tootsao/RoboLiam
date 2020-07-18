@@ -16,7 +16,7 @@ module.exports = {
               .get()
               .then((q) => {
                 if (q.exists) {
-                  warnAdd = q.data().warns++;
+                  warnAdd = q.data().warns + 1;
                 } else {
                   warnAdd = 1;
                 }
