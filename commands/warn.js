@@ -8,12 +8,25 @@ module.exports = {
           if (args[2]) {
             //
           } else {
+            let warnAdd;
+            db.collection("guilds")
+              .doc(message.guild.id)
+              .collection("members")
+              .doc(message.mentions.users.first().id)
+              .get()
+              .then((q) => {
+                if (q.exists) {
+                  warnAdd = q.warns++;
+                } else {
+                  warnAdd = 1;
+                }
+              });
             db.collection("guilds")
               .doc(message.guild.id)
               .collection("members")
               .doc(message.mentions.users.first().id)
               .set({
-                warns: warns || 0 + 1,
+                warns: warnAdd,
               })
               .then(() => {
                 db.collection("guilds")
