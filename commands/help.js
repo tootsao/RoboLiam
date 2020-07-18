@@ -438,6 +438,48 @@ module.exports = {
             message.reply("❌ Please enable Direct Messages.");
           }
         });
+    } else if (args[1] === "code") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField(
+          "code [cmd]",
+          "Displays the code invloved in making the specified command function.\n\n[cmd] - The command you wish to see the code of."
+        )
+        .setFooter("RoboLiam version " + version);
+      message.author
+        .send(Embed)
+        .then(() => {
+          if (message.guild) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
+        })
+        .catch(() => {
+          if (message.guild) {
+            message.reply("❌ Please enable Direct Messages.");
+          }
+        });
+    } else if (args[1] === "define") {
+      const Embed = new MessageEmbed()
+        .setTitle("Help")
+        .setColor(0xff0000)
+        .addField(
+          "define [word/phrase]",
+          "Defines the specified word/phrase.\n\n[word/phrase] - The word/phrase you wish to define."
+        )
+        .setFooter("RoboLiam version " + version);
+      message.author
+        .send(Embed)
+        .then(() => {
+          if (message.guild) {
+            message.channel.send("✅ Check your DMs for the commands!");
+          }
+        })
+        .catch(() => {
+          if (message.guild) {
+            message.reply("❌ Please enable Direct Messages.");
+          }
+        });
     } else if (!args[1]) {
       const Embed = new MessageEmbed()
         .setTitle("Help")
@@ -450,7 +492,7 @@ module.exports = {
         )
         .addField(
           "Fun",
-          "simonSays [message]\nimage [image]\nexactImage [image]\nfact\nsummon [user]"
+          "simonSays [message]\nimage [image]\nexactImage [image]\nfact\nsummon [user]\ndefine [word/phrase]"
         )
         .addField(
           "Moderation",
@@ -458,7 +500,7 @@ module.exports = {
         )
         .addField(
           "Developer",
-          "ping\ninfo\nserverInfo\ngetInvite [guildID]\nexecute [code]"
+          "ping\ninfo\nserverInfo\ngetInvite [guildID]\nexecute [code]\ncode [cmd]"
         )
         .addField("Other", "help [cmd]?")
         .setFooter("RoboLiam version " + version);

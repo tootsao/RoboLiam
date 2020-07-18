@@ -37,5 +37,7 @@ If you wish to add the bot to your own server, you can do so with the following 
 - getInvite [guildID]
 - execute [code]
 - summon [user]
+- code [cmd]
+- define [word/phrase]
 
 Credit to [Noba](https://www.reddit.com/user/N0ba/) on Reddit for the Protogen Avatar.
