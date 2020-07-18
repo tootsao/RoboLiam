@@ -32,7 +32,6 @@ module.exports = {
         const Embed = new MessageEmbed()
           .setTitle(`${response.list[0].word.toUpperCase()}`)
           .setColor("#FFA500")
-          .setDescription(`[View Page](${response.list[0].permalink})`)
           .addField("Definition", response.list[0].definition)
           .addField("Example", example)
           .setFooter(
