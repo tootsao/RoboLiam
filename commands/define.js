@@ -23,11 +23,13 @@ module.exports = {
               },
             }
           ).then((response) => response.json());
-          console.log(response); //remove
 
           const Embed = new MessageEmbed()
-            .setTitle(
-              `[${response.list[0].word}](${response.list[0].permalink})`
+            .setTitle(`${response.list[0].word.toUpperCase()}`)
+            .setAuthor(
+              response.list[0].author,
+              null,
+              `https://www.urbandictionary.com/author.php?author=${response.list[0].author}`
             )
             .addField("Definition", response.list[0].definition)
             .addField("Example", response.list[0].example);
