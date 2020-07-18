@@ -275,6 +275,8 @@ bot.on("guildCreate", async (gData) => {
   db.collection("guilds").doc(gData.id).set({
     prefix: ".",
     serverAnnouncements: "null",
+    warnPunish: "kick",
+    warnAmount: "3",
   });
 });
 

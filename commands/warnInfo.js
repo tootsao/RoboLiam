@@ -29,7 +29,7 @@ module.exports = {
 
     if (punishment == "Not Set") {
       message.channel.send(
-        "The warning system has not been set up for this server."
+        "The warning system is not compatible with this server.\nPlease contact <@441384103946878987> to fix this."
       );
     } else {
       message.channel.send(
