@@ -191,6 +191,9 @@ bot.on("message", (message) => {
           case "warnInfo":
             executeCommand(db);
             break;
+          case "warn":
+            executeCommand(db);
+            break;
         }
       });
   }
