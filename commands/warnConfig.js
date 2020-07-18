@@ -1,5 +1,5 @@
 module.exports = {
-  name: "configWarn",
+  name: "warnConfig",
   description: "Configures the warning system.",
   execute(message, args, db) {
     if (message.member.hasPermission("KICK_MEMBERS")) {
@@ -42,7 +42,7 @@ module.exports = {
             );
           }
         } else {
-          message.chanel.send("Please specify a warn amount.");
+          message.channel.send("Please specify a warn amount.");
         }
       } else {
         message.channel.send("Please specify a punishment.");

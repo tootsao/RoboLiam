@@ -185,7 +185,7 @@ bot.on("message", (message) => {
           case "define":
             executeCommand();
             break;
-          case "configWarn":
+          case "warnConfig":
             executeCommand(db);
             break;
           case "warnInfo":
