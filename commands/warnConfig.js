@@ -6,7 +6,7 @@ module.exports = {
       if (args[1]) {
         if (args[2]) {
           if (args[1] == "ban" || args[1] == "kick" || args[1] == "mute") {
-            if (typeof args[2] == "number") {
+            if (Number(args[2]) != NaN) {
               db.collection("guilds")
                 .doc(message.guild.id)
                 .update({
