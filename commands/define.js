@@ -25,7 +25,7 @@ module.exports = {
         let definition;
         if (response.list[0].definition.length > 1024) {
           definition =
-            response.list[0].definition.substring(0, 984) +
+            response.list[0].definition.substring(0, 983) +
             "... \n**Click the Above Link to Continue**";
         } else {
           definition = response.list[0].definition;
@@ -37,7 +37,7 @@ module.exports = {
         } else {
           if (response.list[0].example.length > 1024) {
             example =
-              response.list[0].example.substring(0, 984) +
+              response.list[0].example.substring(0, 983) +
               "... \n**Click the Above Link to Continue**";
           } else {
             example = response.list[0].example;
