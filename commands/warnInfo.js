@@ -1,7 +1,7 @@
 module.exports = {
   name: "warnInfo",
   description: "Displays info regarding the server's warning system.",
-  execute(message, args) {
+  execute(message, args, db) {
     let punishment;
     let warnings;
     db.collection("guilds")
