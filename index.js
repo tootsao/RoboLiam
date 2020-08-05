@@ -46,6 +46,16 @@ client.on("message", (message) => {
     return message.reply(reply);
   }
 
+  if (command.permission) {
+    if (
+      !message.guild.member(message.author).hasPermission(command.permission)
+    ) {
+      return message.reply(
+        `You don't have permission to do that!\nYou need to be able to \`${command.permission}\` to run this command.`
+      );
+    }
+  }
+
   try {
     command.execute(message, args);
   } catch (error) {
