@@ -1,7 +1,8 @@
 module.exports = {
   name: "ping",
-  description: "Ping!",
+  description: "Displays the bot's ping.",
   execute(message, args) {
-    message.channel.send("Pong!");
+    const { ws } = message.client;
+    message.channel.send(`Ping: ${ws.ping} ms`);
   },
 };

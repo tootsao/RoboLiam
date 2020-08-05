@@ -2,7 +2,7 @@ const { prefix } = require("../config.json");
 const { MessageEmbed, Message } = require("discord.js");
 module.exports = {
   name: "help",
-  description: "List all of my commands or info about a specific command.",
+  description: "Lists all of the commands or info about a specific command.",
   aliases: ["commands", "cmds"],
   usage: "[cmd]",
   execute(message, args) {
@@ -12,7 +12,7 @@ module.exports = {
       const Embed = new MessageEmbed()
         .setTitle("Help")
         .setDescription(
-          `Here's a list of all my commands:\n\n${commands
+          `Here's a list of all the commands:\n\n${commands
             .map((command) => command.name)
             .join(
               "\n"
@@ -23,7 +23,7 @@ module.exports = {
         .send(Embed)
         .then(() => {
           if (message.channel.type === "dm") return;
-          message.reply("I've sent you a DM with all my commands!");
+          message.reply("I've sent you a DM with all the commands!");
         })
         .catch((error) => {
           console.error(
@@ -42,24 +42,28 @@ module.exports = {
       commands.find((c) => c.aliases && c.aliases.includes(name));
 
     if (!command) {
-      return message.reply("that's not a valid command!");
+      return message.reply("That's not a valid command!");
     }
 
     let aliases;
+    let usage;
     if (command.aliases) {
-      aliases = `\'${command.aliases.join("', '")}\'`;
+      aliases = `\`${command.aliases.join("`, `")}\``;
     } else {
       aliases = "None";
     }
     if (command.usage) {
-      data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
+      usage = `\`${prefix}${command.name} ${command.usage}\``;
+    } else {
+      usage = `\`${prefix}${command.name}\``;
     }
 
     const Embed = new MessageEmbed()
       .setTitle(args[0].toLowerCase())
       .addField("Description", command.description)
-      .addField("Aliases", aliases);
+      .addField("Aliases", aliases)
+      .addField("Usage", usage);
 
-    message.channel.send(data, { split: true });
+    message.channel.send(Embed);
   },
 };
