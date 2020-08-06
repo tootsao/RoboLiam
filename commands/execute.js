@@ -1,6 +1,8 @@
 const fs = require("fs");
 const Discord = require("discord.js");
-const { prefix } = require("../config.json");
+const config = require("../config.json");
+const request = require("request");
+const cheerio = require("cheerio");
 module.exports = {
   name: "execute",
   description: "Executes whatever code the user specifies.",
