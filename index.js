@@ -1,4 +1,3 @@
-// Does this show up on the glitch page?
 require("dotenv").config();
 const fs = require("fs");
 const request = require("request");
