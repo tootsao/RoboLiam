@@ -2,6 +2,7 @@ require("dotenv").config();
 const fs = require("fs");
 const request = require("request");
 const cheerio = require("cheerio");
+const fetch = require("node-fetch");
 const Discord = require("discord.js");
 const { prefix } = require("./config.json");
 const client = new Discord.Client();

@@ -23,15 +23,15 @@ module.exports = {
         .send(Embed)
         .then(() => {
           if (message.channel.type === "dm") return;
-          message.reply("I've sent you a DM with all the commands!");
+          message.channel.send("✅ Check your DMs for the commands!");
         })
         .catch((error) => {
           console.error(
             `Could not send help DM to ${message.author.tag}.\n`,
             error
           );
-          message.reply(
-            "it seems like I can't DM you! Do you have DMs disabled?"
+          message.channel.send(
+            "❌ It seems like I can't DM you! Do you have DMs disabled?"
           );
         });
     }
@@ -59,7 +59,7 @@ module.exports = {
     }
 
     const Embed = new MessageEmbed()
-      .setTitle(args[0].toLowerCase())
+      .setTitle(command.name)
       .addField("Description", command.description)
       .addField("Aliases", aliases)
       .addField("Usage", usage);

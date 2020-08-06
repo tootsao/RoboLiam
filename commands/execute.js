@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const config = require("../config.json");
 const request = require("request");
 const cheerio = require("cheerio");
+const fetch = require("node-fetch");
 module.exports = {
   name: "execute",
   description: "Executes whatever code the user specifies.",
