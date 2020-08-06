@@ -18,6 +18,42 @@ for (const file of commandFiles) {
 
 client.once("ready", () => {
   console.log("RoboLiam is now online.");
+
+  const status = [
+    {
+      activity: 'Say "help" for cmds!',
+      type: "PLAYING",
+    },
+    {
+      activity: "With Code.",
+      type: "PLAYING",
+    },
+    {
+      activity: "Minecraft.",
+      type: "PLAYING",
+    },
+    {
+      activity: "Naruto.",
+      type: "WATCHING",
+    },
+    {
+      activity: "LoFi Music.",
+      type: "LISTENING",
+    },
+    {
+      activity: "Furry YouTubers.",
+      type: "WATCHING",
+    },
+  ];
+  const random = status[Math.floor(Math.random() * Math.floor(status.length))];
+  client.user.setActivity(random.activity, {
+    type: random.type,
+  });
+  setInterval(async function () {
+    client.user.setActivity(random.activity, {
+      type: random.type,
+    });
+  }, 60000);
 });
 
 client.on("message", (message) => {
