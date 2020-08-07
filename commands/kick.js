@@ -11,11 +11,11 @@ module.exports = {
       member
         .kick()
         .then(() => {
-          message.reply(`✅ Succesfuly kicked ${member.tag}.`);
+          message.reply(`✅ Succesfuly kicked ${member.user.tag}.`);
         })
         .catch((err) => {
           message.channel.send(
-            `❌ I was unable to kick the user ${member.tag}.`
+            `❌ I was unable to kick the user ${member.user.tag}.`
           );
           console.log(err);
         });
@@ -24,11 +24,13 @@ module.exports = {
       member
         .kick(msgArgs)
         .then(() => {
-          message.reply(`✅ Succesfuly kicked ${member.tag} for "${msgArgs}".`);
+          message.reply(
+            `✅ Succesfuly kicked ${member.user.tag} for "${msgArgs}".`
+          );
         })
         .catch((err) => {
           message.channel.send(
-            `❌ I was unable to kick the user ${member.tag}.`
+            `❌ I was unable to kick the user ${member.user.tag}.`
           );
           console.log(err);
         });
