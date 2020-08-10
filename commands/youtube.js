@@ -28,7 +28,7 @@ module.exports = {
           }
         )
         .setFooter("Say the number that corresponds to a result to send it.");
-      message.channel.send(Embed).then(() => {
+      message.channel.send(Embed).then((optionsMessage) => {
         const messageAuthor = message.author;
         function AwaitResponse() {
           if (timeUp) {
@@ -40,11 +40,15 @@ module.exports = {
               const matches = message.content.match(/(\d+)/);
               if (matches) {
                 if (matches[0] <= search.items.length) {
-                  message.channel.send(
-                    `https://www.youtube.com/watch?v=${
-                      search.items[matches[0] - 1].id.videoId
-                    }`
-                  );
+                  message.channel
+                    .send(
+                      `https://www.youtube.com/watch?v=${
+                        search.items[matches[0] - 1].id.videoId
+                      }`
+                    )
+                    .then(() => {
+                      optionsMessage.delete();
+                    });
                 } else return AwaitResponse();
               } else return AwaitResponse();
             });
