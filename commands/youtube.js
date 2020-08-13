@@ -17,7 +17,8 @@ module.exports = {
       if (search.error.message) {
         const Embed = new MessageEmbed()
           .setTitle(`Error ${search.error.code}!`)
-          .setDescription(`\`${search.error.message}\``);
+          .setDescription(`\`${search.error.message}\``)
+          .setColor(0xff0000);
         console.log(`${search.error.code}:\n${search.error.message}`);
         return message.channel.send(Embed);
       }
