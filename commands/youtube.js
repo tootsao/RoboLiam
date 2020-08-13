@@ -13,6 +13,15 @@ module.exports = {
           args.slice(0).join(" ")
         )}&order=relevance&type=video&key=AIzaSyD0cPaW1USVUzx5w0o7F8Rnqod85_NjaPw`
       ).then((response) => response.json());
+
+      if (search.error.message) {
+        const Embed = new MessageEmbed()
+          .setTitle(`Error ${search.error.code}!`)
+          .setDescription(`\`${search.error.message}\``);
+        console.log(`${search.error.code}:\n${search.error.message}`);
+        return message.channel.send(Embed);
+      }
+
       const Embed = new MessageEmbed()
         .setTitle("Results")
         .addFields(
