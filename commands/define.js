@@ -17,8 +17,7 @@ module.exports = {
           headers: {
             "x-rapidapi-host":
               "mashape-community-urban-dictionary.p.rapidapi.com",
-            "x-rapidapi-key":
-              "5f8e5fd523msh05182ea08acf9ffp18a88fjsneef5bcf8b426",
+            "x-rapidapi-key": process.env.RAPIDAPI_KEY,
           },
         }
       ).then((response) => response.json());

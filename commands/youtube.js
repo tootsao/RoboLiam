@@ -11,7 +11,7 @@ module.exports = {
       const search = await fetch(
         `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(
           args.slice(0).join(" ")
-        )}&order=relevance&type=video&key=AIzaSyD0cPaW1USVUzx5w0o7F8Rnqod85_NjaPw`
+        )}&order=relevance&type=video&key=${process.env.GOOGLE_KEY}`
       ).then((response) => response.json());
 
       if (search.error.message) {
