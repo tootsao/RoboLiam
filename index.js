@@ -103,4 +103,16 @@ client.on("message", (message) => {
   }
 });
 
+// Global Functions
+const globalFunctions = {
+  getGif: async function (query, limit, variable) {
+    const giphy = await fetch(
+      `http://api.giphy.com/v1/gifs/search?q=${query}&api_key=${process.env.GIPHY_KEY}&limit=${limit}`
+    ).then((response) => response.json());
+    return giphy.data[Math.floor(Math.random() * Math.floor(giphy.data.length))]
+      .images.original.url;
+  },
+};
+exports.data = globalFunctions;
+
 client.login(process.env.TOKEN);
