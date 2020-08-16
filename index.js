@@ -3,9 +3,11 @@ const fs = require("fs");
 const request = require("request");
 const cheerio = require("cheerio");
 const fetch = require("node-fetch");
+const DBL = require("dblapi.js");
 const Discord = require("discord.js");
 //const { prefix } = require("./config.json");
 const client = new Discord.Client();
+const dbl = new DBL(process.env.DBL_TOKEN, client);
 
 let prefix = ".";
 
