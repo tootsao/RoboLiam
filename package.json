@@ -1,6 +1,6 @@
 {
   "name": "roboliam",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,8 @@
     "cheerio": "^1.0.0-rc.3",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
+    "firebase": "^7.18.0",
+    "firebase-admin": "^9.1.0",
     "node-fetch": "^2.6.0",
     "request": "^2.88.2"
   }
