@@ -12,7 +12,6 @@ let prefix = ".";
 // Firebase
 const firebase = require("firebase/app");
 const admin = require("firebase-admin");
-const serviceAccount = require("./serviceAccount.json");
 admin.initializeApp({
   credential: admin.credential.cert({
     project_id: "roboliam-427c0",
