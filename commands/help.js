@@ -1,4 +1,5 @@
 const { prefix } = require("../config.json");
+const { version } = require("../package.json");
 const { MessageEmbed, Message } = require("discord.js");
 module.exports = {
   name: "help",
@@ -17,7 +18,8 @@ module.exports = {
             .join(
               "\n"
             )}\n\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`
-        );
+        )
+        .setFooter(`As of v${version}`);
 
       return message.author
         .send(Embed)

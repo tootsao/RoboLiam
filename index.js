@@ -71,6 +71,27 @@ client.once("ready", () => {
       type: random.type,
     });
   }, 60000);
+
+  db.collection("misc")
+    .doc("version")
+    .get()
+    .then((q) => {
+      if (q.exists) {
+        const { version } = require("./package.json");
+        if (!q.data().version == version) {
+          const changelog = require("./commands/changelog.js");
+          client.guilds.cache
+            .find((guild) => guild.id == "695793419993481246")
+            .channels.cache.find(
+              (channel) => channel.id === "722520074765860904"
+            )
+            .send(changelog.data);
+          db.collection("misc").doc("version").update({
+            version: version,
+          });
+        }
+      }
+    });
 });
 
 client.on("message", (message) => {
