@@ -72,6 +72,14 @@ client.once("ready", () => {
     });
   }, 60000);
 
+  const changelog = new MessageEmbed()
+    .setTitle("**Changelog**\nv2.7.0")
+    .setDescription(
+      "```diff\n+ Make changelog send on update\n+ Add boop command :3\n+ Display version on help command```"
+    )
+    .setFooter("Updated 8/19/2020 PDT")
+    .setColor(0xffa500);
+  module.exports = { changelog };
   db.collection("misc")
     .doc("version")
     .get()
@@ -79,13 +87,12 @@ client.once("ready", () => {
       if (q.exists) {
         const { version } = require("./package.json");
         if (!q.data().version == version) {
-          const changelog = require("./commands/changelog.js");
           client.guilds.cache
             .find((guild) => guild.id == "695793419993481246")
             .channels.cache.find(
               (channel) => channel.id === "722520074765860904"
             )
-            .send(changelog.data);
+            .send(changelog);
           db.collection("misc").doc("version").update({
             version: version,
           });
