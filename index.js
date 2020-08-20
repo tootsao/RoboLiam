@@ -72,7 +72,7 @@ client.once("ready", () => {
     });
   }, 60000);
 
-  const changelog = new MessageEmbed()
+  const changelog = new Discord.MessageEmbed()
     .setTitle("**Changelog**\nv2.7.0")
     .setDescription(
       "```diff\n+ Make changelog send on update\n+ Add boop command :3\n+ Display version on help command```"
