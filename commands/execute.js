@@ -10,7 +10,7 @@ module.exports = {
   aliases: ["eval", "run"],
   usage: "[cmd]",
   args: true,
-  execute(message, args) {
+  execute(message, args, db) {
     if (message.author.id != "441384103946878987")
       return message.reply("Only developers of this bot can use that command.");
     const client = message.client;
