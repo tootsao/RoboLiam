@@ -21,7 +21,7 @@ module.exports = {
               message.mentions.users.first().tag
             }.`
           )
-          .setImage(await globalFunctions.data.getGif("anime+boop", 25));
+          .setImage(await globalFunctions.data.getGif("anime+boop", 15));
 
         message.channel.send(Embed);
       }
