@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const globalFunctions = require("../index");
+const globalFunctions = require("../globalFunctions");
 module.exports = {
   name: "slap",
   description: "Slaps the requested user.",

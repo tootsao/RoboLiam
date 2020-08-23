@@ -1,4 +1,4 @@
-const globalFunctions = require("../index");
+const globalFunctions = require("../globalFunctions");
 module.exports = {
   name: "gif",
   description: "Sends a gif based off of the supplied query.",

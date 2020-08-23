@@ -3,7 +3,7 @@ module.exports = {
   description: "Tells a random fact.",
   aliases: ["funfact", "ff"],
   execute(message, args) {
-    facts = [
+    const facts = [
       'The plural of octopus is "octopodies"!',
       "The hashtag symbol is technically called an octothorpe.",
       "The 100 folds in a chef's hat represent 100 ways to cook an egg.",
