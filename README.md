@@ -4,9 +4,11 @@
 
 RoboLiam is a multi-purpose Discord bot that I originally made for my own server, however, I was asked by many people to make the bot public and so I have.
 
-You can test out, report bugs, or make suggestions here! [**RoboLiam Paradise**](https://discord.gg/QFMjF2j).
+You can test out, report bugs, or make suggestions at [**RoboLiam Paradise**](https://discord.gg/QFMjF2j), our Discord server.
 
-If you wish to add the bot to your own server, you can do so with the following link: [**Add to your server**](https://discordapp.com/api/oauth2/authorize?client_id=694637394300895273&permissions=8&scope=bot)
+If you wish to add the bot to your own server, [**click here!**](https://discordapp.com/api/oauth2/authorize?client_id=694637394300895273&permissions=8&scope=bot)
+
+Wanna know what comes next? [**Click here to view the Trello board!**](https://trello.com/b/jqZR7uUx)
 
 (The default prefix is ".")
 
