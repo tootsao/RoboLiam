@@ -4,10 +4,8 @@ module.exports = {
   description: "Sends the changelog to the most recent update.",
   execute(message, args) {
     const Embed = new MessageEmbed()
-      .setTitle("**Changelog**\nv2.9.0")
-      .setDescription(
-        "```diff\nAdded a bunch o' furry stuff.\n\n+ Add sneeze command\n+ Add cat command\n+ Add fox command\n+ Add fursuit command\n+ Add shibe command```"
-      )
+      .setTitle("**Changelog**\nv2.10.0")
+      .setDescription("```diff\n+ Add birb command\n```")
       .setFooter("Updated 8/23/2020 PDT")
       .setColor(0xffa500);
     message.channel.send(Embed);
