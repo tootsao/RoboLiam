@@ -6,7 +6,7 @@ module.exports = {
     const Embed = new MessageEmbed()
       .setTitle("**Changelog**\nv2.9.0")
       .setDescription(
-        "```diff\n+ Add sneeze command\n+ Add cat command\n+ Add fox command\n```"
+        "```diff\n+ Add sneeze command\n+ Add cat command\n+ Add fox command\n+ Add fursuit command\n```"
       )
       .setFooter("Updated 8/23/2020 PDT")
       .setColor(0xffa500);
