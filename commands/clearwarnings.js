@@ -1,6 +1,6 @@
 module.exports = {
   name: "clearwarnings",
-  description: "Clears the warnings of a member.",
+  description: "Clear the warnings of a member.",
   aliases: [
     "clearwarn",
     "removewarnings",
@@ -9,7 +9,8 @@ module.exports = {
     "nowarn",
   ],
   permission: "KICK_MEMBERS",
-  usage: "[member]",
+  usage: "<member>",
+  category: "Moderation",
   args: true,
   guildOnly: true,
   execute(message, args, db) {

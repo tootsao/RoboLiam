@@ -1,8 +1,9 @@
 module.exports = {
   name: "warn",
-  description: "Warns a member.",
+  description: "Warn a member.",
   permission: "KICK_MEMBERS",
-  usage: "[member] <reason>",
+  usage: "<member> [reason]",
+  category: "Moderation",
   args: true,
   guildOnly: true,
   execute(message, args, db) {

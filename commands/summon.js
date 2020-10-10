@@ -1,9 +1,9 @@
 module.exports = {
   name: "summon",
-  description:
-    "Invites the specified user to the channel you are currently in.",
+  description: "Invite the specified user to the channel you are currently in.",
   aliases: ["invite"],
   usage: "[tag/mention]",
+  category: "Fun",
   args: true,
   guildOnly: true,
   execute(message, args) {

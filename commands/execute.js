@@ -6,9 +6,9 @@ const cheerio = require("cheerio");
 const fetch = require("node-fetch");
 module.exports = {
   name: "execute",
-  description: "Executes whatever code the user specifies.",
+  description: "Execute whatever code you specifie.",
   aliases: ["eval", "run"],
-  usage: "[cmd]",
+  usage: "<code>",
   args: true,
   execute(message, args, db) {
     if (message.author.id != "441384103946878987")

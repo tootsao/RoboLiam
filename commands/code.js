@@ -1,8 +1,9 @@
 const fs = require("fs");
 module.exports = {
   name: "code",
-  description: "Discplays the code of the specified command.",
-  usage: "[cmd]",
+  description: "Display the code of the specified command.",
+  usage: "<cmd>",
+  category: "Other",
   args: true,
   execute(message, args) {
     const client = message.client;

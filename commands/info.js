@@ -2,8 +2,9 @@ const { MessageEmbed } = require("discord.js");
 const { version, dependencies } = require("../package.json");
 module.exports = {
   name: "info",
-  description: "Sends info about the bot.",
+  description: "Send info about the bot.",
   aliases: ["botinfo", "bot", "links"],
+  category: "Other",
   execute(message, args) {
     const client = message.client;
 
@@ -31,13 +32,13 @@ module.exports = {
 
     const Embed = new MessageEmbed()
       .setAuthor(
-        "Made by Liam The Snow Leopard#2501",
-        "https://cdn.discordapp.com/avatars/441384103946878987/72dd31a2cd197b4067178e9b82aaaae4.png",
+        "Made by Liam The Protogen#2501",
+        `${message.client.users.cache.get("441384103946878987").avatarURL()}`,
         "http://github.com/Controlfreak707/"
       )
       .setTitle("Bot Info")
       .setThumbnail(
-        "https://cdn.discordapp.com/avatars/694637394300895273/84c7cbd530737d6f5a0b0edb660190a2.png"
+        `${message.client.users.cache.get("694637394300895273").avatarURL()}`
       )
       .setFooter("Made with Discord.js.", "https://i.imgur.com/wSTFkRM.png")
       .setTimestamp()
@@ -74,12 +75,7 @@ module.exports = {
         },
         {
           name: "top.gg",
-          value: "[Click Here](https://top.gg/bot/694637394300895273)",
-        },
-        {
-          name: "discord.bots.gg",
-          value:
-            "[Click Here](https://discord.bots.gg/bots/694637394300895273)",
+          value: "Temporarily unavailable", //[Click Here](https://top.gg/bot/694637394300895273)
         },
       ]);
 

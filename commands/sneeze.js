@@ -2,6 +2,7 @@ module.exports = {
   name: "sneeze",
   description: "Achoo!",
   aliases: ["achoo"],
+  category: "Fun",
   execute(message, args) {
     const sneezes = [
       "***Achoo!***",

@@ -1,8 +1,9 @@
 const globalFunctions = require("../globalFunctions");
 module.exports = {
   name: "gif",
-  description: "Sends a gif based off of the supplied query.",
-  usage: "[query]",
+  description: "Send a gif based off of the supplied query.",
+  usage: "<query>",
+  category: "GIF",
   args: true,
   execute(message, args) {
     async function AsyncFunc(message, args) {

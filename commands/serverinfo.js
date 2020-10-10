@@ -1,8 +1,9 @@
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "serverinfo",
-  description: "Sends info about the server you are currently on.",
+  description: "Send info about the server you are currently on.",
   aliases: ["guildinfo", "guild", "server"],
+  category: "Other",
   guildOnly: true,
   execute(message, args) {
     const d = new Date(message.guild.createdTimestamp);

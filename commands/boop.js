@@ -2,8 +2,9 @@ const { MessageEmbed } = require("discord.js");
 const globalFunctions = require("../globalFunctions");
 module.exports = {
   name: "boop",
-  description: "Boops the requested user.",
-  usage: "[user]",
+  description: "Boop the requested user.",
+  usage: "<user>",
+  category: "GIF",
   args: true,
   execute(message, args) {
     if (!message.mentions.users.first())

@@ -1,25 +1,68 @@
 const { prefix } = require("../config.json");
 const { version } = require("../package.json");
-const { MessageEmbed, Message } = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "help",
-  description: "Lists all of the commands or info about a specific command.",
+  description: "List all of the commands or info about a specific command.",
   aliases: ["commands", "cmds"],
-  usage: "<cmd>",
+  usage: "[cmd]",
   execute(message, args) {
     const { commands } = message.client;
 
     if (!args.length) {
       const Embed = new MessageEmbed()
         .setTitle("Help")
-        .setDescription(
-          `Here's a list of all the commands:\n\n${commands
-            .map((command) => command.name)
-            .join(
-              "\n"
-            )}\n\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`
-        )
-        .setFooter(`As of v${version}`);
+        .setDescription("Here's a list of all the commands:")
+        .addFields([
+          {
+            name: "Moderation",
+            value: `\`${
+              commands
+                .filter((cmd) => cmd.category == "Moderation")
+                .map((cmd) => cmd.name)
+                .join("`\n`") || "No commands found"
+            }\``,
+          },
+          {
+            name: "Fun",
+            value: `\`${
+              commands
+                .filter((cmd) => cmd.category == "Fun")
+                .map((cmd) => cmd.name)
+                .join("`\n`") || "No commands found"
+            }\``,
+          },
+          {
+            name: "Image",
+            value: `\`${
+              commands
+                .filter((cmd) => cmd.category == "Image")
+                .map((cmd) => cmd.name)
+                .join("`\n`") || "No commands found"
+            }\``,
+          },
+          {
+            name: "GIF",
+            value: `\`${
+              commands
+                .filter((cmd) => cmd.category == "GIF")
+                .map((cmd) => cmd.name)
+                .join("`\n`") || "No commands found"
+            }\``,
+          },
+          {
+            name: "Other",
+            value: `\`${
+              commands
+                .filter((cmd) => cmd.category == "Other")
+                .map((cmd) => cmd.name)
+                .join("`\n`") || "No commands found"
+            }\``,
+          },
+        ])
+        .setFooter(
+          `You can send ${prefix}help [cmd] to get info on a specific command! | v${version}`
+        );
 
       return message.author
         .send(Embed)
@@ -47,24 +90,13 @@ module.exports = {
       return message.reply("That's not a valid command!");
     }
 
-    let aliases;
-    let usage;
-    if (command.aliases) {
-      aliases = `\`${command.aliases.join("`, `")}\``;
-    } else {
-      aliases = "None";
-    }
-    if (command.usage) {
-      usage = `\`${prefix}${command.name} ${command.usage}\``;
-    } else {
-      usage = `\`${prefix}${command.name}\``;
-    }
+    const Embed = new MessageEmbed().setTitle(command.name);
 
-    const Embed = new MessageEmbed()
-      .setTitle(command.name)
-      .addField("Description", command.description)
-      .addField("Aliases", aliases)
-      .addField("Usage", usage);
+    if (command.aliases) Embed.addField("Aliases", command.aliases.join(", "));
+    if (command.category) Embed.addField("Category", command.category);
+    if (command.description) Embed.addField("Description", command.description);
+    if (command.usage)
+      Embed.addField("Usage", `\`${prefix}${command.name} ${command.usage}\``);
 
     message.channel.send(Embed);
   },

@@ -2,9 +2,10 @@ const { MessageEmbed } = require("discord.js");
 const fetch = require("node-fetch");
 module.exports = {
   name: "define",
-  description: "Defines a word or phrase.",
+  description: "Define a word or phrase.",
   aliases: ["meaning"],
-  usage: "[word/phrase]",
+  usage: "<word/phrase>",
+  category: "Fun",
   args: true,
   execute(message, args) {
     async function AsyncFunc(message, args) {
