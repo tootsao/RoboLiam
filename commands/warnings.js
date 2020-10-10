@@ -1,7 +1,8 @@
 module.exports = {
   name: "warnings",
-  description: "Checks a member's warnings.",
-  usage: "[member]",
+  description: "Check a member's warnings.",
+  usage: "<member>",
+  category: "Moderation",
   args: true,
   guildOnly: true,
   execute(message, args, db) {

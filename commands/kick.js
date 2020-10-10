@@ -1,7 +1,8 @@
 module.exports = {
   name: "kick",
-  description: "Kicks the specified user for a specified reason.",
-  usage: "[mention] <reason>",
+  description: "Kick the specified user for a specified reason.",
+  usage: "<mention> [reason]",
+  category: "Moderation",
   args: true,
   guildOnly: true,
   permission: "KICK_MEMBERS",

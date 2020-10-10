@@ -1,7 +1,8 @@
 module.exports = {
   name: "prefix",
-  description: "Displays or edits the guild prefix",
-  usage: "<prefix>",
+  description: "Display or edit the guild prefix",
+  usage: "[prefix]",
+  category: "Moderation",
   permission: "MANAGE_GUILD",
   guildOnly: true,
   execute(message, args, db) {

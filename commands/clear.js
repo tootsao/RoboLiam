@@ -1,8 +1,9 @@
 module.exports = {
   name: "clear",
-  description: "Deletes a specified amount of messages",
+  description: "Delete a specified amount of messages",
   aliases: ["purge", "bulk", "bulkdelete", "delete", "remove"],
-  usage: "[amount]",
+  usage: "<amount>",
+  category: "Moderation",
   args: true,
   permission: "MANAGE_MESSAGES",
   execute(message, args) {

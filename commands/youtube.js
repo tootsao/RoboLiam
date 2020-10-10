@@ -2,9 +2,10 @@ const fetch = require("node-fetch");
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "youtube",
-  description: "Searches for YouTube videos",
+  description: "Searche for YouTube videos.",
   aliases: ["video", "yt"],
   usage: "[query]",
+  category: "Fun",
   args: true,
   execute(message, args) {
     async function AsyncFunc(message, args) {
@@ -14,17 +15,20 @@ module.exports = {
         )}&order=relevance&type=video&key=${process.env.GOOGLE_KEY}`
       ).then((response) => response.json());
 
-      if (search.error.message) {
-        const Embed = new MessageEmbed()
-          .setTitle(`Error ${search.error.code}!`)
-          .setDescription(`\`${search.error.message}\``)
-          .setColor(0xff0000);
-        console.log(`${search.error.code}:\n${search.error.message}`);
-        return message.channel.send(Embed);
+      if (search.error) {
+        if (search.error.message) {
+          const Embed = new MessageEmbed()
+            .setTitle(`Error ${search.error.code}!`)
+            .setDescription(`\`${search.error.message}\``)
+            .setColor("RED");
+          console.log(`${search.error.code}:\n${search.error.message}`);
+          return message.channel.send(Embed);
+        }
       }
 
       const Embed = new MessageEmbed()
         .setTitle("Results")
+        .setColor(0xff0000)
         .addFields(
           {
             name: "Author",
