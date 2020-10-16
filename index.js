@@ -37,8 +37,8 @@ client.once("ready", () => {
 
   const status = [
     {
-      activity: 'Say "help" for cmds!',
-      type: "PLAYING",
+      activity: ".help | @RoboLiam",
+      type: "WATCHING",
     },
     {
       activity: "With Code.",
