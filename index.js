@@ -61,11 +61,12 @@ client.once("ready", () => {
       type: "WATCHING",
     },
   ];
-  const random = status[Math.floor(Math.random() * Math.floor(status.length))];
+  let random = status[Math.floor(Math.random() * Math.floor(status.length))];
   client.user.setActivity(random.activity, {
     type: random.type,
   });
   setInterval(async function () {
+    random = status[Math.floor(Math.random() * Math.floor(status.length))];
     client.user.setActivity(random.activity, {
       type: random.type,
     });

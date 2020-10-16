@@ -6,9 +6,9 @@ module.exports = {
   category: "Other",
   execute(message, args) {
     const Embed = new MessageEmbed()
-      .setTitle("**Changelog**\nv3.1.0")
+      .setTitle("**Changelog**\nv3.1.1")
       .setDescription(
-        "```diff\n+ Add more information to info command\n+ Tidy up statuses\n+ Update packages```"
+        "```diff\n+ Fix summon command usage\n+ Fix status not changing```"
       )
       .setFooter("Updated 10/15/2020 PDT")
       .setColor(0xffa500);
