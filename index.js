@@ -83,76 +83,78 @@ client.once("ready", () => {
   }, 60000);
 });
 
-client.on("message", (message) => {
+client.on("message", async (message) => {
   let doc;
   if (message.guild) {
     doc = message.guild.id;
   } else {
     doc = "NULL";
   }
-  db.collection("guilds")
-    .doc(doc)
-    .get()
-    .then((q) => {
-      if (q.exists) {
-        prefix = q.data().prefix;
-      } else {
-        prefix = ".";
-      }
-    })
-    .then(() => {
-      if (
-        message.content == `<@${client.user.id}>` ||
-        message.content == `<@!${client.user.id}>`
-      )
-        return message.channel.send(`The prefix is \`${prefix}\`.`);
-
-      if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-      const args = message.content.slice(prefix.length).trim().split(/ +/);
-      const commandName = args.shift().toLowerCase();
-
-      const command =
-        client.commands.get(commandName) ||
-        client.commands.find(
-          (cmd) => cmd.aliases && cmd.aliases.includes(commandName)
-        );
-
-      if (!command) return;
-
-      if (command.guildOnly && message.channel.type !== "text") {
-        return message.reply("I can't execute that command inside DMs!");
-      }
-
-      if (command.args && !args.length) {
-        let reply = `You didn't provide any arguments!`;
-
-        if (command.usage) {
-          reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
+  try {
+    await db
+      .collection("guilds")
+      .doc(doc)
+      .get()
+      .then((q) => {
+        if (q.exists) {
+          prefix = q.data().prefix;
+        } else {
+          prefix = ".";
         }
+      });
+  } catch (e) {
+    console.error(e);
+  }
 
-        return message.reply(reply);
-      }
+  if (
+    message.content == `<@${client.user.id}>` ||
+    message.content == `<@!${client.user.id}>`
+  )
+    return message.channel.send(`The prefix is \`${prefix}\`.`);
 
-      if (command.permission) {
-        if (
-          !message.guild
-            .member(message.author)
-            .hasPermission(command.permission)
-        ) {
-          return message.reply(
-            `You don't have permission to do that!\nYou need to be able to \`${command.permission}\` to run this command.`
-          );
-        }
-      }
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-      try {
-        command.execute(message, args, db);
-      } catch (error) {
-        console.error(error);
-        message.reply("There was an error executing that command!");
-      }
-    });
+  const args = message.content.slice(prefix.length).trim().split(/ +/);
+  const commandName = args.shift().toLowerCase();
+
+  const command =
+    client.commands.get(commandName) ||
+    client.commands.find(
+      (cmd) => cmd.aliases && cmd.aliases.includes(commandName)
+    );
+
+  if (!command) return;
+
+  if (command.guildOnly && message.channel.type !== "text") {
+    return message.reply("I can't execute that command inside DMs!");
+  }
+
+  if (command.args && !args.length) {
+    let reply = `You didn't provide any arguments!`;
+
+    if (command.usage) {
+      reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
+    }
+
+    return message.reply(reply);
+  }
+
+  if (command.permission) {
+    if (
+      !message.guild.member(message.author).hasPermission(command.permission)
+    ) {
+      return message.reply(
+        `You don't have permission to do that!\nYou need to be able to \`${command.permission}\` to run this command.`
+      );
+    }
+  }
+
+  try {
+    command.execute(message, args, db);
+  } catch (error) {
+    console.error(error);
+    message.reply("There was an error executing that command!");
+  }
 });
 
 client.on("guildCreate", async (gData) => {
