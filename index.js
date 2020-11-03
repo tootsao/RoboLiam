@@ -35,9 +35,17 @@ for (const file of commandFiles) {
 client.once("ready", () => {
   console.log("RoboLiam is now online.");
 
+  let users;
+  let guilds;
+  client.users.cache.tap((coll) => (users = coll.size));
+  client.guilds.cache.tap((coll) => (guilds = coll.size));
   const status = [
     {
       activity: ".help | @RoboLiam",
+      type: "WATCHING",
+    },
+    {
+      activity: `${users} users in ${guilds} servers.`,
       type: "WATCHING",
     },
     {

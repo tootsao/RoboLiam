@@ -6,10 +6,8 @@ module.exports = {
   category: "Other",
   execute(message, args) {
     const Embed = new MessageEmbed()
-      .setTitle("**Changelog**\nv3.2.0")
-      .setDescription(
-        "```diff\n+ Add suggest command\n+ Re-implement top.gg support\n- Remove slap and boop commands (will rework in the future)```"
-      )
+      .setTitle("**Changelog**\nv3.3.0")
+      .setDescription("```diff\n+ Add a single new status```")
       .setFooter("Updated 11/2/2020 PDT")
       .setColor(0xffa500);
     message.channel.send(Embed);
