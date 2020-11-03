@@ -4,7 +4,7 @@ module.exports = {
   description: "Send a specific image of choice.",
   aliases: ["exactsearch", "esearch", "eimage"],
   usage: "<query>",
-  category: "Fun",
+  category: "Image",
   args: true,
   execute(message, args) {
     globalFunctions.data.getImage(message, args.slice(0).join(" "));
