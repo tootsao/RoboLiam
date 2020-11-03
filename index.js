@@ -3,10 +3,10 @@ const fs = require("fs");
 const request = require("request");
 const cheerio = require("cheerio");
 const fetch = require("node-fetch");
-// const DBL = require("dblapi.js");
+const DBL = require("dblapi.js");
 const Discord = require("discord.js");
 const client = new Discord.Client();
-// const dbl = new DBL(process.env.DBL_TOKEN, client);
+const dbl = new DBL(process.env.DBL_TOKEN, client);
 
 let prefix = ".";
 
@@ -35,10 +35,18 @@ for (const file of commandFiles) {
 client.once("ready", () => {
   console.log("RoboLiam is now online.");
 
+  let users;
+  let guilds;
+  client.users.cache.tap((coll) => (users = coll.size));
+  client.guilds.cache.tap((coll) => (guilds = coll.size));
   const status = [
     {
-      activity: 'Say "help" for cmds!',
-      type: "PLAYING",
+      activity: ".help | @RoboLiam",
+      type: "WATCHING",
+    },
+    {
+      activity: `${users} users in ${guilds} servers.`,
+      type: "WATCHING",
     },
     {
       activity: "With Code.",
@@ -61,11 +69,12 @@ client.once("ready", () => {
       type: "WATCHING",
     },
   ];
-  const random = status[Math.floor(Math.random() * Math.floor(status.length))];
+  let random = status[Math.floor(Math.random() * Math.floor(status.length))];
   client.user.setActivity(random.activity, {
     type: random.type,
   });
   setInterval(async function () {
+    random = status[Math.floor(Math.random() * Math.floor(status.length))];
     client.user.setActivity(random.activity, {
       type: random.type,
     });
