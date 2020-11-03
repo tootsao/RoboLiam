@@ -88,7 +88,7 @@ module.exports = {
         },
         {
           name: "top.gg",
-          value: "Temporarily unavailable", //[Click Here](https://top.gg/bot/694637394300895273)
+          value: "[Click Here](https://top.gg/bot/694637394300895273)",
         },
       ]);
 

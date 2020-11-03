@@ -6,11 +6,11 @@ module.exports = {
   category: "Other",
   execute(message, args) {
     const Embed = new MessageEmbed()
-      .setTitle("**Changelog**\nv3.1.1")
+      .setTitle("**Changelog**\nv3.2.0")
       .setDescription(
-        "```diff\n+ Fix summon command usage\n+ Fix status not changing```"
+        "```diff\n+ Add suggest command\n+ Re-implement top.gg support\n- Remove slap and boop commands (will rework in the future)```"
       )
-      .setFooter("Updated 10/15/2020 PDT")
+      .setFooter("Updated 11/2/2020 PDT")
       .setColor(0xffa500);
     message.channel.send(Embed);
   },
