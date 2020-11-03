@@ -74,6 +74,8 @@ client.once("ready", () => {
     type: random.type,
   });
   setInterval(async function () {
+    client.users.cache.tap((coll) => (users = coll.size));
+    client.guilds.cache.tap((coll) => (guilds = coll.size));
     random = status[Math.floor(Math.random() * Math.floor(status.length))];
     client.user.setActivity(random.activity, {
       type: random.type,
