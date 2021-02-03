@@ -38,7 +38,7 @@ module.exports = {
       return member
         .ban({ days: matches[0] })
         .then(() => {
-          message.reply(`✅ Succesfuly banned ${member.user.tag} for${days}.`);
+          message.reply(`✅ Successfully banned ${member.user.tag} for${days}.`);
         })
         .catch(() => {
           message.channel.send(
@@ -52,7 +52,7 @@ module.exports = {
       .ban({ days: matches[0], reason: msgArgs })
       .then(() => {
         message.reply(
-          `✅ Succesfuly banned ${member.user.tag} for "${msgArgs}" for${days}.`
+          `✅ Successfully banned ${member.user.tag} for "${msgArgs}" for${days}.`
         );
       })
       .catch(() => {
