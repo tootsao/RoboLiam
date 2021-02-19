@@ -11,6 +11,6 @@ The default prefix is `.`, however you can easily change the prefix with `.prefi
 If you come across a bug or need support in general, [join the support server](https://discord.gg/QFMjF2j). An invite to the support server is listed above.
 
 # I've got an idea!
-You have an idea for a new command or feature? GREAT! Similair to if you find a bug, [join the support server](https://discord.gg/QFMjF2j) and tell the developers! We'd be more than happy to listen to what you have to say.
+You have an idea for a new command or feature? GREAT! Similar to if you find a bug, [join the support server](https://discord.gg/QFMjF2j) and tell the developers! We'd be more than happy to listen to what you have to say.
 
 ###### Credit to [Noba](https://www.reddit.com/user/N0ba/) on Reddit for the Protogen Avatar.
