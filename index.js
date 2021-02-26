@@ -2,9 +2,9 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/', (req, res) => res.send("...You're not supposed to be here..."));
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
+app.listen(port, () => console.log(`RoboLiam listening at http://localhost:${port}`));
 
 // ================= START BOT CODE ===================
 
